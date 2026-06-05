@@ -1,0 +1,1301 @@
+[
+  {
+    "deviation_id": "DEV-GC-2025-018",
+    "title": "Visible Particles Observed in GC-301 Stability Vials at 6-Month Accelerated Condition",
+    "summary_flags": {
+      "human_error_only_root_cause": false,
+      "retraining_only_capa": false,
+      "missing_effectiveness_check": true,
+      "capa_not_linked_to_root_cause": true,
+      "unresolved_conflict": true,
+      "scope_gap": true
+    },
+    "surfaced_gaps": [
+      {
+        "branch": "root_cause",
+        "category": "root_cause_vs_evidence_mismatch",
+        "gap": "Root cause states silicone-oil-induced protein AGGREGATION, but the visible particles are described as '0.3-0.5mm, dark brown, settled rapidly.' Proteinaceous/silicone aggregates are typically translucent/white and buoyant or slow-settling, not dark brown dense particles. FTIR confirmed protein + silicone bands but the dark-brown rapid-settling morphology is not explained by the aggregation hypothesis and points to a possible additional/different species (e.g., a degraded or metal-contaminated core).",
+        "where_evidence_lives": "FTIR spectra report, SEM-EDX / elemental analysis of the isolated particle, particle photographs, MFI image library",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: dark-brown color indicates oxidized/Maillard-browned protein or a foreign inorganic core (e.g., metal, carbonized rubber) that FTIR alone would under-report",
+          "AI-suggested, to confirm: the particle is a stopper-derived elastomer fragment (bromobutyl) coated with protein, not a pure silicone-induced aggregate",
+          "AI-suggested, to confirm: SEM-EDX was never performed, so an inorganic/foreign-matter root cause was never ruled out"
+        ],
+        "severity": "patient_safety"
+      },
+      {
+        "branch": "root_cause",
+        "category": "why_chain_stops_at_proximate_mechanism",
+        "gap": "The 5-Whys stops at 'silicone oil migrated at 40C.' It does not ask the systemic why: why does the West Kinston stopper lot (STR-2025-K003) migrate silicone when the Eschweiler lot did not? No siliconization spec, incoming-stopper QC limit, or supplier process difference is investigated. The systemic cause (out-of-spec or unspecified stopper siliconization level, or absent incoming acceptance criterion) is unaddressed.",
+        "where_evidence_lives": "Stopper supplier CoA, stopper siliconization specification, incoming QC test records (MAT-301-STP-006), supplier change history, West Kinston vs Eschweiler process comparison",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: there is no incoming-acceptance limit on stopper silicone load, so a higher-siliconized lot passed undetected",
+          "AI-suggested, to confirm: West Kinston is a newer/qualified-differently facility with a different siliconization process never bridged"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "root_cause",
+        "category": "fishbone_categories_not_covered",
+        "gap": "Investigation focused almost entirely on Material (stopper). Ishikawa 6M categories Machine (lyophilizer/stoppering process, capping force), Method (siliconization/wash process), and Measurement (was the same particle present at T0 but missed?) are not addressed. Single-vial 1-of-10 finding with no T0 baseline particle data leaves open whether this is condition-induced or pre-existing.",
+        "where_evidence_lives": "Time-zero visual inspection records, lyophilization/stoppering batch record, capping force records, MFI T0 vs T6 full dataset",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: the particle pre-existed at T0 and was missed (1-of-10 is consistent with a manufacturing-introduced sporadic foreign particle, not a thermal-stress-induced systematic one)",
+          "AI-suggested, to confirm: capping/stoppering process variation caused localized stopper damage releasing a fragment"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "scope_impact",
+        "category": "scope_assessment_incomplete",
+        "gap": "Impact assessment names 'potentially all lots using West Kinston stoppers (lots -003 through -008)' but no Is/Is-Not analysis was performed to confirm which clinical-supply lots actually received this stopper, their storage conditions, or whether any are already at clinical sites. The disposition releases clinical supply while admitting the same stopper population is unscreened.",
+        "where_evidence_lives": "Stopper lot genealogy / bill-of-materials per DP lot, distribution records, clinical-site inventory, stopper lot-to-DP-lot traceability",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: one or more clinical-administered lots already used West Kinston stoppers and were not inspected for this defect"
+        ],
+        "severity": "patient_safety"
+      },
+      {
+        "branch": "scope_impact",
+        "category": "patient_facing_disposition_logic",
+        "gap": "Batch disposition releases clinical supply on the basis that the 25C long-term condition met spec at 6M, while the root cause is a temperature-dependent silicone migration that worsens with stress. Cold-chain excursions during clinical shipping/handling could replicate the 40C-like stress. The disposition rationale does not address transient real-world thermal excursions, and shifts risk to clinical sites via 'reinforced visual inspection before administration' rather than a system control.",
+        "where_evidence_lives": "Shipping qualification / temperature excursion records, clinical handling SOP, stability data at intermediate/stress timepoints",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: relying on bedside visual inspection by clinical staff is an inadequate detection control for a 0.3mm intermittent particle",
+          "AI-suggested, to confirm: the disposition conclusion preceded and drove the scope assessment rather than the reverse"
+        ],
+        "severity": "patient_safety"
+      },
+      {
+        "branch": "capa",
+        "category": "capa_content_not_assessable",
+        "gap": "The record links CAPA-GC-2025-031 but contains NO description of any CAPA action, no root-cause linkage statement, no preventive element, and no effectiveness check. The deviation is marked Closed without any visible corrective/preventive action against the stopper-siliconization root cause. CAPA adequacy cannot be confirmed and on the face of the record fails the linkage/prevention/effectiveness test.",
+        "where_evidence_lives": "CAPA-GC-2025-031 record, CC-GC-2025-006 change control",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: the only action is enhanced monitoring (a detection/containment measure), with no preventive action such as a stopper siliconization spec, supplier requalification, or stopper-lot change",
+          "AI-suggested, to confirm: the change control CC-GC-2025-006 is the actual preventive action but is not summarized or linked to the root cause in this record"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "effectiveness",
+        "category": "effectiveness_check_absent",
+        "gap": "No measurable, time-bound effectiveness check is defined. 'Enhanced monitoring at 9M and 12M' is a continuation of the failing test, not an effectiveness criterion (no metric, threshold, owner, or success definition for whether the corrective action prevented recurrence). There is no defined acceptance criterion that would declare the CAPA effective.",
+        "where_evidence_lives": "CAPA-GC-2025-031 effectiveness section, stability protocol amendment, MFI silicone-droplet trend limits",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: effectiveness should be measured as zero visible particles + MFI silicone droplet count within a defined limit on the next N lots using the requalified/changed stopper, by a stated date"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "root_cause",
+        "category": "unresolved_data_conflict",
+        "gap": "CCIT (headspace) on all vials PASSED, yet the dark-brown rapidly-settling foreign particle and elevated silicone droplet population suggest a container-closure performance issue. A passing CCIT does not rule out elastomer fragmentation or silicone shedding (CCIT tests leakage, not particle shedding). This apparent conflict between 'closure is fine' and 'closure is"
+      }
+    ]
+  },
+  {
+    "deviation_id": "DEV-GC-2025-019",
+    "title": "Sub-Visible Particle Count Excursion in GC-301 Retained Samples Post-Reconstitution",
+    "summary_flags": {
+      "human_error_only_root_cause": false,
+      "retraining_only_capa": false,
+      "missing_effectiveness_check": true,
+      "capa_not_linked_to_root_cause": true,
+      "unresolved_conflict": true,
+      "scope_gap": true
+    },
+    "surfaced_gaps": [
+      {
+        "branch": "problem_statement",
+        "category": "title_vs_method_mismatch",
+        "gap": "Title says 'Post-Reconstitution' and process step says testing per USP <787>, but the description tests lyophilized retained samples by light obscuration. It is unclear whether vials were reconstituted before testing, what diluent/volume was used, and whether reconstitution itself introduced or masked particles. A 150mg/vial lyophilized mAb cannot be light-obscuration tested without a defined reconstitution step.",
+        "where_evidence_lives": "QC test record / raw HIAC run sheet, sample preparation log, reconstitution SOP for GC-301",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: reconstitution diluent or technique contributed particles independent of stopper silicone",
+          "AI-suggested, to confirm: title is boilerplate and testing was on reconstituted solution per spec \u2014 needs explicit confirmation"
+        ],
+        "severity": "data_integrity"
+      },
+      {
+        "branch": "problem_statement",
+        "category": "n_of_1_excursion",
+        "gap": "Only 1 of 5 vials failed, and that vial failed by ~8x the limit (48,215 vs 6,000). The record treats this as a confirmed lot failure but does not address why the other 4 vials passed if silicone migration is a systematic stopper-grade phenomenon. A single grossly out-of-family result raises a sampling/contamination question that is not interrogated.",
+        "where_evidence_lives": "Individual vial results for all 5 retains, HIAC audit trail, sample handling log",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: vial-to-vial silicone shedding is highly variable",
+          "AI-suggested, to confirm: the failing vial had a sample-prep artifact (air bubbles, fiber, lab environment) not representative of the lot"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "root_cause",
+        "category": "weak_evidence_for_assigned_cause",
+        "gap": "Root cause is assigned to 350 cSt silicone migration, but the supporting silicone-load data is nearly equivalent between implicated and control stoppers (0.42 vs 0.38 mg/stopper \u2014 only ~11% higher). The 3.2x forced-extraction differential and the 8x particle excursion are not reconciled with this small surface-load difference. The quantitative chain from 'slightly higher silicone load' to 'gross USP <787> failure in 1 vial' is not closed.",
+        "where_evidence_lives": "Forced extraction study report, FTIR-ATR raw data, silicone vendor CoA, SCN-2025-003 change rationale",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: 350 cSt grade migrates disproportionately under refrigerated long-term storage vs the 25\u00b0C model used",
+          "AI-suggested, to confirm: an unidentified co-factor (fill volume, headspace, protein concentration) amplified aggregation on silicone in this lot",
+          "AI-suggested, to confirm: silicone grade is a contributing cause but not the sole root cause of the 8x outlier"
+        ],
+        "severity": "patient_safety"
+      },
+      {
+        "branch": "root_cause",
+        "category": "change_control_root_cause_not_chased",
+        "gap": "SCN-2025-003 changed the silicone grade from 1000 cSt to 350 cSt, yet the investigation stops at 'this grade migrates more.' It does not interrogate the SYSTEM cause: how a change with direct container-closure/particulate impact was approved without a particulate/extractables risk assessment or stability bridging. The latent condition (change-control assessment gap) is the actionable systemic root cause and is not stated.",
+        "where_evidence_lives": "SCN-2025-003 change record, change-control risk assessment, container-closure qualification protocol, West Kinston supplier change notification",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: the silicone grade change was filed as 'like-for-like' and bypassed particulate risk review",
+          "AI-suggested, to confirm: no stability/retain testing was triggered to bridge the grade change"
+        ],
+        "severity": "patient_safety"
+      },
+      {
+        "branch": "scope_impact",
+        "category": "scope_bounded_only_to_one_product",
+        "gap": "Scope is limited to GC-301 lots using Kinston 350 cSt stoppers. The West Kinston grade change (SCN-2025-003) and the supplier are not product-specific \u2014 any other product filled with the same stopper lot/grade is in scope and is not addressed. The Is/Is-Not boundary (which products/sites received STR-2025-K005 or the 350 cSt grade) is not drawn.",
+        "where_evidence_lives": "Stopper lot STR-2025-K005 distribution/usage records, ERP material genealogy across products, supplier change notification distribution list",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: other products share the Kinston 350 cSt stopper and were not retain-tested"
+        ],
+        "severity": "patient_safety"
+      },
+      {
+        "branch": "scope_impact",
+        "category": "patient_exposure_quantification_missing",
+        "gap": "Impact assessment states clinical lots were distributed and dosed and rates patient safety HIGH, but does not quantify how many patients were exposed to affected lots, over what duration, or the outcome of the Medical Affairs clinical impact assessment. Without exposure quantification the immunogenicity risk and IND safety reporting decision are unsupported.",
+        "where_evidence_lives": "Clinical trial dosing/accountability records, Medical Affairs assessment report, pharmacovigilance/AE database, IND safety report decision memo",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: patient exposure was confirmed and an IND safety report was filed",
+          "AI-suggested, to confirm: affected lots were quarantined before dosing for some sites"
+        ],
+        "severity": "patient_safety"
+      },
+      {
+        "branch": "effectiveness",
+        "category": "no_capa_content_visible",
+        "gap": "The record links CAPA-GC-2025-038 but contains no CAPA actions, no linkage to the root cause, no preventive element, and no effectiveness check. There is no evidence the CAPA addresses either the stopper grade (correction) or the change-control assessment gap (prevention), and no measurable, time-bound effectiveness metric (e.g., particulate trending on next N lots, stopper requalification acceptance criteria, review date, owner).",
+        "where_evidence_lives": "CAPA-GC-2025-038 record, CC-GC-2025-006 change control",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: CAPA reverts to 1000 cSt grade and adds particulate risk review to change control with a defined effectiveness trending plan"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "root_cause",
+        "category": "linked_deviation_conflict",
+        "gap": "Linked deviations include DEV-GC-2026-021, a future-dated record relative to this investigation's 2025-11-22 closure. It is contradictory for a deviation closed in Nov 2025 to be linked to a 2026 deviation as part of its investigation basis. The relationship and timeline are unresolved.",
+        "where_evidence_lives": "QMS deviation linkage log, DEV-GC-2026-021 record, DEV-GC-2025-018 record",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: DEV-GC-2026-021 is a recurrence indicating the CAPA was ineffective and the linkage is post-closure",
+          "AI-suggested, to confirm: a data-entry/typo error in the linked record ID"
+        ],
+        "severity": "compliance"
+      },
+      {
+        "branch": "containment",
+        "category": "release_vs_shelf_life_failure_not_reconciled",
+        "gap": "Time-zero release data was well within spec (890 vs 6,000 limit), then a 4-month 2-8\u00b0C retain failed at 48,215. The investigation does not establish a kinetic/time-dependent migration model proving the tr"
+      }
+    ]
+  },
+  {
+    "deviation_id": "DEV-GC-2025-022",
+    "title": "Visible Gel-Like Particle in GC-301 Vial After Reconstitution at Clinical Site",
+    "summary_flags": {
+      "human_error_only_root_cause": false,
+      "retraining_only_capa": true,
+      "missing_effectiveness_check": true,
+      "capa_not_linked_to_root_cause": true,
+      "unresolved_conflict": true,
+      "scope_gap": true
+    },
+    "surfaced_gaps": [
+      {
+        "branch": "problem_statement",
+        "category": "cause_smuggled_into_statement",
+        "gap": "The problem statement is observationally sound (2-3mm translucent gel-like particle, slow-settling, withheld pre-dose), but the should-have-happened cites Ph. Eur. 2.9.20 (visible particulates) only. The investigation later asserts sub-visible aggregation risk; no standard (e.g. Ph. Eur. 2.9.19 / USP <788> sub-visible) is anchored for that claim.",
+        "where_evidence_lives": "IFU-GC301-v4, registered DP specification, Ph. Eur. 2.9.19/2.9.20",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: sub-visible particulate spec exists on the DP and should be the anchored standard for the impact claim",
+          "AI-suggested, to confirm: the visible-particle standard is the only one applicable and the sub-visible claim is speculative and should be tracked as an open question"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "root_cause",
+        "category": "dual_root_cause_not_reconciled",
+        "gap": "Two distinct causes are conflated under one heading: (1) IFU does not quantify agitation parameters (Method/procedure ambiguity), and (2) PS80 at 0.02% provides only marginal interfacial protection (Material/formulation robustness). The investigation does not state which is primary, nor run Is/Is-Not to separate them. Step 6 shows 0.05% PS80 prevents gel even with aggressive technique \u2014 implying the formulation, not the technique, is the dominant latent condition \u2014 yet the disposition rests entirely on technique.",
+        "where_evidence_lives": "Formulation development report, DOE on PS80 vs agitation, robustness/QbD design space, Step 4/5/6 raw study data",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: formulation robustness (PS80 lower bound) is the true latent root cause; technique is the active failure that exposed it (Reason: latent condition vs active failure)",
+          "AI-suggested, to confirm: IFU ambiguity is a contributing rule-based factor but secondary to formulation marginality"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "root_cause",
+        "category": "swiss_cheese_latent_condition",
+        "gap": "Root cause stops at clinical-site technique without asking why a marketed/clinical formulation is sensitive to a reasonably foreseeable technique variation. The latent condition (PS80 at low end of effective range) was apparently known ('marginal protection', 'lower end of effective range') \u2014 why was it released/used at that level? No link to formulation release rationale.",
+        "where_evidence_lives": "Formulation justification, CMC filing, prior stability/robustness data, change history of PS80 target",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: PS80 target was set on stability grounds without an interfacial-stress robustness study",
+          "AI-suggested, to confirm: a prior signal of marginal PS80 existed and was not escalated"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "scope_impact",
+        "category": "unquantified_subvisible_scope",
+        "gap": "Impact assessment concedes 'undetected sub-visible aggregation in other doses prepared with aggressive technique' may have occurred, then dispositions all lots as acceptable and retains the lot in clinical supply. The sub-visible exposure question to already-dosed patients is raised but never resolved or quantified \u2014 a patient-safety scope gap left open.",
+        "where_evidence_lives": "Clinical dosing records, retained sample sub-visible (HIAC/MFI) testing, pharmacovigilance/AE data for sites with documented aggressive technique",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: retained/retest samples can be subjected to MFI to bound sub-visible levels post-aggressive-reconstitution",
+          "AI-suggested, to confirm: AE review for previously dosed patients at the 4 untrained sites is needed to close the patient-exposure question"
+        ],
+        "severity": "patient_safety"
+      },
+      {
+        "branch": "scope_impact",
+        "category": "other_sites_other_doses_not_assessed",
+        "gap": "Step 7 found 4 of 31 sites had not completed updated reconstitution training, yet no assessment of how many doses were already prepared at those 4 sites, by which technique, and with what outcome. Scope is asserted as 'formulation/IFU issue, not lot-specific' but the retrospective patient-facing scope across sites is not characterized.",
+        "where_evidence_lives": "Site-level dosing logs, training completion timestamps, complaint/AE records per site",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: doses administered at the 4 untrained sites before training need retrospective review",
+          "AI-suggested, to confirm: COMPL-GC-2025-092 and DEV-GC-2025-018 represent related prior signals indicating recurrence"
+        ],
+        "severity": "patient_safety"
+      },
+      {
+        "branch": "scope_impact",
+        "category": "linked_prior_signal_not_analyzed",
+        "gap": "DEV-GC-2025-018 and COMPL-GC-2025-092 are linked but the record does not state whether they are prior instances of the same gel/aggregation phenomenon. If they are, this is a recurrence and the root cause / CAPA adequacy bar rises sharply.",
+        "where_evidence_lives": "DEV-GC-2025-018 record, COMPL-GC-2025-092 record, trend/recurrence analysis",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: linked deviation is a prior particle event indicating the technique/formulation issue was already known",
+          "AI-suggested, to confirm: this is the first occurrence and links are administrative"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "capa",
+        "category": "retraining_only_correction",
+        "gap": "The only action visible in the record is 'enhanced reconstitution training deployed to all clinical sites' \u2014 a retrain/correction that does not address the identified formulation latent condition (low PS80). Per Rule 4, a CAPA cannot pass on retraining where a system/formulation cause exists. No formulation/IFU corrective action is documented in the record itself (CAPA-GC-2025-042 content not shown).",
+        "where_evidence_lives": "CAPA-GC-2025-042, CC-GC-2025-028 (linked change control)",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: CC-GC-2025-028 covers an IFU quantification revision (poka-yoke: forcing function on agitation) \u2014 needs to be confirmed and verified",
+          "AI-suggested, to confirm: a formulation change to raise/justify PS80 target is required, not just retraining"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "capa",
+        "category": "ifu_ambiguity_not_corrected",
+        "gap": "Root cause explicitly states IFU 'specifies gentle rotation but does not quantify acceptable agitation parameters' (a rule-based ambiguity). Training people on an unquantified instruction does not remove the ambiguity; the IFU itself must be made unambiguous (e.g. specified rotation, inversion count, time, or a no-swirl forcing function). No such correction is documented in this record.",
+        "where_evidence_lives": "CC-GC-2025-028, IFU-GC301 revision history",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: IFU v5 quantifies agitation parameters",
+          "AI-suggested, to confirm: only training material updated, leaving the controlling IFU still ambiguous"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "effectiveness",
+        "category": "no_measurable_time_bound_check",
+        "gap": "No effectiveness check is defined: no metric, threshold, owner, or review date for whether enhanced training and any IFU/formulation action actually pr"
+      }
+    ]
+  },
+  {
+    "deviation_id": "DEV-GC-2024-088",
+    "title": "Glass Delamination Flakes in GC-301 Clinical Vials \u2014 Depyrogenation Temperature Excursion Link",
+    "summary_flags": {
+      "human_error_only_root_cause": false,
+      "retraining_only_capa": false,
+      "missing_effectiveness_check": true,
+      "capa_not_linked_to_root_cause": true,
+      "unresolved_conflict": true,
+      "scope_gap": true
+    },
+    "surfaced_gaps": [
+      {
+        "branch": "root_cause",
+        "category": "detection-failure root cause not investigated",
+        "gap": "Step 3 states the 332\u00b0C excursion WAS documented in the lot record at the time of occurrence (2024-07-22) but was NOT flagged as a deviation. The investigation stops at the equipment/PID-overshoot cause and never asks the system question: why did a documented out-of-validated-range excursion pass batch-record review and lot disposition without being caught? The escape was detected only 16 months later via a clinical complaint. The real (and more dangerous) root cause is the detection/review failure, which is unaddressed.",
+        "where_evidence_lives": "Batch record review sign-off, lot disposition record, alarm/audit trail of EQ-DPYR-001, SOP-FF-012 acceptance criteria and excursion-handling section, QA batch-release checklist",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: the tunnel records peak temperature but has no automated alarm/out-of-range flag, so a transient 45s overshoot is not surfaced to the reviewer",
+          "AI-suggested, to confirm: SOP-FF-012 batch-review step does not require checking peak temperature against the validated upper limit, only against the setpoint \u00b110\u00b0C tolerance band (320\u00b15\u00b0... ambiguity below)",
+          "AI-suggested, to confirm: the excursion occurred during a re-qualification run and re-qual data was reviewed under a different (looser) acceptance path than routine production"
+        ],
+        "severity": "patient_safety"
+      },
+      {
+        "branch": "problem_statement",
+        "category": "internally contradictory specification limits",
+        "gap": "The record cites three different temperature windows that do not reconcile: setpoint '320\u00b0C \u00b1 10\u00b0C' (=310-330), 'validated range (310-330\u00b0C)', and root cause says 332\u00b0C is '2\u00b0C above upper validated limit' implying limit=330, yet also calls the setpoint 320\u00b110. Separately the root-cause text references '10\u00b0C above optimal' citing Iacocca but 332 is only 12\u00b0C above the 320 setpoint and 2\u00b0C above the 330 limit \u2014 the literature risk multiplier is being applied to an undefined baseline. The 'against what standard' anchor is ambiguous.",
+        "where_evidence_lives": "VMP-FF-003 validation report, SOP-FF-012 operating limits, depyrogenation tunnel qualification protocol acceptance criteria",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: setpoint band and validated-limit band are different specifications and the record conflates them",
+          "AI-suggested, to confirm: the 'optimal' baseline in the Iacocca citation is not 320\u00b0C, so the 3-5x risk claim is misapplied"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "scope_impact",
+        "category": "scope bounded by qualification window, not by mechanism",
+        "gap": "Scope is limited to the 3 lots 'processed during tunnel qualification period.' The Is/Is-Not logic was never run: if the cause is PID overshoot on this tunnel, the question is whether overshoot could have occurred in routine runs too, not only during qualification. Step 8 reviews 24 months of tunnel data and finds 'no other excursions' \u2014 but that review depends on the same detection method that already failed to flag this excursion (Step 3). A review using the failed detector cannot bound the scope.",
+        "where_evidence_lives": "Full tunnel temperature trend data for all GC-301 and shared-product lots, raw thermocouple logs vs. summary records, list of all products run on EQ-DPYR-001",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: the 24-month review checked only flagged deviations, not raw peak-temperature data, so it would miss any unflagged transient overshoot the same way the index event was missed",
+          "AI-suggested, to confirm: GC201-2024-B016 is a different product (GC-201) on the same tunnel \u2014 cross-product impact on the GC-201 program is in scope but not assessed in the impact section"
+        ],
+        "severity": "patient_safety"
+      },
+      {
+        "branch": "scope_impact",
+        "category": "patient-exposure assessment missing",
+        "gap": "Impact assessment establishes the safety hazard of glass lamellae but never quantifies actual patient exposure: how many vials of GC301-DP-2024-012 were administered to clinical subjects before the 2024-11-15 discovery, over what period, and whether any adverse events correlate. The IND Safety Report is referenced as filed but the exposure basis for it is not in the record.",
+        "where_evidence_lives": "Clinical supply distribution/accountability records, drug accountability logs at clinical sites, pharmacovigilance/AE database, complaint COMPL-GC-2024-115 detail",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: lot was distributed and dosed for the ~4 months between 2024-07-22 release and 2024-11-15 discovery"
+        ],
+        "severity": "patient_safety"
+      },
+      {
+        "branch": "capa",
+        "category": "CAPA content not in record / linkage unverifiable",
+        "gap": "The deviation links to CAPA-GC-2024-056 but contains no CAPA actions, so root-cause linkage, presence of a preventive element, and measurable time-bound effectiveness checks cannot be verified. Two distinct root causes exist (PID overshoot AND batch-review detection failure); for closure, the CAPA must address BOTH, not just the equipment cause. Immediate corrections list PID-tuning adjustment and thermocouple verification but these are corrections to this event, not preventive actions, and no effectiveness check is defined for either.",
+        "where_evidence_lives": "CAPA-GC-2024-056 record, CC-GC-2024-038 change control, effectiveness-check protocol and review dates",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: CAPA addresses only the PID/overshoot cause (Man/Machine) and not the detection/review-process cause (Method/Measurement)",
+          "AI-suggested, to confirm: no forcing function (automated out-of-range alarm or batch-record fail-criterion) was added, leaving the detection gap open"
+        ],
+        "severity": "patient_safety"
+      },
+      {
+        "branch": "effectiveness",
+        "category": "no defined effectiveness measure",
+        "gap": "No effectiveness check is stated for any action. 'PID controller tuning reviewed and adjusted to prevent overshoot' has no verification metric (e.g., post-tuning challenge runs demonstrating zero overshoot above the validated limit across N cycles, monitored for X months). There is no metric to confirm the detection gap is closed (e.g., audit of subsequent batch reviews catching seeded out-of-range values).",
+        "where_evidence_lives": "Effectiveness-check section of CAPA-GC-2024-056, re-qualification run data post-adjustment, batch-review audit results",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: closure was granted on correction-completion rather than on demonstrated effectiveness"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "root_cause",
+        "category": "contributing-cause categories not surveyed (Ishikawa 6M)",
+        "gap": "Root cause focuses on Machine (PID) only. A fishbone survey is missing: Method (was overshoot-prevention verification absent from the qual protocol \u2014 noted in Step 7 but not carried into the formal root cause), Material (was the Schott vial lot at the high end of baseline sodium content, compounding thermal effect), Measurement (does the tunnel measure peak vs. dwell adequately to detect a 45s transient). Step 7 already found the qual protocol lacked an overshoot-prevention step \u2014 that is a latent Method root cause that should be elevated from"
+      }
+    ]
+  },
+  {
+    "deviation_id": "DEV-GC-2025-034",
+    "title": "Fiber Contamination Detected During AQL Visual Inspection of GC-301 Fill Campaign",
+    "summary_flags": {
+      "human_error_only_root_cause": false,
+      "retraining_only_capa": false,
+      "missing_effectiveness_check": true,
+      "capa_not_linked_to_root_cause": true,
+      "unresolved_conflict": true,
+      "scope_gap": true
+    },
+    "surfaced_gaps": [
+      {
+        "branch": "problem_statement",
+        "category": "cause_smuggled_into_classification",
+        "gap": "The deviation is classified Level 3 / Minor and the description frames fiber rejection as 'an expected outcome of 100% inspection' before any investigation conclusion. This pre-judges the event as routine and may bias the depth of investigation downward. The problem statement should state the observable fact (2 of 3,840 vials with adhered fibers above cake level) without asserting it is normal/expected, since the location of the fiber (inner wall, above cake) is itself a question \u2014 how did an extrinsic fiber adhere to the inner wall after stoppering/lyo?",
+        "where_evidence_lives": "Batch record fill/stopper sequence, lyo loading records, vial washing and depyrogenation records (MAT-301-VL-005), in-process inspection logs",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: fiber introduced pre-stopper during fill (consistent with inner-wall adhesion)",
+          "AI-suggested, to confirm: fiber present on incoming vial before wash/depyrogenation and not removed",
+          "AI-suggested, to confirm: fiber introduced during partial-stopper lyo loading"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "root_cause",
+        "category": "physical_pathway_unestablished",
+        "gap": "Root cause names 'personnel shedding' via FTIR polyester match, but the fiber was found on the INNER vial wall above the lyophilized cake. A personnel-shed garment fiber would have to enter the open vial during fill/before stoppering to land on the inner wall. The investigation never establishes the physical pathway by which an externally-shed garment fiber reached the inside of a sealed, lyophilized vial. FTIR polyester is necessary but not sufficient \u2014 polyester is also common in many other cleanroom/packaging materials.",
+        "where_evidence_lives": "Fill line layout/airflow smoke study, open-vial dwell time data, RABS/isolator integrity records, garment material composition specs, vial-wash filter/water for injection records",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: fiber entered during open-vial fill window via local turbulence at the upper-control-limit particle period",
+          "AI-suggested, to confirm: polyester source is NOT the garment (e.g., wipe, swab, vial liner, transport material) \u2014 FTIR cannot distinguish garment polyester from other polyester",
+          "AI-suggested, to confirm: fiber was on the vial before fill and survived wash"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "root_cause",
+        "category": "data_does_not_support_conclusion",
+        "gap": "The EM data is cited as supporting the root cause but actually weakens it: non-viable \u22655 \u00b5m was 18 vs alert 20 / action 29 \u2014 i.e. BELOW the alert limit and within Grade A. Viable counts were within Grade A. There is no excursion. Concluding 'environmental personnel shedding' from in-limit EM data is an inference presented as a finding. The investigation reasons backward from a desired (low-severity) conclusion rather than from the evidence.",
+        "where_evidence_lives": "Continuous non-viable particle monitoring trend for the full 14h fill, viable plate/settle plate locations and counts, EM sample locations relative to the open-vial fill point",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: EM at 18/20 reflects a real upward shift in the second half worth investigating regardless of being sub-alert",
+          "AI-suggested, to confirm: EM sample location did not cover the open-vial fill zone, so EM cannot confirm or exclude the pathway"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "root_cause",
+        "category": "unresolved_procedural_conflict",
+        "gap": "Conflict between SOP citations: root_cause_description cites SOP-FF-022 requiring garment re-verification at the 8-hour mark, while investigation Step 4 states the SOP 'requires consideration of garment change for campaigns >12 hours.' These are two different requirements (mandatory 8h re-verification vs. discretionary >12h change). The actual SOP requirement is not pinned down, so it cannot be determined whether a procedural breach even occurred, nor whether the 14h campaign violated a defined limit.",
+        "where_evidence_lives": "Current effective revision of SOP-FF-022 (and SOP-FF-008), training records confirming which requirement was in force on 2025-05-14",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: the campaign was within SOP limits and no garment-change requirement was triggered, making the stated root cause invalid",
+          "AI-suggested, to confirm: an 8h re-verification was required and missed (a latent system gap, not operator fault)"
+        ],
+        "severity": "compliance"
+      },
+      {
+        "branch": "scope_impact",
+        "category": "scope_not_assessed",
+        "gap": "Scope limited to lot GC301-DP-2025-007 with no rationale. If the cause is environmental/garment shedding during long campaigns or a vial-supply (MAT-301-VL-005) issue, other lots filled on EQ-INSP-001 / the same fill line, the same vial lot, or other long-duration campaigns share the hazard. No Is/Is-Not analysis was performed (where does the fiber appear vs. conspicuously not appear) to bound scope.",
+        "where_evidence_lives": "Fill campaign history on the line, vial lot usage records (MAT-301-VL-005 across products), historical fiber-reject trend broken out by campaign duration and vial lot",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: other long-duration campaigns show elevated fiber rejects (supports environmental/duration cause)",
+          "AI-suggested, to confirm: fiber rejects cluster by incoming vial lot (supports material cause, redirects scope to MAT-301-VL-005)"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "scope_impact",
+        "category": "inspection_effectiveness_assumed",
+        "gap": "Impact assessment states 'no patient safety impact \u2014 fibers detected and removed by 100% inspection' and releases 'with full confidence in inspection effectiveness.' Manual visual inspection detection probability for fibers is not 100%; if 2 detected vials had fibers, the assessment must address the statistical probability that vials with smaller/less-visible fibers passed inspection. No detection-rate / probable-non-detection analysis (e.g., based on validated inspector detection efficiency) is provided to justify the release.",
+        "where_evidence_lives": "Visual inspection method validation / inspector qualification detection-rate data, AQL re-inspection results, knapp test or seeded-defect study data for fiber defects",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: validated detection efficiency for this defect type supports release with quantified residual risk",
+          "AI-suggested, to confirm: detection efficiency is not characterized for fibers, leaving release rationale unsupported"
+        ],
+        "severity": "patient_safety"
+      },
+      {
+        "branch": "capa",
+        "category": "capa_content_not_evaluable",
+        "gap": "CAPA-GC-2025-044 is referenced but no CAPA content is in the record \u2014 no actions, no root-cause linkage, no preventive element, no effectiveness check, no owner, no due date. The CAPA cannot be confirmed to address the stated cause (garment/long-campaign) and, given that the stated root cause itself is unsupported (see root_cause gaps), any CAPA built on it risks correcting the wrong condition. A correction-only outcome (reject vials) would be inadequate without a justified absence of preventive action.",
+        "where_evidence_lives": "CAPA-GC-2025-044 record in the QMS",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: CAPA only enforces existing garment-change SOP (no new preventive control)",
+          ""
+        ]
+      }
+    ]
+  },
+  {
+    "deviation_id": "DEV-GC-2024-067",
+    "title": "Black Metallic Particle Embedded in GC-101 Cardiostat Tablet Surface",
+    "summary_flags": {
+      "human_error_only_root_cause": false,
+      "retraining_only_capa": false,
+      "missing_effectiveness_check": true,
+      "capa_not_linked_to_root_cause": true,
+      "unresolved_conflict": true,
+      "scope_gap": true
+    },
+    "surfaced_gaps": [
+      {
+        "branch": "problem_statement",
+        "category": "occurrence-vs-discovery interval",
+        "gap": "Occurrence 2024-07-15, discovery 2024-08-01 (17 days), but discovery was via patient complaint, meaning a contaminated tablet left the site and reached a patient. The record never quantifies the production-to-distribution timeline or how many units distributed before the complaint, which is essential to bound containment.",
+        "where_evidence_lives": "Distribution/shipping records, batch release date, complaint intake timeline (COMPL-GC-2024-089)",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: the affected lot was already distributed at the patient/pharmacy level before the deviation was opened",
+          "AI-suggested, to confirm: discovery date reflects complaint receipt, not actual tablet ingestion date"
+        ],
+        "severity": "patient_safety"
+      },
+      {
+        "branch": "scope_impact",
+        "category": "in-market product scope",
+        "gap": "Scope assessment only addresses retained samples (n=200) of F022 and an inspection of F021. It does not address units of F022 already in distribution/in the market, nor F021 distributed units. A complaint-sourced metallic particle implies at least one defective unit escaped detection and shipped; retained-sample clearance does not clear distributed inventory.",
+        "where_evidence_lives": "Distribution records, market inventory, batch genealogy, prior complaints trend for GC-101",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: additional defective units shipped but were not returned/complained",
+          "AI-suggested, to confirm: a field action / market check is warranted but was dismissed as 'no field action required' without scope analysis"
+        ],
+        "severity": "patient_safety"
+      },
+      {
+        "branch": "scope_impact",
+        "category": "tooling-set lot genealogy incomplete",
+        "gap": "Punch reached 8.2M compressions, exceeding the 7.5M limit by 0.7M. Only the most recent prior lot (F021) was assessed. All lots compressed during the entire over-limit window (from when the punch passed 7.5M onward) are at risk, not just the immediately preceding lot. The over-limit window is not bounded.",
+        "where_evidence_lives": "Punch lifecycle records (compression counts per campaign), batch records for all lots run on this tooling set after 7.5M was crossed",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: multiple lots beyond F021 were compressed past the 7.5M limit and were not assessed",
+          "AI-suggested, to confirm: the 7.5M crossing point cannot be precisely dated because the logbook was not updated for 2 campaigns"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "root_cause",
+        "category": "detection failure not driven to system cause",
+        "gap": "The metal detector failed to catch the fragment in 3/5 orientations (60% miss for a flat fragment). This is treated as a physics explanation ('flat orientation below threshold') but not as a root cause in its own right. The detection control is demonstrably inadequate for plate/flake morphology \u2014 that is a second, independent root cause requiring its own CAPA, not a footnote.",
+        "where_evidence_lives": "Metal detector qualification/validation package, detection limit study, vendor specs for fragment morphology sensitivity",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: the metal detector qualification only used spherical test pieces and never challenged flake/plate geometry",
+          "AI-suggested, to confirm: the 0.5mm Fe sphere standard is not representative of carbide/stainless punch-chip morphology"
+        ],
+        "severity": "patient_safety"
+      },
+      {
+        "branch": "root_cause",
+        "category": "logbook failure stops at proximate cause",
+        "gap": "Root cause states the manual logbook 'had not been updated for 2 campaigns' \u2014 this is a proximate/symptom cause. The investigation does not ask why a manual-only tracking system was permitted for a safety-critical service-life limit, why no automated compression counter or interlock existed, or what supervisory/review control should have caught the missed entries. The latent system condition is unaddressed.",
+        "where_evidence_lives": "SOP-MFG-028, press PLC/HMI compression-count capability, prior internal audit findings on logbook practices",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: the Fette P2090 records compression counts electronically but the procedure relies on manual transcription anyway",
+          "AI-suggested, to confirm: there is no second-person review or periodic reconciliation of the tooling logbook",
+          "AI-suggested, to confirm: this is a rule-based/latent design gap (no forcing function on service-life limit), not an isolated lapse"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "root_cause",
+        "category": "conflicting detection evidence vs disposition logic",
+        "gap": "Investigation Step 4 proves the metal detector misses this fragment type 60% of the time, yet immediate-correction #4 ('metal detector sensitivity verification \u2014 passed at 0.5mm Fe standard') and the batch release both rely on metal detection as an assurance of cleanliness. These conflict: a passing sphere challenge does not establish the lot is free of flat fragments the detector demonstrably misses. The conflict is unresolved and undermines the release rationale.",
+        "where_evidence_lives": "Metal detector challenge records (both the sphere pass and the 2/5-orientation failure), batch release rationale",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: the release decision rests on a detection control already shown to be unreliable for the actual defect morphology",
+          "AI-suggested, to confirm: 'no additional contamination found in n=200' does not statistically clear a multi-hundred-thousand-tablet lot"
+        ],
+        "severity": "patient_safety"
+      },
+      {
+        "branch": "scope_impact",
+        "category": "patient-safety conclusion not justified",
+        "gap": "Patient safety rated 'Low' on biocompatibility of 316L, but does not address the 0.8mm sharp-edged fragment as a mechanical/laceration hazard, the patient population (cardiac patients on GC-101 Cardiostat may be elderly/comorbid), or whether the complaining patient suffered harm. Biocompatibility alone does not bound the hazard.",
+        "where_evidence_lives": "Complaint medical assessment (COMPL-GC-2024-089), product population data, hazard/HHA from medical affairs",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: no formal Health Hazard Assessment by a qualified medical reviewer was performed",
+          "AI-suggested, to confirm: the sharp-edge laceration hazard for oral mucosa/GI was not evaluated"
+        ],
+        "severity": "patient_safety"
+      },
+      {
+        "branch": "capa",
+        "category": "CAPA content not visible / not linked or measurable",
+        "gap": "Record references CAPA-GC-2024-048 and CC-GC-2024-035 but contains no CAPA actions, no linkage statement to the (two) root causes, no preventive element, and no effectiveness check or timeframe. Cannot confirm the CAPA addresses either the tooling-tracking system cause or the detection-morphology cause. By rule, a CAPA cannot pass without explicit root-cause linkage, a preventive element, and a measurable, time-bound effectiveness check \u2014 none are present in the record.",
+        "where_evidence_lives": "CAPA-GC-2024-048 record, CC-GC-2024-035 change control",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: the CAPA addresses only the punch replacement (correction) and not the manual-tracking system or detection gap (prevention)",
+          "AI-suggested, to confirm: no effectiveness metric/threshold/review date was defined"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "effectiveness",
+        "category": "no operationalized effectiveness measure",
+        "gap": "No defined metric, threshold, owner, or review date for confirming recurrence is prevented (e.g.,"
+      }
+    ]
+  },
+  {
+    "deviation_id": "DEV-GC-2024-071",
+    "title": "Blue Fiber Found in GC-101 Bottle During Distributor Complaint Investigation",
+    "summary_flags": {
+      "human_error_only_root_cause": true,
+      "retraining_only_capa": false,
+      "missing_effectiveness_check": true,
+      "capa_not_linked_to_root_cause": true,
+      "unresolved_conflict": true,
+      "scope_gap": true
+    },
+    "surfaced_gaps": [
+      {
+        "branch": "problem_statement",
+        "category": "cause_smuggled_into_statement",
+        "gap": "The description_what_happened states the fiber 'confirmed' as from a damaged garment sleeve and that the check 'was missed', which embeds the conclusion into the problem statement. The observable fact is: blue polyester fiber on top of tablets in a sealed bottle of lot GC101-2024-F019, reported via COMPL-GC-2024-102. The garment-tear causation is an investigation finding, not the problem statement.",
+        "where_evidence_lives": "Complaint record COMPL-GC-2024-102, original problem-statement field of the deviation",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: problem statement should be restated as observable fact with cause moved to root-cause section"
+        ],
+        "severity": "compliance"
+      },
+      {
+        "branch": "root_cause",
+        "category": "human_error_terminal_cause",
+        "gap": "Root cause stops at two human/active failures: 'operator did not self-report damage' and 'incoming supervisor did not perform the check'. Per Reason's Swiss-cheese model these are active failures at the sharp end; the latent system conditions that allowed both holes to align are not investigated. No 'why' chain drives past the human slip.",
+        "where_evidence_lives": "SOP-MFG-044 Section 5.3 wording, shift handover checklist design, gowning-room workflow, garment durability/wear data from supplier Cintas",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: shift handover checklist allows the garment-check box to be initialed/skipped without a forcing function (skill-based lapse \u2192 poka-yoke needed)",
+          "AI-suggested, to confirm: SOP-MFG-044 5.3 relies on operator self-report of damage with no independent verification \u2014 a single-point-of-failure design",
+          "AI-suggested, to confirm: cuff tears are a recurring garment-wear pattern not detectable by a routine visual check at line speed (rule-based mistake \u2014 check is unworkable as written)",
+          "AI-suggested, to confirm: no second-person/buddy verification or end-of-shift garment integrity check exists to catch tears that develop mid-shift"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "root_cause",
+        "category": "unexplained_timeline_conflict",
+        "gap": "CCTV shows the damaged sleeve visible 'from 09:15 onward' (Step 4), but occurrence_date is 2024-09-01 and the affected packaging run is a full shift. The investigation does not establish when the tear actually occurred relative to the documented shift-start check, nor reconcile whether the tear pre-existed the shift (missed at start) or developed mid-shift (not detectable by a start-of-shift check). This conflict directly determines whether the named root cause (missed start-of-shift check) is even correct.",
+        "where_evidence_lives": "Full CCTV timeline, shift start/break timestamps, gowning records, when garment was last issued/inspected",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: tear may have developed after the 09:15 mark, in which case a start-of-shift check would not have caught it and the stated root cause is misattributed"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "root_cause",
+        "category": "fishbone_categories_unexplored",
+        "gap": "Investigation focused only on the 'Man' (personnel) Ishikawa branch. Machine (garment/material durability, line guarding that could snag a sleeve), Method (whether the integrity check is workable/timed correctly), and Material (garment supplier quality, Cintas CR-500B fitness-for-use) branches were not assessed despite a physical foreign-fiber event.",
+        "where_evidence_lives": "Garment supplier specification and incoming inspection records, equipment EQ-PKG-001 guarding/pinch-point design, garment laundering/replacement-cycle records",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: a line pinch point or rough surface is snagging cuffs; AI-suggested, to confirm: garment material/laundering cycle produces premature cuff wear"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "scope_impact",
+        "category": "scope_under_bounded",
+        "gap": "Scope is bounded to the single complaint unit and 500 remaining bottles from the affected run only. If the operator worked with a damaged garment from 09:15 across the shift, other bottles/runs filled during that exposure window on EQ-PKG-001 \u2014 and any other products run on the same line during the operator's exposure \u2014 are not addressed. Is/Is-Not analysis (where does the problem appear vs. conspicuously not) was not performed.",
+        "where_evidence_lives": "Packaging run schedule for EQ-PKG-001 on occurrence date, batch records for all lots filled during the operator's shift, line clearance records per SOP-PKG-011",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: other lots filled on EQ-PKG-001 during the same exposure window share equal foreign-fiber risk and should be in scope"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "scope_impact",
+        "category": "disposition_logic_inverted",
+        "gap": "Batch disposition 'Released' rests on the premise that only a single unit was affected \u2014 but that premise depends on the under-bounded scope above. The disposition is justified by the inspection of 500 bottles from one run; the n=500 sampling rationale (AQL, statistical confidence for a foreign-particulate defect) is not documented, so 'no additional fibers found' is not quantified as a detection limit.",
+        "where_evidence_lives": "Sampling plan / AQL justification, inspection protocol used for the n=500 visual check",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: visual inspection of n=500 may have insufficient power to detect a low-frequency loose fiber, so 'none found' does not bound the true defect rate"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "containment",
+        "category": "correction_mislabeled_as_action",
+        "gap": "'Shift supervisor counseled on garment check requirement' is a person-directed correction, not a corrective action against a system condition. 'Garment inspection records documented retroactively' is a data-integrity concern: records were created after the fact for a check that was not performed \u2014 back-dating/retroactive documentation must itself be assessed and clearly annotated, not treated as a correction.",
+        "where_evidence_lives": "Shift handover records, the retroactively created garment inspection entries and their annotation/audit trail",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: retroactive documentation of a check that did not occur is a data-integrity finding requiring its own evaluation and clear 'documented retrospectively' annotation"
+        ],
+        "severity": "data_integrity"
+      },
+      {
+        "branch": "capa",
+        "category": "capa_content_absent",
+        "gap": "Only a CAPA identifier (CAPA-GC-2024-051) is referenced; no CAPA actions, root-cause linkage, preventive element, or effectiveness check are present in this record. Cannot confirm rule 4 is satisfied: there is no evidence the CAPA links to a system cause (vs. the personnel cause), introduces any preventive/forcing-function element, or specifies a measurable, time-bound effectiveness check.",
+        "where_evidence_lives": "CAPA-GC-2024-051 record",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: CAPA may consist of correction/counseling only with no preventive design change addressing the latent conditions"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "effectiveness",
+        "category": "no_effectiveness_check_defined",
+        "gap": "No measurable, time-bound effectiveness check is defined anywhere in the record. 'Documented for trending' is stated but no metric, threshold, owner, or review date is given. There is no operationalized definition of how the investigation will know recurrence of foreign-fiber/garment-integrity events has been pr"
+      }
+    ]
+  },
+  {
+    "deviation_id": "DEV-GC-2024-045",
+    "title": "Human Hair Found in GC-101 Film-Coated Tablet Coating Layer",
+    "summary_flags": {
+      "human_error_only_root_cause": true,
+      "retraining_only_capa": true,
+      "missing_effectiveness_check": true,
+      "capa_not_linked_to_root_cause": true,
+      "unresolved_conflict": true,
+      "scope_gap": true
+    },
+    "surfaced_gaps": [
+      {
+        "branch": "problem_statement",
+        "category": "cause_smuggled_into_statement",
+        "gap": "The 'what happened' field asserts 'Root cause: operator beard cover not properly fitted' inside the description, before investigation is presented. The problem statement should state only the observable fact (keratin hair in coating layer, lot, date) without embedding a cause. The 18-day gap between occurrence (2024-05-10) and discovery (2024-05-28) is stated but never examined.",
+        "where_evidence_lives": "batch record, complaint COMPL-GC-2024-056 intake log, coating suite logbook for 2024-05-10",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: detection-system weakness \u2014 the hair was only caught by a downstream patient complaint, indicating no in-process visual or filtration control reliably detects this defect"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "root_cause",
+        "category": "human_error_terminal",
+        "gap": "Root cause category is 'Personnel \u2014 Gowning Non-Compliance' and stops at 'operator did not properly secure beard cover.' This is an active failure (Reason), not a system cause. The 5-Why was not driven: why could the beard cover shift undetected? why is fit not verified at gowning? why does the gowning SOP permit a fit that can shift during a wet-prep task?",
+        "where_evidence_lives": "SOP-MFG-044 gowning step wording, gowning verification/buddy-check records, beard cover specification and supplier, gowning qualification records",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: (a) gowning SOP has no fit-verification or buddy-check step (latent condition); (b) beard cover design/size is unsuitable for the task and prone to shifting; (c) rule-based mistake \u2014 operators trained that 'wearing' a cover equals 'fitting' it"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "root_cause",
+        "category": "second_root_cause_under_investigated",
+        "gap": "The worn 100\u00b5m filter screen measuring 130\u00b5m is identified as the engineering barrier that failed but is treated as secondary. This is arguably the more significant systemic failure \u2014 the filtration step is the designed control that should catch foreign material regardless of gowning. Why was a worn screen in service? There is no screen integrity-check frequency, no qualification or replacement program examined.",
+        "where_evidence_lives": "maintenance log for EQ-COAT-001, filter screen change/inspection records, preventive maintenance schedule, SOP-MFG-039 filter inspection step",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: (a) no defined filter screen inspection/replacement interval exists; (b) no pre-use integrity check of the screen is required by SOP-MFG-039; (c) screen wear was undetectable by current visual check method"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "scope_impact",
+        "category": "scope_not_assessed_across_lots",
+        "gap": "Scope is limited to lot GC101-2024-F015 only, but the worn filter screen (a persistent equipment condition) and the gowning culture gap (2 of 8 operators non-compliant) are both standing conditions that predate this lot. Other lots coated on EQ-COAT-001 since the last screen replacement, and other products sharing this coater, were not assessed. Impact concludes 'single unit affected' without justifying that the worn screen did not pass foreign material into other batches.",
+        "where_evidence_lives": "EQ-COAT-001 usage log, filter screen change history, lot genealogy for all products coated on EQ-COAT-001 since last screen change, complaint trend data",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: the worn screen was in service across multiple lots/products, making this a multi-lot scope rather than single-unit"
+        ],
+        "severity": "patient_safety"
+      },
+      {
+        "branch": "scope_impact",
+        "category": "unresolved_data_conflict_disposition",
+        "gap": "CONFLICT: impact says 'minimal direct health risk' and batch was Released based on a confirmed worn filtration barrier and an n=300 retained sample inspection \u2014 but n=300 from a tablet lot is not justified as statistically adequate to support absence of foreign material across the full lot when the designed control (filtration) is known to have failed. The patient-safety assessment of an ingested foreign body is asserted, not evidenced (no toxicological/QA rationale, no choking/physical-hazard assessment).",
+        "where_evidence_lives": "batch disposition rationale, AQL/sampling plan justification, QA risk assessment for ingested foreign material, retained sample inspection protocol",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: disposition rationale was written to justify a release already decided, rather than scope driving disposition"
+        ],
+        "severity": "patient_safety"
+      },
+      {
+        "branch": "scope_impact",
+        "category": "regulatory_reportability_unexamined",
+        "gap": "Record states 'No regulatory reporting required \u2014 internal audit finding' but this originated as a confirmed patient complaint of foreign material in a marketed product, not an internal audit finding. The reportability determination contradicts the source and is asserted without a documented reportability assessment against jurisdictional foreign-matter/complaint reporting thresholds.",
+        "where_evidence_lives": "complaint COMPL-GC-2024-056 reportability assessment, regulatory affairs reportability decision log, field alert / PQC evaluation",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: a formal reportability assessment was never performed and the conclusion is unsupported"
+        ],
+        "severity": "compliance"
+      },
+      {
+        "branch": "containment",
+        "category": "correction_vs_corrective_action_conflated",
+        "gap": "Immediate corrections list 'operator re-trained,' 'all operators re-qualified on gowning,' 'signage installed' \u2014 these are preventive/corrective actions (recurrence prevention), not containment of the current event. Genuine containment (quarantine of remaining lot units, hold on other EQ-COAT-001 lots pending screen assessment, replacement of the worn screen before next use) is not documented as an immediate action.",
+        "where_evidence_lives": "quarantine records, equipment hold tag log, immediate screen replacement work order for EQ-COAT-001",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: the worn screen may have remained in service after discovery because no immediate containment hold was placed on the equipment"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "capa",
+        "category": "retraining_only_no_linkage_to_screen_cause",
+        "gap": "CAPA-GC-2024-032 actions visible in the record are re-training, re-qualification, and signage \u2014 all addressing only the gowning active failure and none addressing the worn-screen latent condition. No CAPA establishes a filter screen integrity-check, replacement interval, or pre-use verification, despite the screen being a confirmed failed barrier. The retrain/re-qualify/signage set is a remind-and-retrain CAPA with no forcing function (e.g., fit verification, poka-yoke, screen integrity test).",
+        "where_evidence_lives": "CAPA-GC-2024-032 action detail, SOP-MFG-039 and SOP-MFG-044 revision history, PM schedule for EQ-COAT-001",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: (a) no engineering/forcing control was added for either failure mode; (b) the second root cause (screen) was identified but not assigned a CAPA action"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "effectiveness",
+        "category": "no_measurable_time_bound_check",
+        "gap": "No effectiveness check is defined for any CAPA. The closed deviation gives no metric, threshold, owner, or review date to verify recurrence prevention. The gowning audit already found 2 of 8 (25%) non-compliant \u2014 there is no defined post-CAPA gowning compliance target, no foreign-material complaint trend metric, and no filter scre"
+      }
+    ]
+  },
+  {
+    "deviation_id": "DEV-GC-2024-082",
+    "title": "Black Speck Contamination in GC-101 Granulation \u2014 Cross-Contamination from Cleaning Failure",
+    "summary_flags": {
+      "human_error_only_root_cause": false,
+      "retraining_only_capa": false,
+      "missing_effectiveness_check": true,
+      "capa_not_linked_to_root_cause": true,
+      "unresolved_conflict": true,
+      "scope_gap": true
+    },
+    "surfaced_gaps": [
+      {
+        "branch": "root_cause",
+        "category": "five-whys-incomplete",
+        "gap": "Root cause stops at the physical mechanism (pigment trapped in shaft seal) and the validation gap (iron oxide not chosen as worst-case residue). It does not ask WHY the cleaning validation/equipment-cleaning design failed to identify a non-disassembled seal interface as a hard-to-clean location, nor WHY a colorant-bearing product was sequenced before a non-colored product without a cleaning challenge. Two distinct latent system causes (cleaning-validation worst-case selection process; product-sequencing/changeover risk assessment) are named but not driven to a systemic cause.",
+        "where_evidence_lives": "Cleaning validation protocol/report (worst-case residue rationale), riboflavin/coverage studies, equipment cleanability assessment, product changeover matrix / campaign sequencing SOP",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: worst-case residue selection methodology did not account for visually-detectable insoluble pigments (only solubility/toxicity were weighted), so iron oxide was screened out",
+          "AI-suggested, to confirm: cleanability/Riboflavin coverage study never challenged the shaft-seal interface because the equipment FMEA did not flag it as a product-contact hard-to-clean location",
+          "AI-suggested, to confirm: there is no changeover risk assessment that triggers seal disassembly when a colorant product precedes a non-colorant product"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "root_cause",
+        "category": "fishbone-coverage",
+        "gap": "Investigation pursued only Machine (seal design) and Method (cleaning SOP/validation). Measurement, Material, and Man branches were not visibly ruled out. The cleaning swab program PASSED at <10 ppm while >500 ppm sat in the seal groove \u2014 the Measurement branch (swab sampling-location adequacy / detection method) is a candidate contributing cause that was not analyzed.",
+        "where_evidence_lives": "Cleaning swab sampling plan (sampling-location map), swab recovery validation, residue analytical method capability",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: swab sampling plan does not include the shaft-seal interface as a designated location, so a passing cleaning result is systematically blind to this residue",
+          "AI-suggested, to confirm: swab recovery from a recessed seal groove was never validated, making the <10 ppm release criterion meaningless for this location"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "scope_impact",
+        "category": "scope-bounding-incomplete",
+        "gap": "Scope was limited to lot F020 and the immediately prior F019. Iron oxide was 'trapped and gradually released,' which implies a multi-batch accumulation/release timeline \u2014 yet only ONE prior lot was assessed. Every GC-101 (and any other non-colored product) lot run on EQ-GRAN-001 since the LAST GC-201 colorant campaign should be in scope. The Is/Is-Not boundary (which lots are at risk vs not) is not established.",
+        "where_evidence_lives": "Equipment usage log / campaign history for EQ-GRAN-001 back to last iron-oxide product, batch disposition records, retained-sample inventory for all intervening lots",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: multiple GC-101 lots between the GC-201 campaign and F020 were exposed; gradual release means earlier lots had lower (possibly sub-visible) contamination that passed appearance but is still an uncontrolled cross-contamination GMP event",
+          "AI-suggested, to confirm: other non-colored products share EQ-GRAN-001 and fall in the exposure window but were not enumerated"
+        ],
+        "severity": "patient_safety"
+      },
+      {
+        "branch": "scope_impact",
+        "category": "shared-equipment-disposition",
+        "gap": "Step 7 states EQ-GRAN-002 had 'no cross-contamination found due to different product sequence,' but this conclusion rests on sequence rather than on inspection/swab of its identical seal design. The same latent condition (no seal disassembly in SOP-CLN-015) exists on EQ-GRAN-002; absence of a colorant predecessor today does not retire the latent risk.",
+        "where_evidence_lives": "EQ-GRAN-002 seal disassembly inspection record, EQ-GRAN-002 campaign history, SOP-CLN-015 applicability across the equipment train",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: EQ-GRAN-002 was deemed clear by reasoning (sequence) not by physical seal inspection, leaving an undetected-residue possibility",
+          "AI-suggested, to confirm: any other equipment train using SOP-CLN-015 with similar non-disassembled product-contact crevices carries the same latent failure"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "scope_impact",
+        "category": "conflict-unresolved",
+        "gap": "CONFLICT: Step 3 records cleaning 'passed (<10 ppm residue)' while Step 6 records '>500 ppm iron oxide in seal groove.' The record treats both as facts without reconciling them \u2014 i.e. the cleaning program declared the equipment clean while 500 ppm of pigment was present. This contradiction directly undermines confidence in every prior 'passed' cleaning on this train and is not resolved or tracked.",
+        "where_evidence_lives": "Swab sampling-location map vs seal-groove location, cleaning release criteria rationale, audit trail of cleaning approvals",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: the two numbers are not in conflict because the swab plan never sampled the seal groove \u2014 meaning the cleaning program is structurally incapable of detecting this failure mode (a more serious systemic finding than a one-off miss)"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "capa",
+        "category": "capa-not-described",
+        "gap": "CAPA-GC-2024-054 is referenced but its actions are not stated in the record. With no actions visible, the CAPA cannot be confirmed to (a) link to the root cause(s), (b) contain a preventive element beyond a one-equipment fix, or (c) carry a measurable, time-bound effectiveness check. As recorded, the CAPA passes none of the three gates.",
+        "where_evidence_lives": "CAPA-GC-2024-054 action list, CC-GC-2024-040 change description, revised SOP-CLN-015 and cleaning validation protocol",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: CAPA fixes SOP-CLN-015 to add seal disassembly but does not revisit the worst-case-residue SELECTION methodology that allowed iron oxide to be screened out (correction without addressing the latent cause)",
+          "AI-suggested, to confirm: CAPA is limited to EQ-GRAN-001 and does not extend to all equipment with non-disassembled product-contact crevices cleaned under SOP-CLN-015"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "effectiveness",
+        "category": "no-effectiveness-check",
+        "gap": "No effectiveness check is defined anywhere in the record \u2014 no metric, threshold, review date, or owner. 'No recurrence' is not operationalized. For a Level 1 Critical cross-contamination, the absence of a defined effectiveness verification (e.g. post-CAPA cleaning revalidation including the seal interface, with a pass/fail residue limit and a review date) is a closure gap.",
+        "where_evidence_lives": "CAPA-GC-2024-054 effectiveness section, post-implementation cleaning revalidation report, scheduled effectiveness-review record",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: effectiveness should be a re-executed cleaning validation including seal-groove swab"
+        ]
+      }
+    ]
+  },
+  {
+    "deviation_id": "DEV-GC-2025-009",
+    "title": "Iron Oxide Particles in GC-201 Ovaclair White Layer from Corroded Roller Compactor",
+    "summary_flags": {
+      "human_error_only_root_cause": false,
+      "retraining_only_capa": false,
+      "missing_effectiveness_check": true,
+      "capa_not_linked_to_root_cause": true,
+      "unresolved_conflict": true,
+      "scope_gap": true
+    },
+    "surfaced_gaps": [
+      {
+        "branch": "problem_statement",
+        "category": "occurrence_vs_discovery_lag",
+        "gap": "Occurrence dated 2025-01-28 but discovery 2025-02-10 via a patient complaint (COMPL-GC-2025-023) \u2014 meaning affected product reached a patient before in-process detection. The problem statement frames this as an appearance defect, but the detection-escape (defective product released and distributed) is itself a deviation that is not stated or investigated.",
+        "where_evidence_lives": "Batch release records, QA disposition log, distribution/shipping records, in-process visual inspection records for the white layer, complaint file COMPL-GC-2025-023",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: in-process and finished-product visual inspection sampling plan was too small to catch localized/intermittent brown spots",
+          "AI-suggested, to confirm: visual appearance acceptance criteria for the white layer are subjective/undefined, allowing defective tablets through",
+          "AI-suggested, to confirm: the spots developed/became visible only after a time delay (e.g., progressive oxidation) and were not present at release inspection"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "scope_impact",
+        "category": "scope_bounding_inconsistency",
+        "gap": "Immediate corrections say 'All GC-201 lots produced since last roll inspection identified for testing,' but root cause states corrosion built up over 3 years / 847 batch-hours with chrome depleted to zero. The retained-sample check covers only B001\u2013B003 (one direction in time, GC-201 only). Corrosion is progressive \u2014 the time window for shedding particles is not bounded by evidence, and the 'is/is-not' boundary is asserted, not demonstrated.",
+        "where_evidence_lives": "Equipment usage log EQ-RC-001 (full batch history since last re-chroming), roll inspection records, retained sample inventory for all lots run on this roll, batch records identifying every product run on EQ-RC-001",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: roll underside corrosion shed particles for multiple batches before becoming detectable, so the affected window extends earlier than B001",
+          "AI-suggested, to confirm: lots earlier than B001 (within the 3-year service window) were never retained-sample inspected",
+          "AI-suggested, to confirm: the 'visual clean' retained-sample check has the same detection sensitivity gap that let B004 escape, so 'clean' is unproven"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "scope_impact",
+        "category": "shared_equipment_cross_product",
+        "gap": "EQ-RC-001 corrosion released iron-oxide particles, yet impact and scope are assessed for GC-201 only. Any other product roller-compacted on this same compactor in the same window is unaddressed. Cross-product carryover/contamination of other products from the same corroded roll is not assessed.",
+        "where_evidence_lives": "EQ-RC-001 equipment usage/changeover log, product-equipment matrix, batch records for all products on EQ-RC-001 since last re-chroming",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: other products manufactured on EQ-RC-001 received the same iron-oxide shedding and were not screened",
+          "AI-suggested, to confirm: EQ-RC-001 is GC-201-dedicated, in which case the no-cross-product conclusion is justified \u2014 but this is not stated"
+        ],
+        "severity": "patient_safety"
+      },
+      {
+        "branch": "impact_impact",
+        "category": "patient_safety_basis",
+        "gap": "Patient safety rated 'Low' on the basis that iron oxide is excipient E172 and poses no toxicological risk. The actual contaminant is uncontrolled-quantity Fe2O3 plus underlying carbon-steel corrosion products at an unquantified, non-uniform level \u2014 not a qualified, dose-controlled colorant. Toxicological conclusion is asserted without a quantitative exposure assessment or a particle-size/foreign-particulate evaluation (foreign particulate is a distinct safety concern from a soluble colorant).",
+        "where_evidence_lives": "SEM/EDS particle quantification and size distribution from complaint analysis, toxicological assessment / PDE rationale, foreign-particulate risk assessment, carbon-steel corrosion-product composition",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: contaminant includes non-E172 carbon-steel corrosion products (FeOOH, mixed oxides) not covered by the E172 justification",
+          "AI-suggested, to confirm: particulate size/load presents a foreign-particulate hazard independent of chemical toxicity",
+          "AI-suggested, to confirm: no quantitative worst-case daily-intake estimate was performed to support the 'Low' rating"
+        ],
+        "severity": "patient_safety"
+      },
+      {
+        "branch": "root_cause",
+        "category": "unverified_causal_chain",
+        "gap": "Core mechanism is hedged with 'likely from mechanical fatigue' \u2014 the chrome micro-crack initiating mechanism is hypothesized, not confirmed. Several proximate causes are stated but not driven to the system condition: (a) why did PM-EQ-RC-001 not trigger re-chroming/replacement before plating depleted to zero over 847 batch-hours; (b) why did SOP-MFG-050 pre-use inspection structurally fail (roll underside not accessible/required to be inspected); (c) why was a 3-year re-chrome interval considered adequate without an in-service plating-integrity check. The investigation stops at 'corrosion happened' rather than 'the maintenance and inspection system permitted undetected degradation to end-of-life.'",
+        "where_evidence_lives": "PM-EQ-RC-001 schedule basis and rationale, SOP-MFG-050 inspection scope (does it require underside inspection?), plating thickness trend/history, OEM maintenance recommendations, fatigue/metallurgical analysis of the roll",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: PM interval was time-based with no plating-thickness or roll-integrity acceptance criterion (latent condition)",
+          "AI-suggested, to confirm: SOP-MFG-050 does not require inspection of the roll underside where corrosion occurred (inspection method blind spot \u2014 rule-based design gap)",
+          "AI-suggested, to confirm: 0.5% NaOH cleaning is chemically incompatible with the exposed substrate and cleaning validation never assessed roll-material compatibility"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "root_cause",
+        "category": "linked_prior_deviation_repeat",
+        "gap": "DEV-GC-2024-082 is linked but its relationship is unexplained. If it was a prior corrosion/equipment-integrity event on the same or similar equipment, this is a recurring/repeat deviation and the CAPA from that event was ineffective \u2014 a systemic CAPA-effectiveness failure that escalates classification and root cause.",
+        "where_evidence_lives": "DEV-GC-2024-082 record and its CAPA, deviation trending report for EQ-RC-001 and roller compaction",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: DEV-GC-2024-082 was a prior equipment-degradation event whose corrective action did not prevent this recurrence",
+          "AI-suggested, to confirm: the link is incidental and unrelated \u2014 in which case the rationale should be stated"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "capa",
+        "category": "capa_content_not_in_record",
+        "gap": "Record references CAPA-GC-2025-012 and CC-GC-2025-008 but contains no CAPA actions, no root-cause linkage, no preventive element, and no effectiveness check. The deviation is Closed without any demonstrable CAPA adequacy in the record. The metal-detector finding (Fe2O3 undetectable,"
+      }
+    ]
+  },
+  {
+    "deviation_id": "DEV-GC-2025-012",
+    "title": "Aluminum Fragment in GC-201 Blister Cavity from Worn Die-Cutting Blade",
+    "summary_flags": {
+      "human_error_only_root_cause": false,
+      "retraining_only_capa": false,
+      "missing_effectiveness_check": true,
+      "capa_not_linked_to_root_cause": true,
+      "unresolved_conflict": false,
+      "scope_gap": true
+    },
+    "surfaced_gaps": [
+      {
+        "branch": "problem_statement",
+        "category": "cause_smuggled_into_statement",
+        "gap": "The title and description assert 'from Worn Die-Cutting Blade' as established fact within the problem statement. The observable problem is 'aluminum foil fragment found in blister cavity'; the worn blade is a root-cause conclusion that belongs in the root-cause section, not the framing of the event.",
+        "where_evidence_lives": "Complaint record COMPL-GC-2025-031, SEM/EDX report, original blister cavity photo",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: fragment originated at die-cutting as concluded",
+          "AI-suggested, to confirm: fragment could also originate from foil slitting upstream, foil reel edge, or sealing platen contact"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "scope_impact",
+        "category": "scope_bounded_to_single_lot_without_justification",
+        "gap": "Scope is limited to lot GC201-2025-B007 only, but the blade ran ~123,000 cycles overdue. A worn blade producing burrs would have affected every lot packaged on EQ-PKG-003 between the 500,000-cycle limit and the 623,000-cycle replacement. No Is/Is-Not analysis bounds which lots were exposed to the worn-blade condition.",
+        "where_evidence_lives": "EQ-PKG-003 batch/packaging run log, blade cycle-to-lot mapping, packaging schedule for the overdue window",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: multiple lots packaged during the overdue window are within shelf life and on-market and require retrospective risk assessment",
+          "AI-suggested, to confirm: other products sharing EQ-PKG-003 were also exposed to the worn blade"
+        ],
+        "severity": "patient_safety"
+      },
+      {
+        "branch": "scope_impact",
+        "category": "detection_lag_not_assessed",
+        "gap": "Occurrence 2025-03-25, discovery 2025-04-08 \u2014 discovery occurred only via an external pharmacist complaint, two weeks after packaging. The record never asks why in-line/in-process detection failed to catch the defect, or how many units shipped before complaint discovery.",
+        "where_evidence_lives": "Distribution records for the lot(s), in-process inspection records, complaint timeline",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: no automated foreign-particle/cut-edge detection exists at the die-cutting/sealing station",
+          "AI-suggested, to confirm: AQL sampling plan is insufficient to detect low-frequency embedded fragments"
+        ],
+        "severity": "patient_safety"
+      },
+      {
+        "branch": "scope_impact",
+        "category": "patient_safety_assessment_unsupported",
+        "gap": "Patient-safety impact is asserted as 'Negligible' with no toxicological/sharps risk rationale. An aluminum fragment with a cut/burr edge in an oral product raises mechanical-injury and choking considerations that are stated away rather than evaluated. The 'Level 3 \u2014 Minor' classification rests on this unsupported assertion.",
+        "where_evidence_lives": "Health hazard evaluation / medical assessment, fragment dimension data from SEM/EDX, QRM risk file",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: fragment size/edge sharpness warrants a documented HHE before 'negligible' is defensible",
+          "AI-suggested, to confirm: classification should be re-evaluated if multiple lots prove in scope"
+        ],
+        "severity": "patient_safety"
+      },
+      {
+        "branch": "root_cause",
+        "category": "detection_root_cause_not_driven",
+        "gap": "Investigation Step 5 reveals the in-process cut-quality check did NOT include edge-burr assessment \u2014 a true detection-system root cause \u2014 but this is never developed into a second root-cause leg or its own CAPA. The investigation treats the overdue PM as the sole cause and leaves the inspection-design gap dangling.",
+        "where_evidence_lives": "SOP-PKG-018 inspection criteria, in-process inspection records, inspector training/qualification records",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: SOP-PKG-018 cut-quality acceptance criteria are silent on burrs (rule-based gap \u2014 wrong/incomplete rule applied)",
+          "AI-suggested, to confirm: the visual check is not capable of detecting burrs at line speed (unworkable-as-written)"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "root_cause",
+        "category": "systemic_cause_only_named_not_driven",
+        "gap": "Root cause states the PM system 'had conflicting priority with higher-criticality equipment maintenance' and the work order was 'deprioritized' \u2014 this is the actual latent/system condition (Reason: latent organizational condition) but it is named and abandoned. No 5-Why is driven on WHY a packaging-direct-contact PM was allowed to be deprioritized past its limit, or who/what controls that prioritization.",
+        "where_evidence_lives": "CMMS work-order history, PM prioritization SOP/criticality matrix, maintenance backlog reports",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: criticality matrix does not classify product-contact cutting blades as high-criticality",
+          "AI-suggested, to confirm: no escalation/forcing-function exists when a PM exceeds its cycle limit",
+          "AI-suggested, to confirm: cycle-count overrun is not alarmed/blocked by the machine or planning system"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "root_cause",
+        "category": "fishbone_categories_unexplored",
+        "gap": "Only the Machine (worn blade) and Method (PM scheduling) categories were explored. Material (foil/MAT-201-PKG-005 lot quality, foil temper/hardness), Measurement (cut-quality inspection capability), and Method (sealing-station vibration that 'caused burrs to detach') are asserted but not investigated.",
+        "where_evidence_lives": "Incoming foil CoA, foil specification, sealing-step process parameters",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: foil lot hardness/temper contributed to burr formation",
+          "AI-suggested, to confirm: sealing vibration parameters are within validated range"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "capa",
+        "category": "capa_content_not_provided",
+        "gap": "The record links CAPA-GC-2025-015 but provides no CAPA actions, no root-cause linkage, no preventive element, and no effectiveness check. With only an overdue-PM cause addressed, a blade replacement is a correction, not a preventive action \u2014 recurrence is prevented only if the PM-prioritization/forcing-function and the inspection-design gaps are addressed.",
+        "where_evidence_lives": "CAPA-GC-2025-015 record",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: CAPA contains only 'replace blade' (correction, not prevention)",
+          "AI-suggested, to confirm: CAPA does not add a cycle-limit forcing function or burr-detection inspection criterion",
+          "AI-suggested, to confirm: CAPA has no measurable, time-bound effectiveness check"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "effectiveness",
+        "category": "no_effectiveness_check_defined",
+        "gap": "No effectiveness check, metric, threshold, owner, or review date is present anywhere in the record. There is no operationalized way to confirm the worn-blade/burr defect does not recur (e.g., PM on-time-completion %, fragment complaint rate, burr-defect in-process reject trend).",
+        "where_evidence_lives": "CAPA-GC-2025-015 effectiveness section, complaint trending, PM compliance metrics",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: effectiveness should track PM on-time completion for product-contact cutting t"
+        ]
+      }
+    ]
+  },
+  {
+    "deviation_id": "DEV-GC-2025-028",
+    "title": "Metal Particles Detected in GC-201 Granulation from Worn Tablet Press Punch Tips",
+    "summary_flags": {
+      "human_error_only_root_cause": false,
+      "retraining_only_capa": false,
+      "missing_effectiveness_check": true,
+      "capa_not_linked_to_root_cause": true,
+      "unresolved_conflict": true,
+      "scope_gap": true
+    },
+    "surfaced_gaps": [
+      {
+        "branch": "problem_statement",
+        "category": "title_vs_evidence_mismatch",
+        "gap": "Title states metal particles in 'GC-201 Granulation' but the entire investigation, SEM/EDX and metal detection concern compressed tablets from worn punch tips \u2014 not granulation. The problem statement is mislabeled and could mis-scope the event in the QMS.",
+        "where_evidence_lives": "BPR-GC201-B009 compression record, metal detector audit trail, deviation title field",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: title is a clerical carryover error and the true affected stage is compression only",
+          "AI-suggested, to confirm: granulation was never sampled, so a granulation source cannot be excluded \u2014 title may have been intended"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "root_cause",
+        "category": "detection_failure_not_investigated",
+        "gap": "Root cause addresses WHY punches wore (abrasive formulation) but never WHY the wear was not detected before metal entered product. Pre-campaign and in-process punch inspection per SOP-MFG-028 either failed, was not performed, or cannot detect micro-chipping \u2014 this latent detection gap (Reason's holes) is uninvestigated.",
+        "where_evidence_lives": "SOP-MFG-028 inspection records, tooling inspection logs, BPR in-process inspection sign-offs, audit trail",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: visual inspection cannot detect 0.3-0.6mm micro-chipping, so the inspection step has no real detection capability",
+          "AI-suggested, to confirm: inspection interval is campaign-start only with no mid-run check at high compression counts",
+          "AI-suggested, to confirm: inspection was performed but the acceptance criterion is undefined/subjective"
+        ],
+        "severity": "patient_safety"
+      },
+      {
+        "branch": "root_cause",
+        "category": "wear_model_validation_gap",
+        "gap": "The standard wear model was developed for non-pigmented formulations yet was applied to a pigmented bilayer product. The systemic cause \u2014 that the tooling-management system permitted a non-applicable wear model / validated limit to govern a new product without an abrasiveness assessment \u2014 is implied but not stated as the actionable root cause.",
+        "where_evidence_lives": "Tooling validation rationale, formulation development report, change control for GC-201 introduction, SOP-MFG-028 limit-setting basis",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: no procedure requires an abrasiveness/Einlehner assessment before assigning a punch replacement limit to a new formulation",
+          "AI-suggested, to confirm: the 5M limit was copied from GC-101 without product-specific justification"
+        ],
+        "severity": "patient_safety"
+      },
+      {
+        "branch": "root_cause",
+        "category": "unresolved_data_conflict",
+        "gap": "Description says 'micro-metallic fragments in 3 of 50 tablets sampled'; investigation Step 6 says '15 of 4,200 tablets rejected'; immediate corrections imply only quarantined tablets screened. The relationship between the 3/50 sample, the 15 rejects, and total compromised population is not reconciled \u2014 the true contaminated population is unclear.",
+        "where_evidence_lives": "Metal detector reject log, sampling plan, BPR yield/reject reconciliation, audit trail",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: 3/50 was the initial sample that triggered escalation and 15/4200 was full screening \u2014 figures are consistent but not stated as such",
+          "AI-suggested, to confirm: only the quarantine window was 100% screened, leaving an unscreened earlier population at risk"
+        ],
+        "severity": "patient_safety"
+      },
+      {
+        "branch": "scope_impact",
+        "category": "other_lots_not_assessed",
+        "gap": "Scope limited to lot B009 with rationale 'first campaign to approach 5M limit.' But prior GC-201 lots ran below 5M yet potentially above the newly-calculated 2.2M safe limit for the pigmented layer. Any prior lot exceeding 2.2M compressions on the same punches is now suspect and was not impact-assessed.",
+        "where_evidence_lives": "Tooling compression-count history per punch set, prior GC-201 batch records, tooling rotation/usage log",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: same punch set carried compression count across multiple lots, so earlier lots exceeded 2.2M undetected",
+          "AI-suggested, to confirm: punches were new each campaign and no prior lot exceeded 2.2M"
+        ],
+        "severity": "patient_safety"
+      },
+      {
+        "branch": "scope_impact",
+        "category": "shared_equipment_other_products",
+        "gap": "EQ-TAB-003 is a shared bilayer press; other pigmented products run on the same press governed by the same flawed (non-pigmented) wear model are not assessed for the same latent risk.",
+        "where_evidence_lives": "Equipment usage log for EQ-TAB-003, product/tooling matrix, list of pigmented formulations on shared tooling",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: other pigmented products on the press are governed by the same 5M limit and share the risk",
+          "AI-suggested, to confirm: EQ-TAB-003 is dedicated to GC-201 and no read-across is needed"
+        ],
+        "severity": "patient_safety"
+      },
+      {
+        "branch": "scope_impact",
+        "category": "released_disposition_justification",
+        "gap": "Tablets produced AFTER punch replacement were released, but the record does not establish WHEN the wear began producing fragments \u2014 micro-chipping is progressive. Without a defined first-failure point, tablets produced before quarantine but after wear onset may have been released under-screened. Batch disposition appears driven by detection capability rather than a bounded contamination window.",
+        "where_evidence_lives": "Metal detector run-time/event log, compression timeline, quarantine start time vs wear-onset estimate",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: metal detector ran continuously and would have caught all fragments, bounding the release",
+          "AI-suggested, to confirm: fragment generation predates the first alarm, leaving an unscreened released window"
+        ],
+        "severity": "patient_safety"
+      },
+      {
+        "branch": "impact_assessment",
+        "category": "patient_safety_basis",
+        "gap": "Patient safety rated 'Low' on the basis that 0.3-0.6mm tool steel poses minimal oral risk, but this is asserted without a documented toxicological/physical-hazard rationale and assumes metal detection captured 100% of fragments. The 'all affected tablets removed by metal detection' claim depends on the detector's validated sensitivity for fragments at/below 0.3mm.",
+        "where_evidence_lives": "Metal detector validation/sensitivity qualification, hazard assessment, foreign-particle risk SOP",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: detector validated to detect ferrous fragments well below 0.3mm, supporting the Low rating",
+          "AI-suggested, to confirm: detector sensitivity floor is above some fragment sizes, so smaller undetected fragments may remain"
+        ],
+        "severity": "patient_safety"
+      },
+      {
+        "branch": "capa",
+        "category": "capa_content_absent",
+        "gap": "Record references CAPA-GC-2025-036 and CC-GC-2025-019 but contains no CAPA actions. Root-cause linkage, preventive element, and effectiveness check cannot be confirmed \u2014 no preventive action (e.g., product-specific replacement limit, mandatory abrasiveness assessment for new formulations, enhanced punch inspection method) is stated in this record.",
+        "where_evidence_lives": "CAPA-GC-2025-036 action plan, CC-GC-2025-019 change record",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: CAPA sets a 2.2M pigmented-layer replacement limit and a new-product"
+        ]
+      }
+    ]
+  },
+  {
+    "deviation_id": "DEV-GC-2024-CDMO1-008",
+    "title": "Stainless Steel Particles in GC-101 API from Reactor Impeller Wear at CDMO-1",
+    "summary_flags": {
+      "human_error_only_root_cause": false,
+      "retraining_only_capa": false,
+      "missing_effectiveness_check": true,
+      "capa_not_linked_to_root_cause": true,
+      "unresolved_conflict": true,
+      "scope_gap": true
+    },
+    "surfaced_gaps": [
+      {
+        "branch": "root_cause",
+        "category": "stops at proximate mechanism, latent condition under-investigated",
+        "gap": "The root cause names the erosion mechanism (cavitation) and notes the PM was 6 months overdue, but treats 'CDMO-1 maintenance backlog' as a one-line contributing factor rather than driving it to a system cause. Why was a 12-month PM allowed to slip to 18 months without triggering a stop-use or escalation? What system permits a 50%-overdue PM on product-contact equipment to remain in production service?",
+        "where_evidence_lives": "CDMO-1 CMMS/maintenance scheduling system, PM escalation SOP, deviation/alert log for overdue PMs, quality agreement maintenance-oversight clauses",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: no automated lock-out/alert when a product-contact PM goes overdue (latent design gap, Reason)",
+          "AI-suggested, to confirm: PM interval of 12 months was never qualified against actual impeller wear rate for the high-speed crystallization duty (rule-based: wrong rule applied)",
+          "AI-suggested, to confirm: maintenance backlog was a known, accepted operational state with no escalation threshold defined"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "root_cause",
+        "category": "cavitation cause not confirmed vs assumed",
+        "gap": "Erosion 'from cavitation during high-speed crystallization' is asserted but only blade-tip material loss was observed. Cavitation is one of several erosion mechanisms (abrasion from crystal slurry, corrosion, mechanical fatigue). No engineering confirmation that cavitation specifically occurred.",
+        "where_evidence_lives": "Reactor agitation parameters / batch record (impeller RPM, tip speed), CFD or vendor agitation design data, metallurgical analysis of eroded blade surface, slurry density data",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: erosion is abrasive from crystal slurry, not cavitation \u2014 different CAPA (slurry density / RPM limits)",
+          "AI-suggested, to confirm: impeller material (316L) was under-spec for the abrasive duty",
+          "AI-suggested, to confirm: agitation step run above qualified tip-speed limit"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "scope_impact",
+        "category": "shared-equipment and prior-lot scope not bounded",
+        "gap": "Scope is limited to D003, with D002 'retrospectively cleared.' Record states wear is progressive and impeller in service 18 months, yet only the immediately prior lot was reviewed. All other API lots crystallized on CDMO1-RX-003 across the wear period, and any other products run on this shared reactor, are not assessed.",
+        "where_evidence_lives": "Equipment use log for CDMO1-RX-003, batch genealogy, QC visual-inspection records for all lots since last impeller inspection, product changeover records",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: other GC-101 lots between PM and D003 carried sub-visible 316L particles not caught by visual inspection",
+          "AI-suggested, to confirm: other products sharing CDMO1-RX-003 are also at risk and were released",
+          "AI-suggested, to confirm: D002 clearance based only on 'no visible particles' \u2014 not sub-visible particulate testing"
+        ],
+        "severity": "patient_safety"
+      },
+      {
+        "branch": "scope_impact",
+        "category": "D002 clearance logic is weak / conflicts with wear progression",
+        "gap": "Step 4 says D002 had 'no metallic particles observed (but impeller wear progressive).' This is an internal conflict: if wear is progressive, D002 likely had earlier-stage shedding below the visual detection threshold, yet was cleared on visual inspection alone with no sub-visible/particulate or assay-impurity testing.",
+        "where_evidence_lives": "D002 QC release data, retained D002 sample, sub-visible particulate count, ICP elemental impurity (Fe/Cr/Ni) data",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: D002 retain should be ICP-tested for elemental Fe/Cr/Ni to confirm clearance",
+          "AI-suggested, to confirm: visual inspection has no defined detection limit for 0.2\u20130.5mm particles \u2014 clearance unsupported"
+        ],
+        "severity": "patient_safety"
+      },
+      {
+        "branch": "scope_impact",
+        "category": "patient-safety toxicology not assessed for elemental impurity",
+        "gap": "Patient safety dismissed solely because the lot was not released. But the rework path and the broader-scope lots require a toxicological/elemental-impurity assessment: 316L contains Fe, Cr (incl. potential Cr VI), Ni \u2014 ICH Q3D elements. No PDE/exposure assessment is present.",
+        "where_evidence_lives": "ICH Q3D elemental impurity risk assessment, ICP-MS data on reworked API, toxicology PDE references",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: reworked D003 should have ICP-MS confirmation of Cr/Ni below Q3D PDE",
+          "AI-suggested, to confirm: dissolution step may have leached soluble metal ions that 0.22\u00b5m filtration does not remove"
+        ],
+        "severity": "patient_safety"
+      },
+      {
+        "branch": "containment",
+        "category": "rework adequacy vs root cause",
+        "gap": "Rework is dissolution + 0.22\u00b5m filtration + re-crystallization on the SAME reactor CDMO1-RX-003. The record does not state the eroded impeller was replaced before the re-crystallization, so the rework may have re-exposed the API to the unresolved root cause. Also, filtration removes particulate but not dissolved metal ions.",
+        "where_evidence_lives": "Rework batch record, impeller replacement work order date vs rework date, post-rework ICP-MS",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: re-crystallization performed before impeller replacement",
+          "AI-suggested, to confirm: dissolved Cr/Ni ions not addressed by 0.22\u00b5m filter"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "capa",
+        "category": "CAPA content not provided / linkage and prevention unverifiable",
+        "gap": "Only a CAPA identifier (CAPA-CDMO1-2024-011) is given \u2014 no actions, no preventive element, no effectiveness check are recorded in the deviation. Linkage to root cause, presence of a preventive element, and a measurable time-bound effectiveness check cannot be confirmed and therefore cannot be passed.",
+        "where_evidence_lives": "CAPA-CDMO1-2024-011 record, CC-CDMO1-2024-006 change control",
+        "candidate_hypotheses": [
+          "AI-suggested, to confirm: CAPA may only address this impeller replacement (correction) without a preventive PM-escalation/lock-out control",
+          "AI-suggested, to confirm: no effectiveness metric (e.g. zero overdue product-contact PMs / particulate trend over N future lots) defined"
+        ],
+        "severity": "product_quality"
+      },
+      {
+        "branch": "capa",
+        "category": "PM interval requalification missing",
+        "gap": "If a 12-month PM let the impeller erode to 2mm/blade loss, the interval itself may be inadequate for this duty. A CAPA that only restores schedule compliance does not address whether 12 months is the correct interval, nor introduces in-service wear monitoring/inspection.",
+        "where_evidence_lives": "Impeller wear-rate data, vendor service-life recommendation, change control CC-CDMO1-2024-006",
+        "candidate_hypotheses": [
+          ""
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,44 @@
+Key ...LgAA | cases=['material_supplier', 'procedure_ambiguity', 'data_integrity_alcoa', 'planted_conflict', 'thin_but_clean'] | max_turns=12
+
+=== material_supplier :: Material / supplier-attributed cause ===
+  generating case...
+  planted defects: 6
+  running grill loop... (ablation=none)
+  grill turns: 11 | completed_naturally=True
+  judging...
+  recall=1.0 halluc=0 lead=2 cost=$1.1849
+
+=== procedure_ambiguity :: Procedure ambiguity ===
+  generating case...
+  planted defects: 5
+  running grill loop... (ablation=none)
+  grill turns: 12 | completed_naturally=False
+  judging...
+  recall=1.0 halluc=0 lead=2 cost=$0.9819
+
+=== data_integrity_alcoa :: Data-integrity / ALCOA+ concern ===
+  generating case...
+  planted defects: 7
+  running grill loop... (ablation=none)
+  grill turns: 8 | completed_naturally=True
+  judging...
+  recall=1.0 halluc=1 lead=1 cost=$0.7610
+
+=== planted_conflict :: Investigation with a planted speaker CONFLICT ===
+  generating case...
+  planted defects: 5
+  running grill loop... (ablation=none)
+  grill turns: 9 | completed_naturally=True
+  judging...
+  recall=1.0 halluc=0 lead=2 cost=$0.8737
+
+=== thin_but_clean :: Thin but genuinely clean ===
+  generating case...
+  planted defects: 0
+  running grill loop... (ablation=none)
+  grill turns: 11 | completed_naturally=True
+  judging...
+  recall=0.0 halluc=5 lead=2 cost=$1.0484
+
+WROTE /Users/gouravpandey/the fictional company/deviation-grill/results/metrics_run.csv
+TOTAL COST THIS RUN: $4.8500  (calls=117)

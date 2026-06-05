@@ -1,0 +1,93 @@
+{
+  "case_id": "DEV-2024-0847",
+  "archetype": "No planted defects",
+  "planted_total": 0,
+  "defects": [],
+  "surfaced_count": 0,
+  "false_gaps": [
+    {
+      "description": "Timestamp correlation between OOS tablets and force-drift log",
+      "why_spurious": "The deviation record does not claim this correlation exists; the Grill treated its absence as a gap, but the record is internally consistent without it \u2014 the drift is documented over three days and the OOS was detected on day 3."
+    },
+    {
+      "description": "IPC sampling adequacy / single sample point",
+      "why_spurious": "The record describes routine IPC per the manufacturing procedure; the Grill treated the absence of the full sampling plan in the deviation packet as an investigation gap, but deviation records routinely reference rather than reproduce SOPs."
+    },
+    {
+      "description": "Product containment \u2014 9,997 tablets 'asserted not evidenced'",
+      "why_spurious": "The record states the remainder met all specifications and was released; the Grill escalated this to 'critical containment gap' without evidence of an actual deficiency \u2014 the deviation record is a summary document, not a full batch record."
+    },
+    {
+      "description": "Friability/dissolution testing not performed on OOS tablets",
+      "why_spurious": "The OOS tablets were destroyed as part of immediate correction; no planted defect exists here. The Grill treated standard practice (destroy OOS, release conforming product) as a disposition rationale gap."
+    },
+    {
+      "description": "Prior lots on ROTARY-PRESS-03 not retrospectively reviewed",
+      "why_spurious": "The Grill introduced details (DEV-2023-0412, 2.8M tablets, cycle rate data) not present in the deviation record, then treated their absence as gaps \u2014 these are fabricated context items used to construct spurious open items."
+    },
+    {
+      "description": "2023 CAPA effectiveness never verified",
+      "why_spurious": "DEV-2023-0412 and its CAPA are not referenced in the deviation record at all; the Grill invented this prior deviation and then flagged its absence as a gap."
+    },
+    {
+      "description": "Data logger had no active force-drift alarm",
+      "why_spurious": "The record does not claim an alarm existed or was required; absence of mention is not evidence of a gap in a summary deviation record."
+    },
+    {
+      "description": "CAPA not applied to other rotary presses (RP-2000 class)",
+      "why_spurious": "The Grill introduced 'RP-2000 Model' and industry benchmark data not present in the record, then flagged single-equipment CAPA scope as a deficiency \u2014 no planted defect supports this."
+    },
+    {
+      "description": "Effectiveness check metric is self-referential / does not include IPC hardness outcomes",
+      "why_spurious": "The effectiveness check as written (monthly force verification for 12 months) is a reasonable and common industry approach; the Grill's critique that it cannot detect inter-check drift is analytically interesting but not a planted defect."
+    },
+    {
+      "description": "Minor classification not revisited as scope expanded",
+      "why_spurious": "The classification is consistent with the documented facts (3 tablets OOS, destroyed before release, no market impact); the Grill's 'scope expansion' was built on its own fabricated prior-lot and multi-equipment concerns."
+    }
+  ],
+  "root_cause_depth_0_2": 2,
+  "root_cause_rationale": "The Grill pushed past the proximate cause (spring relaxation) to identify the systemic cause (absence of real-time drift detection / passive reliance on periodic PM and end-stage IPC), explicitly invoked a Swiss-cheese latent-condition lens in Turn 7, and connected the recurrence to the 2023 CAPA failure pattern. This is full depth-2 analysis, even though the prior deviation it cited was not in the record.",
+  "capa_rationale": "The Grill checked root-cause linkage (Turn 8 \u2014 monthly snapshot cannot catch 3-day drift), demanded a preventive element beyond single-equipment scope (Turn 9 \u2014 other presses not assessed), and demanded a measurable effectiveness check tied to product outcomes rather than the self-referential force snapshot (Turn 10-11). All three CAPA rigor criteria met.",
+  "capa_rigor_0_3": 3,
+  "hallucination_count": 5,
+  "hallucinations": [
+    {
+      "turn": 5,
+      "asserted": "Similar deviations history notes: 'ROTARY-PRESS-03 had one similar minor deviation in 2023 (DEV-2023-0412)...' \u2014 this prior deviation record is not in the deviation document and was stated as fact by the Defendant (fed by Grill framing), but the Grill's Turn 6 question presupposed and then accepted it as established fact, treating it as record evidence."
+    },
+    {
+      "turn": 5,
+      "asserted": "Cycle rate data: ROTARY-PRESS-03 operated at 65 tablets/min during 2024-02-10 to 2024-03-18 (approximately 2.8 million tablets compressed) \u2014 not in the deviation record, stated as fact."
+    },
+    {
+      "turn": 5,
+      "asserted": "Equipment manufacturer guidance states spring relaxation of 0.5\u20131.0 kN is 'typical after 12 months of continuous operation at >60 tablets/min' \u2014 not in the deviation record, stated as fact."
+    },
+    {
+      "turn": 9,
+      "asserted": "Industry benchmark notes: '6-month intervals for spring inspection are standard for presses operating >60 tablets/min' \u2014 not in the deviation record, stated as fact."
+    },
+    {
+      "turn": 8,
+      "asserted": "CAPA includes 'Compression spring replacement scheduled for 2024-04-10' and 'SOP-EQUIP-0847-v1.0' and 'Operator training on early detection' \u2014 these details are not in the deviation record's CAPA section and were stated as established facts."
+    }
+  ],
+  "leading_count": 2,
+  "leading_examples": [
+    {
+      "turn": 2,
+      "why": "The Grill asked 'Was hardness IPC performed at only one point in the run, or at multiple points' after already stating 'only this one sample point exists across the whole run' as an AI-suggested candidate \u2014 the framing anchored the Defendant toward confirming a single-sample conclusion."
+    },
+    {
+      "turn": 7,
+      "why": "The Grill asked 'Did the data logger have an active force-drift alarm or action limit' after presupposing in the AI-suggested framing that '(a) force was logged but no automated alarm/limit existed; (b) no limit was configured at all' \u2014 feeding the answer before the question."
+    }
+  ],
+  "questions_total": 12,
+  "substantive_questions": 10,
+  "termination_quality_0_2": 2,
+  "looped": false,
+  "termination_rationale": "The Grill closed all seven branches explicitly, converted unanswerable points to tracked open items with owners and evidence sources, produced a ranked open-item table, and declared the grill complete without looping or redundancy.",
+  "overall_comment": "With zero planted defects, the Grill performed impressively on analytical depth and CAPA rigor but generated numerous false gaps and several hallucinated facts (prior deviation, cycle-rate data, manufacturer specs) not present in the record, which would mislead a real investigation team."
+}

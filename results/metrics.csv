@@ -1,0 +1,10 @@
+case_id,archetype,variant,planted_total,surfaced_count,gap_recall,false_gaps_n,root_cause_depth_0_2,capa_rigor_0_3,hallucination_count,leading_count,questions_total,substantive_questions,precision,termination_quality_0_2,looped,n_turns,completed_naturally
+DEV-2024-1847,data_integrity_alcoa,baseline,7,7,1.0,0,2,3,1,1,7,7,1.0,2,False,8,True
+DEV-2024-003421,equipment_calibration,baseline,5,5,1.0,1,2,3,0,1,11,10,0.909,2,False,11,True
+DEV-2024-0847,human_error_masking_system,baseline,6,6,1.0,1,2,3,0,1,8,8,1.0,2,False,8,True
+DEV-2024-0847,material_supplier,baseline,6,6,1.0,2,2,3,0,2,12,10,0.833,2,False,11,True
+DEV-2024-1847,planted_conflict,baseline,5,5,1.0,0,2,3,0,2,9,9,1.0,2,False,9,True
+DEV-2024-0847,procedure_ambiguity,baseline,5,5,1.0,3,2,3,0,2,12,10,0.833,2,False,12,False
+DEV-2024-0847,thin_but_clean,baseline,0,0,0.0,10,2,3,5,2,12,10,0.833,2,False,11,True
+DEV-2024-0847,human_error_masking_system,hardstops_off,6,6,1.0,1,2,3,0,1,8,8,1.0,2,False,8,True
+DEV-2024-0847,human_error_masking_system,hyp_off,6,6,1.0,1,2,3,1,0,9,8,0.889,2,False,9,True

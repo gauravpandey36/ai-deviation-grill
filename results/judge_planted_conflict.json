@@ -1,0 +1,57 @@
+{
+  "case_id": "DEV-2024-1847",
+  "archetype": "CIP failure / root-cause misattribution / CAPA mismatch",
+  "planted_total": 5,
+  "defects": [
+    {
+      "id": "D1",
+      "surfaced": true,
+      "evidence": "Turn 1: 'Which timeline does the contemporaneous equipment audit trail actually support \u2014 the 14:00 nominal completion, or the 15:45 alarm-and-restart?' \u2014 explicitly demanded the detailed event log and named the conflict between QA and Operator accounts."
+    },
+    {
+      "id": "D2",
+      "surfaced": true,
+      "evidence": "Turn 3: 'has the patient-safety/bioburden impact been reassessed without relying on the sampling error explanation?' and Turn 3 defendant confirmed lab QC passed (positive control clean, SOP followed), directly challenging the sampling-error root cause assignment."
+    },
+    {
+      "id": "D3",
+      "surfaced": true,
+      "evidence": "Turn 5-6: 'Does SOP-CDMO1-LYOPH-02 actually require an operator to notify QA and hold batch loading when a CIP cycle alarms and restarts \u2014 and is there any system interlock enforcing the swab-review-before-load sequence?' directly probing the batch-loading timing relative to CIP completion and swab approval."
+    },
+    {
+      "id": "D4",
+      "surfaced": true,
+      "evidence": "Turn 4: 'Was the CIP cycle requalified for cleaning efficacy after the CC-2024-0312 upgrade?' and Turn 5: probing the SOP escalation requirement and interlock \u2014 directly addressing the pressure alarm, CC-2024-0312 gap, and absence of alarm-notification protocol."
+    },
+    {
+      "id": "D5",
+      "surfaced": true,
+      "evidence": "Turn 8: 'Is there any defined, measurable, time-bound effectiveness check tied to the actual failure modes \u2014 or is effectiveness entirely unscheduled and undefined in this investigation?' explicitly demanding metrics, threshold, owner, and review date."
+    }
+  ],
+  "surfaced_count": 5,
+  "false_gaps": [],
+  "root_cause_depth_0_2": 2,
+  "root_cause_rationale": "The Grill drove past the proximate human-error explanation (Chen didn't notify QA) and the stated sampling-error root cause, identifying two systemic causes: (1) a validation/change-control gap in CC-2024-0312 (SAT omitted pressure-transient test, no cleaning-efficacy requalification, multi-site alarms), and (2) a system/SOP gap permitting batch loading before swab-result review with no interlock. It explicitly invoked the distinction between human-error terminal causes and system-level enabling conditions, consistent with Swiss-cheese/5-why logic.",
+  "capa_rigor_0_3": 3,
+  "capa_rationale": "+1: Grill explicitly checked that CAPA-2024-0847-A is linked to a refuted root cause (sampling error) and demanded it be replaced. +1: Grill rejected the retraining-only CAPA as addressing a non-cause and demanded preventive actions tied to CIP requalification and load-before-swab interlock. +1: Turn 8 explicitly demanded a measurable, time-bound effectiveness check with defined metrics, threshold, owner, and review date.",
+  "hallucination_count": 0,
+  "hallucinations": [],
+  "leading_count": 2,
+  "leading_examples": [
+    {
+      "turn": 3,
+      "why": "The Grill stated as AI-suggested hypothesis '(a) Bacillus spores survive lyophilization and pose a sterility-assurance risk to ~50,000 units; (b) re-lyophilization does not address a pre-existing bioburden load' \u2014 while labeled AI-suggested, this feeds the specific technical conclusion (spore survival) to the Defendant before they had a chance to reason to it independently, anchoring the impact discussion."
+    },
+    {
+      "turn": 4,
+      "why": "The Grill stated AI-suggested hypothesis '(a) the CIP upgrade altered rinse pressure parameters and was not re-validated to confirm cleaning efficacy; (b) the alarm/restart truncated the rinse so the chamber was never fully cleaned' \u2014 this presupposes the specific mechanism (truncated rinse = non-clean chamber) before the Defendant confirmed it, anchoring the root-cause direction."
+    }
+  ],
+  "questions_total": 9,
+  "substantive_questions": 9,
+  "termination_quality_0_2": 2,
+  "looped": false,
+  "termination_rationale": "The Grill closed each branch explicitly as RESOLVED or DEFERRED\u2192OPEN ITEM, converted all unanswerable points to tracked open items with owner/deadline/evidence fields, and declared GRILL COMPLETE after exhausting all planted defect branches plus a legitimate additional cross-site escalation branch. No looping or premature closure observed.",
+  "overall_comment": "An exceptionally thorough grill that surfaced all five planted defects, drove to systemic root causes beyond human error, rejected the CAPA on root-cause-linkage and preventive-element grounds, demanded a measurable effectiveness check, and cleanly converted unresolved branches to tracked open items \u2014 with only minor leading on technical hypotheses."
+}

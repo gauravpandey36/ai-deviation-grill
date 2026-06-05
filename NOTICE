@@ -1,0 +1,14 @@
+ai-deviation-grill
+Copyright (c) 2026 Gourav Pandey — MIT License.
+
+This work adapts the conversational "grill" interrogation discipline from
+Matt Pocock's grill-me skill (MIT License):
+  https://github.com/amazingloft999-droid/mattpocock-skills/blob/main/skills/productivity/grill-me/SKILL.md
+
+The GxP guardrails, the depth-first 7-branch deviation tree, and the four-role
+evaluation harness are original work. See CREDITS.md for full attribution.
+
+All examples reference a fictional pharmaceutical company
+built for research and educational purposes. No proprietary content from any current
+or prior employer is used or implied. This is a research/educational experiment,
+not a validated GxP system.

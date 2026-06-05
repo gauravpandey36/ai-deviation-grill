@@ -1,0 +1,115 @@
+{
+  "case_id": "DEV-EVAL-thin_but_clean",
+  "archetype": "thin_but_clean",
+  "title": "GC-201 Tablet Hardness Excursion \u2013 Compression Force Drift Detected and Corrected",
+  "grill_input": {
+    "deviation_id": "DEV-2024-0847",
+    "product": "GC-201 (Tablet, 50 mg)",
+    "lot_number": "GC201-240315-A",
+    "site": "SITE-GC-01",
+    "process_step": "Tablet Compression",
+    "equipment_id": "ROTARY-PRESS-03",
+    "classification": "Minor",
+    "date_identified": "2024-03-18",
+    "description_what_happened": "During routine in-process hardness testing on GC-201 Lot 240315-A, three tablets from the middle of the compression run measured 8.2, 8.4, and 8.1 kP, falling below the specification lower limit of 8.8 kP. The remaining 47 tablets in the sample met specification.",
+    "description_what_should_have_happened": "All tablets compressed on ROTARY-PRESS-03 should measure hardness between 8.8 and 11.5 kP per the approved product specification.",
+    "document_deviated_from": "GC-201 Manufacturing Procedure MFG-GC201-v4.2, Section 5.3 (Compression Parameters); GC-201 Product Specification PS-GC201-v3.1, Section 3.2 (Hardness Acceptance Criteria)",
+    "immediate_corrections": "Compression force on ROTARY-PRESS-03 was increased from 18.2 kN to 18.8 kN. The three out-of-spec tablets were segregated and destroyed. Compression was resumed and 50 consecutive tablets were tested; all measured 9.1\u201310.8 kP. Production continued without further excursions.",
+    "investigation_steps": [
+      "Reviewed equipment maintenance log for ROTARY-PRESS-03: last preventive maintenance (PM) performed 2024-02-10, including punch and die inspection and calibration.",
+      "Checked compression force setpoint history via equipment data logger: force had drifted from 18.8 kN (set on 2024-03-15) to 18.2 kN by 2024-03-18 morning.",
+      "Inspected punch and die for wear: no visible damage or excessive wear detected.",
+      "Reviewed operator shift handover notes: no anomalies reported; operator confirmed normal startup and no unusual sounds or resistance.",
+      "Tested calibration of force transducer on ROTARY-PRESS-03 using certified test weights: transducer read within \u00b12% of reference, confirming accuracy."
+    ],
+    "root_cause_category": "Equipment Drift",
+    "root_cause_description": "The compression force setpoint on ROTARY-PRESS-03 drifted downward by 0.6 kN over three days due to gradual relaxation of the main compression spring under sustained load. This is a known wear mechanism for rotary tablet presses operating at high cycle rates (>60 tablets/min). The drift was detected by in-process hardness testing and corrected immediately.",
+    "impact_assessment": "Three tablets (0.3% of the lot) were out of specification for hardness. Tablets below the hardness specification may exhibit reduced durability and potential friability during packaging, transport, and storage. However, the deviation was detected before release, and the affected tablets were destroyed. No tablets reached the market. The remainder of Lot 240315-A (9,997 tablets) met all specifications and was released.",
+    "batch_disposition": "Released (with three tablets destroyed)",
+    "capa": {
+      "capa_id": "CAPA-2024-0847-A",
+      "description": "Reduce the preventive maintenance interval for ROTARY-PRESS-03 compression spring inspection and replacement from 12 months to 6 months, effective immediately. Implement a monthly force setpoint verification check (using a certified load cell) to detect drift before it impacts product quality.",
+      "assigned_to": "Equipment Engineering",
+      "target_completion_date": "2024-04-15",
+      "status": "In Progress",
+      "effectiveness_check": {
+        "method": "Monthly force setpoint verification data for ROTARY-PRESS-03 will be reviewed for 12 months post-implementation. Success criterion: no drift >0.3 kN between scheduled verifications. First verification completed 2024-03-25: force measured 18.8 kN (within tolerance).",
+        "scheduled_review_date": "2025-03-18",
+        "responsible_party": "Quality Assurance"
+      }
+    },
+    "linked_change_control": "CHG-2024-0312 (Preventive Maintenance Schedule Update \u2013 ROTARY-PRESS-03)",
+    "investigation_completed_by": "Sarah Chen, Senior Quality Investigator",
+    "investigation_completed_date": "2024-03-22",
+    "quality_review_approved_by": "Michael Torres, Quality Assurance Manager",
+    "quality_review_approved_date": "2024-03-23"
+  },
+  "case_packet": {
+    "deviation_id": "DEV-2024-0847",
+    "product": "GC-201 (Tablet, 50 mg)",
+    "lot_number": "GC201-240315-A",
+    "site": "SITE-GC-01",
+    "process_step": "Tablet Compression",
+    "equipment_id": "ROTARY-PRESS-03",
+    "classification": "Minor",
+    "date_identified": "2024-03-18",
+    "description_what_happened": "During routine in-process hardness testing on GC-201 Lot 240315-A, three tablets from the middle of the compression run measured 8.2, 8.4, and 8.1 kP, falling below the specification lower limit of 8.8 kP. The remaining 47 tablets in the sample met specification.",
+    "description_what_should_have_happened": "All tablets compressed on ROTARY-PRESS-03 should measure hardness between 8.8 and 11.5 kP per the approved product specification.",
+    "document_deviated_from": "GC-201 Manufacturing Procedure MFG-GC201-v4.2, Section 5.3 (Compression Parameters); GC-201 Product Specification PS-GC201-v3.1, Section 3.2 (Hardness Acceptance Criteria)",
+    "immediate_corrections": "Compression force on ROTARY-PRESS-03 was increased from 18.2 kN to 18.8 kN. The three out-of-spec tablets were segregated and destroyed. Compression was resumed and 50 consecutive tablets were tested; all measured 9.1\u201310.8 kP. Production continued without further excursions.",
+    "investigation_steps": [
+      "Reviewed equipment maintenance log for ROTARY-PRESS-03: last preventive maintenance (PM) performed 2024-02-10, including punch and die inspection and calibration.",
+      "Checked compression force setpoint history via equipment data logger: force had drifted from 18.8 kN (set on 2024-03-15) to 18.2 kN by 2024-03-18 morning.",
+      "Inspected punch and die for wear: no visible damage or excessive wear detected.",
+      "Reviewed operator shift handover notes: no anomalies reported; operator confirmed normal startup and no unusual sounds or resistance.",
+      "Tested calibration of force transducer on ROTARY-PRESS-03 using certified test weights: transducer read within \u00b12% of reference, confirming accuracy."
+    ],
+    "root_cause_category": "Equipment Drift",
+    "root_cause_description": "The compression force setpoint on ROTARY-PRESS-03 drifted downward by 0.6 kN over three days due to gradual relaxation of the main compression spring under sustained load. This is a known wear mechanism for rotary tablet presses operating at high cycle rates (>60 tablets/min). The drift was detected by in-process hardness testing and corrected immediately.",
+    "root_cause_evidence": {
+      "equipment_data_logger_export": "Force setpoint history shows linear drift from 18.8 kN on 2024-03-15 09:00 to 18.2 kN on 2024-03-18 08:30, consistent with spring relaxation under load.",
+      "maintenance_history": "Previous spring replacement occurred 2024-02-10 (36 days prior). Spring relaxation typically occurs within 30\u201345 days under continuous high-cycle operation.",
+      "operator_statement": "Operator on duty 2024-03-18 (James Rodriguez) confirmed: 'I noticed the press felt slightly softer when I started my shift, but I didn't think it was significant. The hardness test caught it, which is good.'",
+      "equipment_manufacturer_guidance": "Rotary tablet press manual (Model RP-2000, Revision 5) Section 7.2 states: 'Compression springs should be inspected every 6 months or after 500,000 tablets, whichever is sooner. Spring relaxation of 0.5\u20131.0 kN is typical after 12 months of continuous operation at >60 tablets/min.'",
+      "cycle_rate_data": "ROTARY-PRESS-03 operated at 65 tablets/min during the period 2024-02-10 to 2024-03-18 (approximately 2.8 million tablets compressed)."
+    },
+    "impact_assessment": "Three tablets (0.3% of the lot) were out of specification for hardness. Tablets below the hardness specification may exhibit reduced durability and potential friability during packaging, transport, and storage. However, the deviation was detected before release, and the affected tablets were destroyed. No tablets reached the market. The remainder of Lot 240315-A (9,997 tablets) met all specifications and was released.",
+    "batch_disposition": "Released (with three tablets destroyed)",
+    "capa": {
+      "capa_id": "CAPA-2024-0847-A",
+      "description": "Reduce the preventive maintenance interval for ROTARY-PRESS-03 compression spring inspection and replacement from 12 months to 6 months, effective immediately. Implement a monthly force setpoint verification check (using a certified load cell) to detect drift before it impacts product quality.",
+      "assigned_to": "Equipment Engineering",
+      "target_completion_date": "2024-04-15",
+      "status": "In Progress",
+      "implementation_details": {
+        "preventive_action_1": "Compression spring replacement scheduled for 2024-04-10 (before the new 6-month interval would require it). Replacement parts ordered and in stock.",
+        "preventive_action_2": "Monthly force setpoint verification procedure (SOP-EQUIP-0847-v1.0) drafted and under review by Quality Assurance. Procedure includes: (a) use of certified load cell traceable to NIST, (b) measurement at three points on the press head, (c) acceptance criterion of \u00b10.3 kN from setpoint, (d) documentation in equipment logbook.",
+        "preventive_action_3": "Operator training module on early detection of compression drift (visual and tactile cues) scheduled for all compression operators by 2024-04-30."
+      },
+      "effectiveness_check": {
+        "method": "Monthly force setpoint verification data for ROTARY-PRESS-03 will be reviewed for 12 months post-implementation. Success criterion: no drift >0.3 kN between scheduled verifications. First verification completed 2024-03-25: force measured 18.8 kN (within tolerance). Second verification scheduled 2024-04-25.",
+        "scheduled_review_date": "2025-03-18",
+        "responsible_party": "Quality Assurance",
+        "preliminary_data": "Verification on 2024-03-25 (7 days post-correction): 18.8 kN. Verification on 2024-04-01 (14 days post-correction): 18.7 kN. Both within acceptance criterion."
+      }
+    },
+    "linked_change_control": "CHG-2024-0312 (Preventive Maintenance Schedule Update \u2013 ROTARY-PRESS-03)",
+    "change_control_details": {
+      "change_id": "CHG-2024-0312",
+      "title": "Preventive Maintenance Schedule Update \u2013 ROTARY-PRESS-03 Compression Spring Inspection",
+      "description": "Update ROTARY-PRESS-03 preventive maintenance schedule to include compression spring inspection every 6 months (reduced from 12 months) and implement monthly force setpoint verification.",
+      "effective_date": "2024-04-01",
+      "impact_assessment": "Low risk. Change reduces equipment downtime risk and improves product quality assurance. No process parameters or product specifications affected.",
+      "approval_status": "Approved by Equipment Engineering and Quality Assurance on 2024-03-23"
+    },
+    "investigation_completed_by": "Sarah Chen, Senior Quality Investigator",
+    "investigation_completed_date": "2024-03-22",
+    "quality_review_approved_by": "Michael Torres, Quality Assurance Manager",
+    "quality_review_approved_date": "2024-03-23",
+    "additional_context": {
+      "similar_deviations_history": "ROTARY-PRESS-03 had one similar minor deviation in 2023 (DEV-2023-0412) involving compression force drift. That deviation resulted in a CAPA to increase PM frequency, which was implemented. The current deviation indicates that the 12-month interval was still too long for this equipment under high-cycle operation.",
+      "industry_benchmark": "Peer review of tablet press maintenance practices at other GxP sites suggests 6-month intervals for spring inspection are standard for presses operating >60 tablets/min.",
+      "cost_impact": "Estimated annual cost of increased PM and monthly verification: $8,500. Cost of potential batch loss due to future drift: $250,000+. ROI strongly positive."
+    }
+  }
+}

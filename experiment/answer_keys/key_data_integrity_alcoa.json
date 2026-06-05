@@ -1,0 +1,53 @@
+{
+  "planted_defects": [
+    {
+      "id": "D1",
+      "branch": "root_cause",
+      "type": "alcoa_gap",
+      "description": "Attributability failure: Shared login credential (QA-DUB-042) used by two technicians (Technician A for Run 1, Technician B for Run 2). Audit trail shows user ID but not individual name. No electronic signature enforcing individual accountability. ALCOA+ 'Attributable' requirement not met.",
+      "ideal_grill_behavior": "Grill should ask: 'Who specifically performed the first assay run? Is there an individual electronic signature or unique user ID in the audit trail?' and 'Are shared logins used in this lab? If so, how does the system enforce individual accountability?'"
+    },
+    {
+      "id": "D2",
+      "branch": "root_cause",
+      "type": "missing_evidence",
+      "description": "Audit trail not reviewed before retest authorization. No audit trail printout in deviation file. QA Supervisor signed retest form without reviewing instrument audit trail data. Column temperature excursion (28.1\u00b0C vs. 25.0\u00b0C) and manual peak integration override in Run 1 were not investigated.",
+      "ideal_grill_behavior": "Grill should ask: 'Was the audit trail from the first run reviewed before authorizing the retest? Can you provide the audit trail printout?' and 'What was the root cause of the out-of-spec result? Was instrumental drift or temperature excursion ruled out?'"
+    },
+    {
+      "id": "D3",
+      "branch": "scope_impact",
+      "type": "alcoa_gap",
+      "description": "Contemporaneous documentation failure: Out-of-spec result (98.2%) discovered at 14:32 on 2024-11-14, but no contemporaneous deviation report or lab notebook entry documenting the result and decision to retest. Retest authorization form signed 2024-11-15 (after retest completed), not before. ALCOA+ 'Contemporaneous' requirement not met.",
+      "ideal_grill_behavior": "Grill should ask: 'When was the out-of-spec result first documented? Is there a contemporaneous lab notebook entry or deviation report from 2024-11-14?' and 'When was the retest authorized relative to when it was performed?'"
+    },
+    {
+      "id": "D4",
+      "branch": "root_cause",
+      "type": "human_error_terminal",
+      "description": "Analyst's stated root cause ('sample prep issue') is not supported by evidence. Lab notebook shows no anomalies in sample prep for Run 1. Technical evidence points to column temperature excursion (28.1\u00b0C vs. 25.0\u00b0C) and manual peak integration override as more likely causes. Root cause analysis is incomplete and based on assumption rather than data.",
+      "ideal_grill_behavior": "Grill should ask: 'What evidence supports the conclusion that the first result was due to sample prep? Can you compare the sample prep procedures and conditions between Run 1 and Run 2?' and 'What was the column temperature during each run? Were there any instrument maintenance or calibration issues?'"
+    },
+    {
+      "id": "D5",
+      "branch": "capa",
+      "type": "no_effectiveness_check",
+      "description": "CAPA (CAPA-2024-0847-A) is limited to retraining on SOP-QA-2401. No preventive action addresses the systemic defects: (1) shared login credentials preventing individual accountability; (2) lack of mandatory audit-trail review procedure with system control (e.g., electronic workflow requiring audit trail printout before retest authorization); (3) no change to access controls or audit-trail review SOP. Effectiveness check is undefined.",
+      "ideal_grill_behavior": "Grill should ask: 'Does the CAPA address the root cause? Will retraining alone prevent recurrence?' and 'What system controls will be implemented to ensure audit-trail review is mandatory and documented before any retest authorization?' and 'How will the shared login issue be resolved to ensure individual accountability?'"
+    },
+    {
+      "id": "D6",
+      "branch": "open_items",
+      "type": "scope_gap",
+      "description": "Lot 2024-0847 was released without investigation of the out-of-spec result. No hold was placed pending root-cause analysis. Impact assessment acknowledges potential quality impact if root cause was instrumental drift, but no customer notification, stability data review, or post-release surveillance plan is documented. Scope of investigation and corrective action does not address the released lot.",
+      "ideal_grill_behavior": "Grill should ask: 'Was the lot held pending investigation? If released, what is the justification?' and 'Has the customer been notified of the out-of-spec result and retest?' and 'Is there a post-release surveillance plan or stability data review for this lot?'"
+    },
+    {
+      "id": "D7",
+      "branch": "conflict",
+      "type": "unresolved_conflict",
+      "description": "Analyst states 'I reviewed the first result, saw it was low, and knew the sample prep was rushed. I reran it the next day and got a good result, so I released the lot.' QA Supervisor states 'Our procedure requires audit-trail review before any retest. I did not see evidence that this was done, and I did not authorize the retest.' Conflict is unresolved: Did the supervisor authorize the retest or not? Who released the lot? Audit trail evidence supports the supervisor's statement.",
+      "ideal_grill_behavior": "Grill should ask: 'Who authorized the retest? Can you provide the signed retest authorization form and the date/time of authorization?' and 'Did the supervisor review the audit trail before signing the retest form?' and 'Who has authority to release the lot? Was the lot released by the analyst or by the supervisor?'"
+    }
+  ]
+}

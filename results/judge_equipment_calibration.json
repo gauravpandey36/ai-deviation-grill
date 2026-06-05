@@ -1,0 +1,58 @@
+{
+  "case_id": "DEV-2024-003421",
+  "archetype": "Equipment calibration lapse / PM control failure",
+  "planted_total": 5,
+  "defects": [
+    {
+      "id": "D1",
+      "surfaced": true,
+      "evidence": "Turn 4: 'Did the investigation check which other batches ran on FERM-CTRL-07 during the 78-day calibration gap?' \u2014 explicitly named GC-201-2024-0801 and GC-301-2024-0815 and tracked as Open Item #3."
+    },
+    {
+      "id": "D2",
+      "surfaced": true,
+      "evidence": "Turn 6: 'What in the PM checklist design allowed it to be signed complete with the calibration step skipped?' \u2014 demanded PM checklist, audit trail, supervisor sign-off records, and buffer inventory process; tracked as Open Item #4."
+    },
+    {
+      "id": "D3",
+      "surfaced": true,
+      "evidence": "Turn 9: 'What in CAPA-2024-001847 prevents the next tech, on the next stock-out, from marking PM complete without calibration?' \u2014 explicitly rejected retraining-only as person-focused vs. latent design hole; demanded forcing-function checklist control and buffer stock-out hold; tracked as Open Item #5."
+    },
+    {
+      "id": "D4",
+      "surfaced": true,
+      "evidence": "Turn 10: 'Is there any measurable, time-bound effectiveness check defined for CAPA-2024-001847 \u2014 or is it entirely undefined?' \u2014 confirmed entirely undefined; demanded metric, threshold, timeframe, owner, baseline; tracked as Open Item #6."
+    },
+    {
+      "id": "D5",
+      "surfaced": true,
+      "evidence": "Turn 6: Grill probed the PM checklist design and the conflicting statements (tech claimed buffers unavailable; supervisor said PM should never be marked complete without calibration) \u2014 demanded the actual PM checklist and supervisor approval records to resolve the conflict; Turn 7 confirmed the PM record showed deferral without escalation and incomplete supervisor sign-off."
+    }
+  ],
+  "surfaced_count": 5,
+  "false_gaps": [
+    {
+      "description": "Open Item #1 (probe drift characterization and CoA timing/method) and Open Item #2 (re-verification record and QA disposition memo) are not in the planted defect set.",
+      "why_spurious": "These are legitimate analytical gaps the Grill identified from the deviation record itself, not planted defects. They are not false in the sense of being wrong \u2014 they are real gaps \u2014 but they are not scored defects per the answer key. They do not inflate the defect count and represent genuine investigative depth rather than hallucination."
+    }
+  ],
+  "root_cause_depth_0_2": 2,
+  "root_cause_rationale": "The Grill explicitly rejected 'operator error' as a proximate/active failure (Rule 3 invocation), applied Reason's Swiss-cheese model and Rasmussen's SRK framework by name, identified the latent system conditions (no forcing function on checklist, no buffer stock-out escalation path, supervisor sign-off permitted without calibration completion), and demanded systemic root-cause re-characterization with a specific owner and deadline. It also surfaced the 3-prior-lapse recurrence signal and demanded prior CAPA effectiveness review before accepting the current root cause.",
+  "capa_rigor_0_3": 3,
+  "capa_rationale": "+1: Checked root-cause linkage \u2014 explicitly noted CAPA targets the person (retraining) not the latent design hole (no forcing function, no buffer-hold logic), failing root-cause linkage. +1: Demanded preventive element and rejected retraining-only \u2014 required checklist forcing function and buffer stock-out hold as design controls; also flagged change control absence. +1: Demanded measurable, time-bound effectiveness check \u2014 specified metric, threshold, timeframe, owner, and baseline against 3-lapse history.",
+  "hallucination_count": 0,
+  "hallucinations": [],
+  "leading_count": 1,
+  "leading_examples": [
+    {
+      "turn": 4,
+      "why": "The Grill offered AI-suggested candidates '(a) GC-201-2024-0847 was the only batch on FERM-CTRL-07 in that window; (b) other lots ran and were released on the same unverified probe' \u2014 option (b) presupposes the planted scope gap and could anchor the Defendant toward confirming it rather than independently surfacing it. However, the Grill did label these as AI-suggested candidates, partially mitigating the leading effect."
+    }
+  ],
+  "questions_total": 11,
+  "substantive_questions": 10,
+  "termination_quality_0_2": 2,
+  "looped": false,
+  "termination_rationale": "The Grill explicitly closed each branch with a 'deferred' tag, converted every unanswerable point to a numbered tracked open item with owner, deadline, and evidence location, produced a structured GRILL LOG with ranked open items, and declared GRILL COMPLETE after seven branches. No looping or dropped threads observed.",
+  "overall_comment": "Exemplary grill: all five planted defects surfaced with specificity, root cause driven to systemic latent conditions with named frameworks, CAPA rigor maximal, zero hallucinations, clean branch-and-close structure with fully tracked open items \u2014 the only minor issue is one mildly leading question in Turn 4 that was partially mitigated by the AI-suggested label."
+}

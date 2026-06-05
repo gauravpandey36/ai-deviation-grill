@@ -1,0 +1,2 @@
+case_id,archetype,planted_total,surfaced_count,gap_recall,false_gaps_n,root_cause_depth_0_2,capa_rigor_0_3,hallucination_count,leading_count,questions_total,substantive_questions,precision,termination_quality_0_2,looped,n_turns,completed_naturally,case_cost_usd
+DEV-2024-0847,human_error_masking_system,6,6,1.0,1,2,3,1,0,9,8,0.889,2,False,9,True,0.6899

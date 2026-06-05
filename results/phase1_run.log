@@ -1,0 +1,53 @@
+Key ...LgAA | cases=['equipment_calibration', 'material_supplier', 'procedure_ambiguity', 'data_integrity_alcoa', 'planted_conflict', 'thin_but_clean'] | max_turns=12
+
+=== equipment_calibration :: Equipment / calibration excursion ===
+  generating case...
+  planted defects: 5
+  running grill loop...
+  grill turns: 11 | completed_naturally=True
+  judging...
+  recall=1.0 halluc=0 lead=1 cost=$1.0651
+
+=== material_supplier :: Material / supplier-attributed cause ===
+  generating case...
+Traceback (most recent call last):
+  File "/Users/gouravpandey/the fictional company/deviation-grill/experiment/run_phase1.py", line 52, in extract_json
+    return json.loads(text)
+           ~~~~~~~~~~^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/json/__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/json/decoder.py", line 361, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ~~~~~~~~~~~~~~^^^^^^^^
+json.decoder.JSONDecodeError: Unterminated string starting at: line 150 column 9 (char 14469)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/gouravpandey/the fictional company/deviation-grill/experiment/run_phase1.py", line 424, in <module>
+    f"lead={row['leading_count']} cost=${case_cost:.4f}")
+    
+  File "/Users/gouravpandey/the fictional company/deviation-grill/experiment/run_phase1.py", line 351, in main
+    else [k.strip() for k in args.cases.split(",")]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/gouravpandey/the fictional company/deviation-grill/experiment/run_phase1.py", line 119, in generate_case
+    case = extract_json(text)
+  File "/Users/gouravpandey/the fictional company/deviation-grill/experiment/run_phase1.py", line 67, in extract_json
+    return _repair_truncated_json(frag)
+  File "/Users/gouravpandey/the fictional company/deviation-grill/experiment/run_phase1.py", line 95, in _repair_truncated_json
+    return json.loads(frag)
+           ~~~~~~~~~~^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/json/__init__.py", line 352, in loads
+    return _default_decoder.decode(s)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/json/decoder.py", line 345, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/json/decoder.py", line 361, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ~~~~~~~~~~~~~~^^^^^^^^
+json.decoder.JSONDecodeError: Expecting ':' delimiter: line 150 column 23 (char 14483)

@@ -1,0 +1,55 @@
+{
+  "case_id": "DEV-EVAL-procedure_ambiguity",
+  "archetype": "procedure_ambiguity",
+  "title": "GC-201 Buffer pH Adjustment \u2014 Ambiguous SOP Step Treated as Operator Slip",
+  "grill_input": {
+    "deviation_id": "DEV-2024-0847",
+    "product": "GC-201 (Monoclonal Antibody)",
+    "lot_number": "GC201-LOT-2024-0156",
+    "site": "CDMO-1 Pharmagen Dublin",
+    "process_step": "Formulation Buffer Preparation \u2014 pH Adjustment",
+    "equipment_id": "FORM-pH-PROBE-04",
+    "date_detected": "2024-02-14",
+    "classification": "Major",
+    "description_what_happened": "Buffer pH measured at 6.87 instead of target 6.95 \u00b1 0.05. Operator recorded measurement but did not re-adjust. Batch released with out-of-spec pH.",
+    "description_what_should_have_happened": "pH should be adjusted to 6.95 \u00b1 0.05 before release. If out of spec, corrective action required.",
+    "document_deviated_from": "SOP-FORM-0412 Rev 3, Section 4.2.1: 'Measure pH using calibrated probe. If reading is outside target range, adjust with 1 M HCl or 1 M NaOH dropwise until in-spec, then re-measure and confirm.'",
+    "immediate_corrections": "Batch GC201-LOT-2024-0156 quarantined. pH re-measured at 6.88 (still OOS). Batch disposition: scrap.",
+    "investigation_steps": [
+      "Operator interview: stated 'I measured 6.87 and thought it was close enough to 6.95, so I did not adjust.'",
+      "pH probe calibration check: in-spec (last calibrated 2024-02-12).",
+      "No other lots reviewed for similar pH readings."
+    ],
+    "root_cause_category": "Human Error",
+    "root_cause_description": "Operator judgment error. Operator did not follow SOP requirement to adjust pH to within specification range. Operator stated they interpreted 'close enough' as acceptable.",
+    "impact_assessment": "Single batch affected. No released product impacted. Potency and stability data indicate pH 6.87\u20136.88 is within acceptable range for GC-201 (historical data 6.80\u20137.10). No patient safety risk identified.",
+    "batch_disposition": "Scrap",
+    "capa": {
+      "capa_id": "CAPA-2024-0847-001",
+      "description": "Retraining of Operator ID EMP-4521 on SOP-FORM-0412 Section 4.2.1. Emphasis on strict adherence to specification limits and requirement to adjust and re-measure if out of spec.",
+      "target_completion": "2024-03-14",
+      "effectiveness_check": "Not yet scheduled"
+    },
+    "linked_change_control": null,
+    "statements": [
+      {
+        "attributed_to": "Operator EMP-4521",
+        "quote": "The SOP says 'adjust with dropwise until in-spec' but it doesn't say what to do if you're only 0.08 pH units away. I thought I could use judgment."
+      },
+      {
+        "attributed_to": "Quality Manager (Investigation Lead)",
+        "quote": "The SOP is clear: 6.95 \u00b1 0.05 is the target. 6.87 is out of spec. The operator should have adjusted. This is a one-off slip."
+      }
+    ]
+  },
+  "case_packet": {
+    "sop_text_full": "SOP-FORM-0412 Rev 3, Section 4.2.1 reads: 'Measure pH using calibrated probe. If reading is outside target range [6.95 \u00b1 0.05], adjust with 1 M HCl or 1 M NaOH dropwise until in-spec, then re-measure and confirm.' However, Section 3.1 (Acceptance Criteria) states: 'Buffer pH shall be 6.90\u20137.00 for release.' These two ranges are contradictory: Section 4.2.1 specifies 6.95 \u00b1 0.05 (6.90\u20137.00), but the phrase 'until in-spec' is ambiguous\u2014does it mean 6.95 \u00b1 0.05 or the broader 6.90\u20137.00 range in Section 3.1?",
+    "operator_interpretation_survey": "Post-investigation, Quality conducted informal survey of 8 other operators who perform this step. Results: 3 operators interpreted 'in-spec' as 6.95 \u00b1 0.05 (strict); 4 operators interpreted it as 6.90\u20137.00 (loose); 1 operator was unsure. No formal documentation of this survey exists.",
+    "historical_batch_data": "Review of last 12 months of GC-201 batches (n=24) shows: 6 batches released with pH 6.88\u20136.93 (below 6.95 but within 6.90\u20137.00); all 6 passed stability and potency testing. No adverse trends.",
+    "probe_calibration_history": "FORM-pH-PROBE-04 calibration records show: last calibration 2024-02-12 (in-spec); previous calibration 2024-01-15 (in-spec). No drift noted.",
+    "procedure_change_history": "SOP-FORM-0412 Rev 3 issued 2023-11-01. Rev 2 (prior) stated: 'Adjust pH to 6.95 \u00b1 0.05 or to 6.90\u20137.00 if 6.95 \u00b1 0.05 cannot be achieved.' Rev 3 removed the fallback language but did not clarify the acceptance range in Section 4.2.1. No change control or training record for Rev 3 transition.",
+    "operator_emp_4521_history": "Operator has 4 years experience, no prior deviations, passed annual SOP training in 2023. Training records do not show specific emphasis on pH adjustment procedure.",
+    "quality_manager_investigation_notes": "Investigator assumed operator error without reviewing SOP internal consistency or other operator interpretations. Investigation closed in 5 days. No cross-functional review with R&D or formulation team.",
+    "true_root_cause": "Procedure ambiguity: SOP-FORM-0412 Rev 3 contains conflicting acceptance ranges (6.95 \u00b1 0.05 vs. 6.90\u20137.00) and does not clarify which range applies during adjustment. Multiple operators have interpreted the step differently. The SOP change from Rev 2 to Rev 3 removed clarifying language without updating training or conducting a readiness assessment."
+  }
+}

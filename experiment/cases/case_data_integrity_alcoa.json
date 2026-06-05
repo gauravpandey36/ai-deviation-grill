@@ -1,0 +1,90 @@
+{
+  "case_id": "DEV-EVAL-data_integrity_alcoa",
+  "archetype": "data_integrity_alcoa",
+  "title": "Assay Result Reprocessed Without Audit Trail Review \u2013 GC-201 Lot 2024-0847",
+  "grill_input": {
+    "deviation_id": "DEV-2024-1847",
+    "product": "GC-201 (Lyophilized Powder)",
+    "lot_number": "2024-0847",
+    "site": "CDMO-1 Pharmagen Dublin",
+    "process_step": "Release Testing \u2013 Potency Assay (HPLC)",
+    "equipment_id": "HPLC-DUB-04",
+    "classification": "Major",
+    "date_identified": "2024-11-15",
+    "description_what_happened": "Initial potency result was 98.2% (out-of-spec, lower limit 99.5%). Analyst re-ran the assay the following day and obtained 101.1% (in-spec). The second result was used for lot release. No documented review of audit trail or investigation of the first failure prior to reprocessing.",
+    "description_what_should_have_happened": "Out-of-spec result should have triggered immediate investigation, root-cause analysis, and documented audit-trail review before any reprocessing. Original data and rationale for retest must be retained and traceable.",
+    "document_deviated_from": "SOP-QA-2401 'Release Testing and Out-of-Spec Handling'; ALCOA+ Data Integrity Policy v3.2",
+    "immediate_corrections": "Lot 2024-0847 was released on the basis of the second (in-spec) result. No hold was placed pending investigation.",
+    "investigation_steps": "Analyst stated that 'the first run may have had a sample prep issue' but no documented evidence of sample prep review was found. HPLC maintenance records show routine calibration on 2024-11-14 (day before first assay). No audit trail printout was reviewed before retest authorization.",
+    "root_cause_category": "Process/Procedure Non-Compliance",
+    "root_cause_description": "Analyst did not follow SOP-QA-2401 requirement to document and review audit trail before reprocessing. Shared login credentials (Analyst ID: QA-DUB-042, used by two technicians) prevented clear attribution of who performed each run.",
+    "impact_assessment": "Lot 2024-0847 (50 kg) released to customer without full investigation of initial failure. Potential impact on product quality if root cause was instrumental drift or systematic error, not sample prep.",
+    "batch_disposition": "Released",
+    "capa": {
+      "capa_id": "CAPA-2024-0847-A",
+      "description": "Retraining of QA staff on SOP-QA-2401 out-of-spec handling procedures. Emphasis on mandatory audit-trail review before reprocessing.",
+      "target_completion": "2024-12-15",
+      "effectiveness_check": "Not yet defined"
+    },
+    "statements": [
+      {
+        "attributed_to": "Analyst (QA-DUB-042)",
+        "quote": "I reviewed the first result, saw it was low, and knew the sample prep was rushed. I reran it the next day and got a good result, so I released the lot."
+      },
+      {
+        "attributed_to": "QA Supervisor (Dublin)",
+        "quote": "Our procedure requires audit-trail review before any retest. I did not see evidence that this was done, and I did not authorize the retest."
+      }
+    ],
+    "linked_change_control": "None",
+    "original_record_status": "First assay raw data file (HPLC-DUB-04_20241114_GC201_2024-0847_Run1.raw) located in instrument archive. Second assay raw data file present. No contemporaneous lab notebook entry for first run."
+  },
+  "case_packet": {
+    "deviation_id": "DEV-2024-1847",
+    "product": "GC-201 (Lyophilized Powder)",
+    "lot_number": "2024-0847",
+    "site": "CDMO-1 Pharmagen Dublin",
+    "process_step": "Release Testing \u2013 Potency Assay (HPLC)",
+    "equipment_id": "HPLC-DUB-04",
+    "classification": "Major",
+    "date_identified": "2024-11-15",
+    "description_what_happened": "Initial potency result was 98.2% (out-of-spec, lower limit 99.5%). Analyst re-ran the assay the following day and obtained 101.1% (in-spec). The second result was used for lot release. No documented review of audit trail or investigation of the first failure prior to reprocessing.",
+    "description_what_should_have_happened": "Out-of-spec result should have triggered immediate investigation, root-cause analysis, and documented audit-trail review before any reprocessing. Original data and rationale for retest must be retained and traceable.",
+    "document_deviated_from": "SOP-QA-2401 'Release Testing and Out-of-Spec Handling'; ALCOA+ Data Integrity Policy v3.2",
+    "immediate_corrections": "Lot 2024-0847 was released on the basis of the second (in-spec) result. No hold was placed pending investigation.",
+    "investigation_steps": "Analyst stated that 'the first run may have had a sample prep issue' but no documented evidence of sample prep review was found. HPLC maintenance records show routine calibration on 2024-11-14 (day before first assay). No audit trail printout was reviewed before retest authorization.",
+    "root_cause_category": "Process/Procedure Non-Compliance",
+    "root_cause_description": "Analyst did not follow SOP-QA-2401 requirement to document and review audit trail before reprocessing. Shared login credentials (Analyst ID: QA-DUB-042, used by two technicians) prevented clear attribution of who performed each run.",
+    "impact_assessment": "Lot 2024-0847 (50 kg) released to customer without full investigation of initial failure. Potential impact on product quality if root cause was instrumental drift or systematic error, not sample prep.",
+    "batch_disposition": "Released",
+    "capa": {
+      "capa_id": "CAPA-2024-0847-A",
+      "description": "Retraining of QA staff on SOP-QA-2401 out-of-spec handling procedures. Emphasis on mandatory audit-trail review before reprocessing.",
+      "target_completion": "2024-12-15",
+      "effectiveness_check": "Not yet defined"
+    },
+    "audit_trail_truth": {
+      "first_run_audit_trail": "HPLC-DUB-04_20241114_GC201_2024-0847_Run1.raw shows: Injection at 14:32 on 2024-11-14 by User ID QA-DUB-042. Column temperature 28.1\u00b0C (spec: 25\u00b12\u00b0C). Mobile phase pH 3.18 (spec: 3.0\u00b10.2). Detector wavelength 215 nm (correct). Peak integration manual override applied at 14:47 by same user. No documented reason for override in audit trail. System suitability passed. Result: 98.2%.",
+      "second_run_audit_trail": "HPLC-DUB-04_20241115_GC201_2024-0847_Run2.raw shows: Injection at 09:15 on 2024-11-15 by User ID QA-DUB-042. Column temperature 25.0\u00b0C (spec: 25\u00b12\u00b0C). Mobile phase pH 3.05 (spec: 3.0\u00b10.2). Detector wavelength 215 nm (correct). No manual overrides. System suitability passed. Result: 101.1%.",
+      "shared_login_detail": "User ID QA-DUB-042 is shared between Technician A (primary) and Technician B (backup). Both have access to the same password. Technician A performed Run 1; Technician B performed Run 2. No individual electronic signature enforced.",
+      "audit_trail_review_evidence": "No printout of audit trail was generated or reviewed before retest authorization. QA Supervisor's signature block on retest authorization form (dated 2024-11-15, 08:00) is present, but supervisor states in interview: 'I signed off on the form as a formality; I did not see the audit trail data myself.'"
+    },
+    "sample_prep_truth": {
+      "first_run_sample_prep": "Sample prepared by Technician A on 2024-11-14 at 13:45. Standard reference material (GC-201-STD-Lot-2024-0401) used. Weighing balance calibration current (last calibrated 2024-11-10). Sample weight recorded in lab notebook as 10.05 mg. Dissolution in mobile phase completed at 14:15. No anomalies noted in notebook.",
+      "second_run_sample_prep": "Sample prepared by Technician B on 2024-11-15 at 08:30. Same standard reference material lot used. Same balance (calibration still current). Sample weight recorded in lab notebook as 10.02 mg. Dissolution completed at 08:50. No anomalies noted.",
+      "root_cause_technical": "Column temperature excursion in Run 1 (28.1\u00b0C vs. 25.0\u00b0C in Run 2) correlates with lower potency result. Temperature drift was not investigated. Manual peak integration override in Run 1 audit trail suggests possible integration issue, not sample prep issue. Technician A's stated reason ('sample prep issue') is not supported by evidence."
+    },
+    "original_record_status": "First assay raw data file (HPLC-DUB-04_20241114_GC201_2024-0847_Run1.raw) located in instrument archive. Second assay raw data file present. Lab notebook entry for first run exists but does not reference the out-of-spec result or investigation. No contemporaneous deviation report was initiated on 2024-11-14.",
+    "statements_truth": {
+      "analyst_statement": "Technician A (primary user of QA-DUB-042) stated 'I reviewed the first result, saw it was low, and knew the sample prep was rushed. I reran it the next day and got a good result, so I released the lot.' This is contradicted by: (1) lab notebook shows no rush or anomaly in sample prep; (2) no documented review of audit trail occurred; (3) Technician A did not have authority to release the lot without supervisor sign-off.",
+      "supervisor_statement": "QA Supervisor stated 'Our procedure requires audit-trail review before any retest. I did not see evidence that this was done, and I did not authorize the retest.' This is supported by: (1) no audit trail printout in deviation file; (2) supervisor's signature on retest form was given without reviewing audit trail data; (3) supervisor did not initiate investigation of the out-of-spec result."
+    },
+    "alcoa_plus_gaps": {
+      "attributable": "Shared login (QA-DUB-042) used by two technicians. Run 1 performed by Technician A; Run 2 by Technician B. Audit trail shows user ID but not individual name. No electronic signature enforcing individual accountability.",
+      "legible": "Audit trail exists in raw data file but was not reviewed or printed. Lab notebook entry for Run 1 does not reference the out-of-spec result.",
+      "contemporaneous": "Lab notebook entry for Run 1 made at time of sample prep (13:45) but does not document the out-of-spec result discovered at 14:32. No contemporaneous deviation report initiated on 2024-11-14.",
+      "original": "First assay raw data file retained in instrument archive. However, no original lab notebook entry documenting the out-of-spec result and decision to retest. Retest authorization form signed 2024-11-15 (after retest completed), not before.",
+      "accurate": "First result (98.2%) is accurate per instrument data. Second result (101.1%) is accurate per instrument data. However, no investigation of why results differ by 2.9% or why column temperature differed between runs."
+    }
+  }
+}

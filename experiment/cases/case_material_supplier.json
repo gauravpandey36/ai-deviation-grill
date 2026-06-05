@@ -1,0 +1,175 @@
+{
+  "case_id": "DEV-EVAL-material_supplier",
+  "archetype": "material_supplier",
+  "title": "Excipient Discoloration in GC-201 Tablets \u2014 Supplier Blamed, No CoA Review",
+  "grill_input": {
+    "deviation_id": "DEV-2024-0847",
+    "product": "GC-201 (Tablet, 50 mg)",
+    "lot_number": "GC201-24-0156",
+    "site": "SITE-GC-01",
+    "process_step": "Tablet Compression",
+    "equipment_id": "TABLET-PRESS-03",
+    "classification": "Major",
+    "date_identified": "2024-02-14",
+    "description_what_happened": "During in-process inspection, 47 tablets from the middle of the compression run exhibited a faint yellow discoloration on the tablet surface. The batch was placed on hold. Discoloration was not present in tablets compressed earlier in the same run.",
+    "description_what_should_have_happened": "All tablets should be white to off-white, consistent with the approved product specification.",
+    "document_deviated_from": "GC-201 Manufacturing SOP-MFG-0847 v3.2; Product Specification GC-201-SPEC-001 Rev 8",
+    "immediate_corrections": "Batch GC201-24-0156 placed on hold. Remaining tablets (post-discoloration) were segregated and quarantined. Equipment TABLET-PRESS-03 was cleaned and a blank run was performed with no discoloration observed.",
+    "investigation_steps": [
+      "Visual inspection of affected tablets under controlled lighting",
+      "HPLC assay of affected tablets \u2014 results within specification",
+      "Supplier contacted regarding microcrystalline cellulose (MCC) lot MCC-SUPP-2024-0089",
+      "Supplier stated lot was manufactured within normal parameters"
+    ],
+    "root_cause_category": "Supplier/Material",
+    "root_cause_description": "Microcrystalline cellulose (MCC) lot MCC-SUPP-2024-0089 supplied by Excipient Solutions Ltd. contained trace levels of an unidentified yellow pigment, likely introduced during supplier manufacturing. The pigment was not detected by the supplier's quality control and was not flagged in the Certificate of Analysis (CoA) provided.",
+    "impact_assessment": "Batch GC201-24-0156 (450,000 tablets) affected. 47 tablets with visible discoloration. Remaining 449,953 tablets appear unaffected visually but may contain trace pigment. Product released to market: No. Batch disposition: Pending.",
+    "batch_disposition": "Under investigation; no disposition decision recorded",
+    "capa": {
+      "capa_id": "CAPA-2024-0847-001",
+      "description": "Implement supplier audit of Excipient Solutions Ltd. to review their manufacturing controls and QC procedures for MCC production. Request supplier implement enhanced pigment screening.",
+      "target_completion": "2024-04-30",
+      "effectiveness_check": "Not yet scheduled"
+    },
+    "linked_change_control": "None",
+    "statements": [
+      {
+        "speaker": "Quality Assurance Manager, SITE-GC-01",
+        "quote": "The incoming inspection team did not flag the MCC lot because the CoA from the supplier showed all parameters within specification. We rely on the supplier's CoA for routine lots."
+      },
+      {
+        "speaker": "Incoming Inspection Supervisor, SITE-GC-01",
+        "quote": "We performed a visual inspection of the MCC lot upon receipt and noted no discoloration. The CoA was reviewed and signed off. There was no reason to suspect the material."
+      }
+    ]
+  },
+  "case_packet": {
+    "deviation_id": "DEV-2024-0847",
+    "product": "GC-201 (Tablet, 50 mg)",
+    "lot_number": "GC201-24-0156",
+    "site": "SITE-GC-01",
+    "process_step": "Tablet Compression",
+    "equipment_id": "TABLET-PRESS-03",
+    "classification": "Major",
+    "date_identified": "2024-02-14",
+    "description_what_happened": "During in-process inspection, 47 tablets from the middle of the compression run exhibited a faint yellow discoloration on the tablet surface. The batch was placed on hold. Discoloration was not present in tablets compressed earlier in the same run.",
+    "description_what_should_have_happened": "All tablets should be white to off-white, consistent with the approved product specification.",
+    "document_deviated_from": "GC-201 Manufacturing SOP-MFG-0847 v3.2; Product Specification GC-201-SPEC-001 Rev 8",
+    "immediate_corrections": "Batch GC201-24-0156 placed on hold. Remaining tablets (post-discoloration) were segregated and quarantined. Equipment TABLET-PRESS-03 was cleaned and a blank run was performed with no discoloration observed.",
+    "investigation_steps": [
+      "Visual inspection of affected tablets under controlled lighting",
+      "HPLC assay of affected tablets \u2014 results within specification",
+      "Supplier contacted regarding microcrystalline cellulose (MCC) lot MCC-SUPP-2024-0089",
+      "Supplier stated lot was manufactured within normal parameters",
+      "CoA from Excipient Solutions Ltd. reviewed: all parameters within specification, no pigment testing performed by supplier",
+      "Incoming inspection records retrieved: MCC lot MCC-SUPP-2024-0089 received 2024-01-28, visual inspection performed, no discoloration noted at receipt",
+      "Supplier change notification history reviewed: Excipient Solutions Ltd. changed their MCC manufacturing facility from Basel to Krakow on 2024-01-15; transition lot MCC-SUPP-2024-0089 was first production run from new facility",
+      "Supplier audit conducted (2024-03-10): new facility lacked pigment-screening SOP; raw material supplier for iron oxide colorant changed without documented qualification",
+      "Scope assessment: MCC lot MCC-SUPP-2024-0089 used in three other products: GC-101 (Capsule, 25 mg, lot GC101-24-0203), GC-301 (Powder, 100 mg, lot GC301-24-0089), and one CDMO-1 contract product (CDMO-PROD-X, lot CDMO-X-24-0045)",
+      "Retrospective testing of GC101-24-0203 and GC301-24-0089: trace yellow pigment detected via HPLC-UV; both lots released to market",
+      "CDMO-1 notified; CDMO-PROD-X lot CDMO-X-24-0045 quarantined and under investigation by CDMO-1",
+      "Root cause confirmed: supplier facility transition, inadequate change control at supplier, no pigment specification in incoming material specification for MCC"
+    ],
+    "root_cause_category": "Supplier/Material + Internal Control Gap",
+    "root_cause_description": "Primary: Microcrystalline cellulose (MCC) lot MCC-SUPP-2024-0089 supplied by Excipient Solutions Ltd. contained trace levels of yellow pigment introduced during supplier's facility transition from Basel to Krakow (2024-01-15). Supplier's new facility lacked pigment-screening SOP and had not qualified the new raw material supplier for iron oxide. Secondary: the fictional company's incoming inspection procedure does not include pigment testing for MCC; reliance on supplier CoA alone was insufficient. Tertiary: Supplier change notification (facility transition) was not reviewed by the fictional company Quality before material was released to manufacturing.",
+    "impact_assessment": "Batch GC201-24-0156 (450,000 tablets) affected; 47 tablets with visible discoloration. Remaining 449,953 tablets contain trace pigment (confirmed by retrospective testing). Two additional lots released to market: GC101-24-0203 (Capsule, 25 mg) and GC301-24-0089 (Powder, 100 mg), both containing trace pigment. One CDMO-1 contract product lot (CDMO-X-24-0045) quarantined. Total market exposure: ~1.2 million units across three products. Pigment is non-toxic at detected levels but represents a specification deviation and potential customer complaint risk.",
+    "batch_disposition": "GC201-24-0156: Rejected. GC101-24-0203 and GC301-24-0089: Recalled from distribution (market impact: 8 customer complaints received post-recall). CDMO-X-24-0045: Rejected by CDMO-1.",
+    "capa": {
+      "capa_id": "CAPA-2024-0847-001",
+      "description": "Implement supplier audit of Excipient Solutions Ltd. to review their manufacturing controls and QC procedures for MCC production. Request supplier implement enhanced pigment screening.",
+      "target_completion": "2024-04-30",
+      "effectiveness_check": "Not yet scheduled",
+      "actual_capa_implemented": [
+        {
+          "capa_id": "CAPA-2024-0847-002",
+          "description": "Revise incoming material specification for MCC to include pigment testing (HPLC-UV) for all lots. Implement at SITE-GC-01 and CDMO-1.",
+          "target_completion": "2024-03-31",
+          "status": "Completed 2024-03-28",
+          "effectiveness_check": "Retrospective testing of 5 subsequent MCC lots from Excipient Solutions Ltd. (post-facility transition) performed; all passed pigment specification. Prospective testing of 3 new MCC lots from alternative suppliers (Cellulose Corp, Pharma Excipients Inc.) initiated; all passed."
+        },
+        {
+          "capa_id": "CAPA-2024-0847-003",
+          "description": "Establish supplier change notification review process: Quality to review all supplier facility transitions, process changes, and raw material supplier changes before material is released to manufacturing.",
+          "target_completion": "2024-04-15",
+          "status": "Completed 2024-04-10",
+          "effectiveness_check": "Process implemented; supplier change log reviewed; 2 additional supplier transitions identified and escalated for audit."
+        },
+        {
+          "capa_id": "CAPA-2024-0847-004",
+          "description": "Conduct supplier audit of Excipient Solutions Ltd. (completed 2024-03-10); audit findings: facility transition not communicated to customers, pigment-screening SOP not established, raw material supplier for iron oxide not qualified. Supplier issued corrective action plan with 60-day deadline.",
+          "target_completion": "2024-03-10",
+          "status": "Completed",
+          "effectiveness_check": "Follow-up audit scheduled for 2024-05-15; supplier submitted evidence of pigment-screening SOP implementation and iron oxide supplier qualification (completed 2024-04-05)."
+        }
+      ]
+    },
+    "linked_change_control": "None at time of deviation; retrospective change control CC-2024-0156 issued to document incoming material specification revision for MCC.",
+    "incoming_inspection_records": {
+      "lot_received": "MCC-SUPP-2024-0089",
+      "date_received": "2024-01-28",
+      "visual_inspection_performed": true,
+      "visual_inspection_result": "No discoloration observed",
+      "coa_review_performed": true,
+      "coa_parameters_reviewed": [
+        "Moisture content: 3.2% (spec: \u22645%)",
+        "Bulk density: 0.28 g/cm\u00b3 (spec: 0.25\u20130.35 g/cm\u00b3)",
+        "Particle size: D50 = 45 \u00b5m (spec: 40\u201360 \u00b5m)",
+        "Assay (loss on drying): 98.5% (spec: \u226597%)"
+      ],
+      "pigment_testing_performed": false,
+      "pigment_specification_existed": false,
+      "coa_signed_off_by": "Incoming Inspection Supervisor, 2024-01-28",
+      "material_released_to_manufacturing": "2024-02-08"
+    },
+    "supplier_change_notification_history": {
+      "notification_received": "2024-01-10",
+      "change_description": "Facility transition: MCC manufacturing relocated from Basel, Switzerland to Krakow, Poland effective 2024-01-15",
+      "change_reviewed_by_quality": false,
+      "notification_filed_in": "Supplier management system (not escalated to Quality)",
+      "raw_material_supplier_change": "Iron oxide colorant supplier changed from Colorant Corp (Germany) to Pigment Industries (Poland) without documented qualification",
+      "notification_of_raw_material_change": "Not communicated to the fictional company"
+    },
+    "scope_to_other_lots": {
+      "mcc_lot_mcc_supp_2024_0089_used_in": [
+        {
+          "product": "GC-201 (Tablet, 50 mg)",
+          "lot_number": "GC201-24-0156",
+          "status": "Rejected",
+          "action": "Batch placed on hold 2024-02-14; rejected 2024-03-05"
+        },
+        {
+          "product": "GC-101 (Capsule, 25 mg)",
+          "lot_number": "GC101-24-0203",
+          "status": "Released to market; recalled",
+          "action": "Released 2024-02-20; recall initiated 2024-03-12; 8 customer complaints received"
+        },
+        {
+          "product": "GC-301 (Powder, 100 mg)",
+          "lot_number": "GC301-24-0089",
+          "status": "Released to market; recalled",
+          "action": "Released 2024-02-25; recall initiated 2024-03-12; no customer complaints to date"
+        },
+        {
+          "product": "CDMO-PROD-X (Contract product, CDMO-1)",
+          "lot_number": "CDMO-X-24-0045",
+          "status": "Quarantined by CDMO-1",
+          "action": "CDMO-1 notified 2024-03-08; lot quarantined; under CDMO-1 investigation"
+        }
+      ]
+    },
+    "retrospective_testing_results": {
+      "lot_gc101_24_0203": {
+        "test": "HPLC-UV pigment analysis",
+        "result": "Yellow pigment detected, concentration 0.8 ppm (specification limit: <0.1 ppm)",
+        "date_tested": "2024-03-10",
+        "status": "Out of specification"
+      },
+      "lot_gc301_24_0089": {
+        "test": "HPLC-UV pigment analysis",
+        "result": "Yellow pigment detected, concentration 0.6 ppm (specification limit: <0.1 ppm)",
+        "date_tested": "2024-03-10",
+        "status": "Out of specification"
+      }
+    }
+  }
+}

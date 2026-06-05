@@ -1,0 +1,41 @@
+Key ...LgAA | cases=['material_supplier', 'procedure_ambiguity', 'data_integrity_alcoa', 'planted_conflict', 'thin_but_clean'] | max_turns=12
+
+=== material_supplier :: Material / supplier-attributed cause ===
+  generating case...
+  planted defects: 6
+  running grill loop... (ablation=none)
+  [retry 1/3] defendant call failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CbkPuenWy1jB3WpbFS6KJ'} -> sleep 1s
+  [retry 2/3] defendant call failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CbkPujzoWrtJuUstTKydL'} -> sleep 2s
+  [retry 3/3] defendant call failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CbkPuu8E323pSUWLgpnHH'} -> sleep 4s
+  !! material_supplier FAILED: defendant call failed after 3 retries: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CbkPuu8E323pSUWLgpnHH'} (skipping, continuing)
+
+=== procedure_ambiguity :: Procedure ambiguity ===
+  generating case...
+  [retry 1/3] generator call failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CbkPvD5DmXh3x11cL1oJV'} -> sleep 1s
+  [retry 2/3] generator call failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CbkPvJ8q2gHPWvNAPtS3V'} -> sleep 2s
+  [retry 3/3] generator call failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CbkPvTDmpzaKu5WbQm22t'} -> sleep 4s
+  !! procedure_ambiguity FAILED: generator call failed after 3 retries: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CbkPvTDmpzaKu5WbQm22t'} (skipping, continuing)
+
+=== data_integrity_alcoa :: Data-integrity / ALCOA+ concern ===
+  generating case...
+  [retry 1/3] generator call failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CbkPvku9b3VbwJ7jTXcgp'} -> sleep 1s
+  [retry 2/3] generator call failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CbkPvr4CpeQd1NUzXXUwF'} -> sleep 2s
+  [retry 3/3] generator call failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CbkPw18ASZXkank3WC3Gy'} -> sleep 4s
+  !! data_integrity_alcoa FAILED: generator call failed after 3 retries: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CbkPw18ASZXkank3WC3Gy'} (skipping, continuing)
+
+=== planted_conflict :: Investigation with a planted speaker CONFLICT ===
+  generating case...
+  [retry 1/3] generator call failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CbkPwJiagy8oFv3LffyRz'} -> sleep 1s
+  [retry 2/3] generator call failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CbkPwPckmXhgrARrvFf9c'} -> sleep 2s
+  [retry 3/3] generator call failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CbkPwYfiYrsezRE4doAHU'} -> sleep 4s
+  !! planted_conflict FAILED: generator call failed after 3 retries: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CbkPwYfiYrsezRE4doAHU'} (skipping, continuing)
+
+=== thin_but_clean :: Thin but genuinely clean ===
+  generating case...
+  [retry 1/3] generator call failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CbkPwrM6fqZs2jDhaf4pN'} -> sleep 1s
+  [retry 2/3] generator call failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CbkPwwbN5tAcfNP9Zv892'} -> sleep 2s
+  [retry 3/3] generator call failed: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CbkPx6fZk8VNfxqJwtsvM'} -> sleep 4s
+  !! thin_but_clean FAILED: generator call failed after 3 retries: Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CbkPx6fZk8VNfxqJwtsvM'} (skipping, continuing)
+
+WROTE /Users/gouravpandey/the fictional company/deviation-grill/results/metrics_run.csv
+TOTAL COST THIS RUN: $0.8670  (calls=24)

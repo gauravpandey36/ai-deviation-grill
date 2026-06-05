@@ -1,0 +1,63 @@
+{
+  "case_id": "DEV-2024-0847",
+  "archetype": "human_error_terminal_with_latent_equipment_defect",
+  "planted_total": 6,
+  "defects": [
+    {
+      "id": "D1",
+      "surfaced": true,
+      "evidence": "Turn 6: 'The adjustment was a response to upstream weight variability. What made the tablets light before the operator touched the dial?' \u2014 directly probed why operator believed adjustment was necessary; Turn 7 confirmed systemic dial drift via WO-2024-0156."
+    },
+    {
+      "id": "D2",
+      "surfaced": true,
+      "evidence": "Turn 8: 'The sole CAPA (retraining) is not linked to the actual root cause (dial drift), has no preventive element for the equipment' \u2014 explicitly rejected retraining-only CAPA and demanded preventive action on equipment."
+    },
+    {
+      "id": "D3",
+      "surfaced": true,
+      "evidence": "Turn 8/9: 'effectiveness_check is null... what measurable, time-bound check would confirm any CAPA worked \u2014 metric, threshold, review date, owner?' \u2014 explicitly flagged null effectiveness check."
+    },
+    {
+      "id": "D4",
+      "surfaced": true,
+      "evidence": "Turn 3: 'Were any other lots compressed on RP-04 around this event evaluated for the same weight variability?' \u2014 probed scope beyond single operator/lot; Turn 9/10 extended to maintenance tracking across equipment."
+    },
+    {
+      "id": "D5",
+      "surfaced": true,
+      "evidence": "Turn 6 and Turn 7: Grill probed why operator believed adjustment was necessary, surfacing the missing maintenance history (WO-2024-0156) and calibration records; the defendant confirmed these were not reviewed in the investigation."
+    },
+    {
+      "id": "D6",
+      "surfaced": true,
+      "evidence": "Turn 6: 'operator and supervisor both state the trigger was light tablets / hopper jamming / inconsistent feed' \u2014 directly referenced the conflicting statements and probed the unresolved conflict between operator and supervisor accounts."
+    }
+  ],
+  "surfaced_count": 6,
+  "false_gaps": [
+    {
+      "description": "Spec discrepancy \u00b11.5 mg vs \u00b12 mg raised in Turn 2",
+      "why_spurious": "The Grill introduced \u00b11.5 mg in its own restatement (Turn 1) and then flagged the discrepancy as a gap \u2014 the deviation record consistently states \u00b12 mg throughout; the \u00b11.5 mg figure was a Grill-introduced error, not a planted defect in the record."
+    }
+  ],
+  "root_cause_depth_0_2": 2,
+  "root_cause_rationale": "The Grill explicitly rejected 'operator did not follow procedure' as a proximate/active failure and drove to the systemic latent condition (dial drift under vibration, overdue calibration, unactioned WO-2024-0156). It invoked a Swiss-cheese/sharp-end vs. system-cause framing ('active failure at the sharp end, not a system cause') and confirmed the operator's adjustment was a rational response to a real equipment defect.",
+  "capa_rigor_0_3": 3,
+  "capa_rationale": "+1: Explicitly checked that retraining CAPA is not linked to the verified root cause (dial drift). +1: Demanded preventive action on equipment (recalibration, PM scheduling, WO-2024-0156 closure) and rejected retraining-only as insufficient. +1: Demanded measurable, time-bound effectiveness check with metric, threshold, review date, and named owner; noted that even the retraining effectiveness check would measure the wrong cause.",
+  "hallucination_count": 1,
+  "hallucinations": [
+    {
+      "turn": 1,
+      "asserted": "Grill restated the spec as '50.0 \u00b1 1.5 mg' \u2014 a specific value not present anywhere in the deviation record (which consistently states 50 \u00b1 2 mg) \u2014 and then used this self-introduced figure to raise a spec discrepancy flag."
+    }
+  ],
+  "leading_count": 0,
+  "leading_examples": [],
+  "questions_total": 9,
+  "substantive_questions": 8,
+  "termination_quality_0_2": 2,
+  "looped": false,
+  "termination_rationale": "The Grill explicitly closed all seven branches, tagged each as RESOLVED or DEFERRED\u2192OPEN ITEM with owner, evidence source, and rationale. It conducted a final sweep in Turn 9 to catch any remaining gaps and formally declared 'GRILL COMPLETE' after confirming all branches were addressed.",
+  "overall_comment": "Exceptionally thorough grill that surfaced all 6 planted defects, drove root cause to the systemic equipment level with evidence, demanded preventive CAPA and measurable effectiveness checks, and cleanly converted unanswerable items to tracked open items \u2014 marred only by a self-introduced spec value (\u00b11.5 mg) that constitutes a minor hallucination."
+}

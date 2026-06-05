@@ -1,0 +1,39 @@
+{
+  "planted_defects": [
+    {
+      "id": "D1",
+      "branch": "conflict",
+      "type": "unresolved_conflict",
+      "description": "Two contradictory accounts of CIP completion time: QA Manager states 14:00 completion; Operator states 15:45 completion after alarm reset. Investigation did not adjudicate between them. The grill_input presents both statements but does not resolve which is correct or why they differ.",
+      "ideal_grill_behavior": "Grill should ask: 'What does the detailed equipment log show for cycle start, any alarms, resets, and final completion time?' and 'Why does the QA summary differ from the operator's account?' Grill should demand the full equipment event log, not just the summary screen."
+    },
+    {
+      "id": "D2",
+      "branch": "root_cause",
+      "type": "missing_evidence",
+      "description": "Root cause assigned to 'sampling/laboratory error' without evidence. The microbial lab documentation (in case_packet) shows the lab followed SOP correctly, positive control was clean, and media sterility passed. The swab result is valid. Investigation did not verify lab procedure or controls before dismissing the result as artifactual.",
+      "ideal_grill_behavior": "Grill should ask: 'What is the evidence that the swab result is a sampling artifact? Was the lab procedure reviewed? Were positive and negative controls run?' Grill should challenge the root cause assignment as unsupported."
+    },
+    {
+      "id": "D3",
+      "branch": "scope_impact",
+      "type": "scope_gap",
+      "description": "Investigation did not consider the timing of batch loading relative to actual CIP completion. If CIP completed at 15:47 (per operator) and batch was loaded at ~16:15, the batch was loaded into equipment that had been clean for only ~30 minutes, with no post-CIP swab approval before loading. This violates SOP-CDMO1-LYOPH-02. Investigation attributed the elevated swab to lab error rather than investigating the actual equipment state at time of batch loading.",
+      "ideal_grill_behavior": "Grill should ask: 'What time was the batch actually loaded into the chamber? Were post-CIP swabs collected and approved before batch loading?' and 'If the CIP cycle was interrupted and restarted, what is the procedure for post-CIP environmental monitoring after a restart?' Grill should verify compliance with the batch record timeline."
+    },
+    {
+      "id": "D4",
+      "branch": "capa",
+      "type": "no_preventive_action",
+      "description": "CAPA addresses only training on swab collection technique (reactive, assumes lab error). No preventive action addresses: (1) the pressure alarm in the new CIP system (CC-2024-0312), (2) the lack of alarm notification protocol between Operator and QA, or (3) the need for post-CIP swab approval before batch loading after a cycle restart. The true systemic issue (pressure module calibration or design flaw) is not addressed.",
+      "ideal_grill_behavior": "Grill should ask: 'What caused the pressure alarm at 14:15? Is this a known issue with the new CIP system upgrade? Were other sites affected?' and 'What is the procedure for post-CIP environmental monitoring after a cycle restart or alarm?' Grill should demand investigation of the equipment change control (CC-2024-0312) and require preventive actions tied to the actual root cause."
+    },
+    {
+      "id": "D5",
+      "branch": "effectiveness",
+      "type": "no_effectiveness_check",
+      "description": "CAPA effectiveness check is 'not yet scheduled.' There is no plan to verify that the training on swab collection technique actually reduces sampling artifacts or prevents recurrence. No metrics or acceptance criteria are defined.",
+      "ideal_grill_behavior": "Grill should ask: 'How will you verify that the training is effective? What is the acceptance criterion? When will post-training swabs be reviewed to confirm the training worked?' Grill should require a defined effectiveness check with timeline and success criteria before CAPA closure."
+    }
+  ]
+}

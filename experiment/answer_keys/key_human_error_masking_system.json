@@ -1,0 +1,46 @@
+{
+  "planted_defects": [
+    {
+      "id": "D1",
+      "branch": "root_cause",
+      "type": "human_error_terminal",
+      "description": "Investigation stops at 'operator did not follow SOP' without exploring WHY the operator adjusted the dial. The conflicting statements (operator vs. supervisor) hint at a systemic issue (hopper drift, jamming) that was never investigated. Root cause is labeled 'Human Error' when the true cause is a latent system defect (dial drift, ambiguous SOP, superseded training).",
+      "ideal_grill_behavior": "Grill should ask: 'Why did the operator believe adjustment was necessary? What does the maintenance history show about hopper feed consistency? Has the dial been calibrated recently? Were other operators trained on the same SOP revision, and do they also adjust the dial?' These questions would surface the systemic cause."
+    },
+    {
+      "id": "D2",
+      "branch": "capa",
+      "type": "retraining_only_capa",
+      "description": "CAPA is limited to retraining operator OP-2847. No preventive action addresses the root systemic cause: the ambiguous SOP, the dial drift, the training gap (Rev 3 vs. Rev 4), or the lack of a locking/detent mechanism on the dial. Retraining alone will not prevent recurrence if other operators face the same latent conditions.",
+      "ideal_grill_behavior": "Grill should ask: 'What preventive actions are planned to address the SOP ambiguity, the dial calibration, and the training gap for other operators? How will you prevent other operators from making the same adjustment?' If no preventive actions exist, flag as incomplete CAPA."
+    },
+    {
+      "id": "D3",
+      "branch": "effectiveness",
+      "type": "no_effectiveness_check",
+      "description": "CAPA-2024-0847-001 shows 'effectiveness_check: null.' Retraining completion is documented, but no follow-up verification is planned. No monitored compression runs, no audit of adherence to Rev 4, no confirmation that the root cause (operator adjustment) has been eliminated.",
+      "ideal_grill_behavior": "Grill should ask: 'How will you verify that operator OP-2847 no longer adjusts the dial during runs? Will you monitor their next 5 compression runs? Will you audit other operators to ensure they are also compliant with Rev 4?' Absence of these checks is a red flag."
+    },
+    {
+      "id": "D4",
+      "branch": "scope_impact",
+      "type": "scope_gap",
+      "description": "Investigation scope is limited to operator OP-2847 and equipment RP-04. No assessment of whether other operators on other equipment face the same latent conditions (SOP ambiguity, dial drift, training gap). The conflicting statement from the supervisor hints that 'hopper jamming' is a known issue, but this is not explored across the site.",
+      "ideal_grill_behavior": "Grill should ask: 'Have other operators reported similar issues with hopper feed consistency? Are there other compression runs with weight variance that might be linked to the same root cause? Should this investigation be expanded to include all operators trained on Rev 3 vs. Rev 4?'"
+    },
+    {
+      "id": "D5",
+      "branch": "root_cause",
+      "type": "missing_evidence",
+      "description": "Investigation does not review SOP revision history, change control rationale, or training records. The fact that operator OP-2847 was trained on Rev 3 and never formally re-trained on Rev 4 is not discovered. The maintenance work order (WO-2024-0156) documenting dial drift is not reviewed. These gaps allow the investigation to conclude 'operator error' without understanding the systemic context.",
+      "ideal_grill_behavior": "Grill should ask: 'When was the operator last trained on this SOP? Has the SOP been revised recently? What does the maintenance history show about this equipment? Are there any change controls or training records that explain the discrepancy between what the operator was taught and what the current SOP requires?'"
+    },
+    {
+      "id": "D6",
+      "branch": "conflict",
+      "type": "unresolved_conflict",
+      "description": "Two conflicting statements are recorded but not resolved: operator says they adjusted because tablets looked light; supervisor says operator reported hopper jamming. Investigation does not determine which is accurate or whether both are true. The maintenance work order (in case_packet) supports the supervisor's statement, but this evidence was not reviewed.",
+      "ideal_grill_behavior": "Grill should ask: 'What is the basis for the supervisor's claim that the operator reported hopper jamming? Are there any maintenance requests, emails, or logbook entries that document this? If the hopper is jamming, why was this not addressed before the deviation occurred?'"
+    }
+  ]
+}

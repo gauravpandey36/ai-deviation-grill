@@ -1,0 +1,129 @@
+{
+  "case_id": "DEV-EVAL-equipment_calibration",
+  "archetype": "equipment_calibration",
+  "title": "pH Probe Out-of-Calibration Detected in GC-201 Fermentation Batch GC-201-2024-0847",
+  "grill_input": {
+    "deviation_id": "DEV-2024-003421",
+    "product": "GC-201",
+    "lot_number": "GC-201-2024-0847",
+    "site": "CDMO-1 Pharmagen Dublin",
+    "process_step": "Fermentation pH monitoring and control",
+    "equipment_id": "FERM-CTRL-07",
+    "equipment_description": "Bioreactor 7 pH probe and controller assembly",
+    "classification": "Major",
+    "discovery_date": "2024-02-14",
+    "description_what_happened": "During batch GC-201-2024-0847 fermentation (Days 3\u20135), pH readings ranged 6.8\u20137.2. Post-batch CoA analysis showed final product pH 6.4, outside specification (6.8\u20137.4). Investigation revealed pH probe FERM-CTRL-07 had not been calibrated since 2023-11-28. Last scheduled PM was 2024-01-15, but calibration was not performed at that time.",
+    "description_what_should_have_happened": "pH probe FERM-CTRL-07 must be calibrated every 30 days per SOP-FERM-002 and before each batch. Calibration record and CoA must align.",
+    "document_deviated_from": "SOP-FERM-002 (Fermentation Equipment Maintenance and Calibration), Batch Record GC-201-2024-0847",
+    "immediate_corrections": "Batch GC-201-2024-0847 placed on hold. pH probe FERM-CTRL-07 calibrated on 2024-02-14 (post-discovery). Calibration points: pH 4.0, 7.0, 10.0 all within \u00b10.1 units. Batch released after pH re-verification.",
+    "investigation_steps": [
+      "Reviewed batch record for pH readings during fermentation.",
+      "Confirmed CoA result (pH 6.4) vs. in-process readings (6.8\u20137.2).",
+      "Identified probe FERM-CTRL-07 calibration overdue.",
+      "Confirmed PM log showed 2024-01-15 PM event but no calibration record attached.",
+      "Corrective action: recalibrate probe and release batch."
+    ],
+    "root_cause_category": "Equipment maintenance / calibration lapse",
+    "root_cause_description": "pH probe FERM-CTRL-07 calibration was overdue by 78 days. PM event on 2024-01-15 was logged but calibration step was not completed or documented. Operator error in PM execution.",
+    "impact_assessment": "One batch (GC-201-2024-0847) exposed to unmeasured pH drift. Final product pH 6.4 is below specification but within acceptable range per stability data review. No patient safety risk identified. Product released.",
+    "batch_disposition": "Released",
+    "capa": {
+      "capa_id": "CAPA-2024-001847",
+      "description": "Recalibrate pH probe FERM-CTRL-07 immediately. Retraining of fermentation technicians on PM checklist completion and calibration sign-off requirements.",
+      "assigned_to": "Operations Manager, CDMO-1",
+      "due_date": "2024-03-15",
+      "effectiveness_check": "Not yet performed"
+    },
+    "linked_change_control": null,
+    "statements": [
+      {
+        "attributed_to": "Fermentation Tech, Shift A",
+        "quote": "I performed the PM on 2024-01-15 but the calibration buffer bottles were out of stock that day, so I logged the PM as complete and planned to calibrate the next day. I forgot to follow up."
+      },
+      {
+        "attributed_to": "Operations Supervisor",
+        "quote": "The PM checklist requires calibration to be done on the same day. If buffers were unavailable, the tech should have escalated and rescheduled the entire PM. The PM should never have been marked complete without calibration."
+      }
+    ]
+  },
+  "case_packet": {
+    "deviation_id": "DEV-2024-003421",
+    "product": "GC-201",
+    "lot_number": "GC-201-2024-0847",
+    "site": "CDMO-1 Pharmagen Dublin",
+    "process_step": "Fermentation pH monitoring and control",
+    "equipment_id": "FERM-CTRL-07",
+    "equipment_description": "Bioreactor 7 pH probe and controller assembly",
+    "classification": "Major",
+    "discovery_date": "2024-02-14",
+    "description_what_happened": "During batch GC-201-2024-0847 fermentation (Days 3\u20135), pH readings ranged 6.8\u20137.2. Post-batch CoA analysis showed final product pH 6.4, outside specification (6.8\u20137.4). Investigation revealed pH probe FERM-CTRL-07 had not been calibrated since 2023-11-28. Last scheduled PM was 2024-01-15, but calibration was not performed at that time.",
+    "description_what_should_have_happened": "pH probe FERM-CTRL-07 must be calibrated every 30 days per SOP-FERM-002 and before each batch. Calibration record and CoA must align.",
+    "document_deviated_from": "SOP-FERM-002 (Fermentation Equipment Maintenance and Calibration), Batch Record GC-201-2024-0847",
+    "immediate_corrections": "Batch GC-201-2024-0847 placed on hold. pH probe FERM-CTRL-07 calibrated on 2024-02-14 (post-discovery). Calibration points: pH 4.0, 7.0, 10.0 all within \u00b10.1 units. Batch released after pH re-verification.",
+    "investigation_steps": [
+      "Reviewed batch record for pH readings during fermentation.",
+      "Confirmed CoA result (pH 6.4) vs. in-process readings (6.8\u20137.2).",
+      "Identified probe FERM-CTRL-07 calibration overdue.",
+      "Confirmed PM log showed 2024-01-15 PM event but no calibration record attached.",
+      "Corrective action: recalibrate probe and release batch."
+    ],
+    "root_cause_category": "Equipment maintenance / calibration lapse",
+    "root_cause_description": "pH probe FERM-CTRL-07 calibration was overdue by 78 days. PM event on 2024-01-15 was logged but calibration step was not completed or documented. Operator error in PM execution.",
+    "impact_assessment": "One batch (GC-201-2024-0847) exposed to unmeasured pH drift. Final product pH 6.4 is below specification but within acceptable range per stability data review. No patient safety risk identified. Product released.",
+    "batch_disposition": "Released",
+    "capa": {
+      "capa_id": "CAPA-2024-001847",
+      "description": "Recalibrate pH probe FERM-CTRL-07 immediately. Retraining of fermentation technicians on PM checklist completion and calibration sign-off requirements.",
+      "assigned_to": "Operations Manager, CDMO-1",
+      "due_date": "2024-03-15",
+      "effectiveness_check": "Not yet performed"
+    },
+    "linked_change_control": null,
+    "calibration_audit_trail": {
+      "last_successful_calibration": "2023-11-28",
+      "calibration_interval_days": 30,
+      "days_overdue_at_discovery": 78,
+      "2024_01_15_pm_event": {
+        "logged_by": "Fermentation Tech, Shift A",
+        "time": "14:30",
+        "checklist_items": [
+          "Visual inspection: PASS",
+          "Electrode cleaning: PASS",
+          "Calibration buffers check: FAIL \u2014 buffers expired 2024-01-10",
+          "Calibration performed: NOT COMPLETED \u2014 marked as 'deferred, buffers unavailable'",
+          "Sign-off: INCOMPLETE \u2014 supervisor did not verify before marking PM complete"
+        ],
+        "notes": "Tech noted buffer shortage but did not escalate. Supervisor approved PM completion without verifying calibration step."
+      },
+      "post_discovery_calibration_2024_02_14": {
+        "performed_by": "QA Technician",
+        "calibration_points": {
+          "pH_4_0": "4.01 (within \u00b10.1)",
+          "pH_7_0": "6.98 (within \u00b10.1)",
+          "pH_10_0": "9.99 (within \u00b10.1)"
+        },
+        "result": "PASS \u2014 probe acceptable for use"
+      }
+    },
+    "scope_to_other_batches": {
+      "batches_measured_on_ferm_ctrl_07_between_2023_11_28_and_2024_02_14": [
+        "GC-201-2024-0801 (fermented 2024-01-08 to 2024-01-12)",
+        "GC-301-2024-0815 (fermented 2024-01-22 to 2024-01-26)",
+        "GC-201-2024-0847 (fermented 2024-02-03 to 2024-02-07)"
+      ],
+      "note": "All three batches used FERM-CTRL-07 during the out-of-calibration window. Only GC-201-2024-0847 showed CoA pH excursion. GC-201-2024-0801 and GC-301-2024-0815 CoA results within spec (pH 7.1 and 7.0 respectively), but probe drift was undetected during those batches."
+    },
+    "calibration_interval_program": {
+      "current_policy": "30-day calibration interval for all pH probes per SOP-FERM-002",
+      "review_status": "Not reviewed as part of this investigation",
+      "historical_data": "CDMO-1 has had 3 similar calibration lapses in past 18 months (DEV-2023-001204, DEV-2023-002156, DEV-2024-000891). No trend analysis or interval adjustment has been performed.",
+      "recommendation_not_in_capa": "Consider risk-based calibration interval review and implementation of electronic PM scheduling with mandatory supervisor sign-off before PM closure."
+    },
+    "true_root_cause_layers": [
+      "Immediate: Fermentation Tech did not complete calibration step on 2024-01-15 due to expired buffers.",
+      "Contributing: Supervisor did not verify calibration completion before approving PM closure.",
+      "Systemic: No preventive program-level action to review calibration intervals or implement electronic PM controls despite prior similar deviations."
+    ],
+    "conflict_resolution": "Fermentation Tech's statement is supported by PM checklist notes (buffers marked FAIL). Operations Supervisor's statement is correct per SOP-FERM-002 requirements, but supervisor failed to enforce the rule on 2024-01-15."
+  }
+}

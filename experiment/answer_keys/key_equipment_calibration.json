@@ -1,0 +1,39 @@
+{
+  "planted_defects": [
+    {
+      "id": "D1",
+      "branch": "scope_impact",
+      "type": "scope_gap",
+      "description": "Investigation identifies only batch GC-201-2024-0847 as impacted, but does not investigate or document other batches measured on FERM-CTRL-07 during the 78-day out-of-calibration window (GC-201-2024-0801, GC-301-2024-0815). Scope is incomplete.",
+      "ideal_grill_behavior": "Grill should ask: 'What other batches were processed on FERM-CTRL-07 between 2023-11-28 and 2024-02-14? Have their CoA results been reviewed for pH drift? Have those batches been assessed for impact?' Grill should flag that investigation must document all batches in scope and justify why only one batch is being held/released."
+    },
+    {
+      "id": "D2",
+      "branch": "root_cause",
+      "type": "missing_evidence",
+      "description": "Investigation does not review or reference the calibration audit trail, PM checklist, or supervisor sign-off records. The root cause is attributed to 'operator error' without evidence of what actually happened on 2024-01-15 (e.g., why calibration was not done, who approved incomplete PM, what controls failed).",
+      "ideal_grill_behavior": "Grill should ask: 'What does the PM checklist for 2024-01-15 show? Was calibration marked complete or deferred? Who signed off on the PM? Are there notes explaining why calibration was not performed?' Grill should demand the audit trail and require investigation to document the actual sequence of events and control failures."
+    },
+    {
+      "id": "D3",
+      "branch": "capa",
+      "type": "no_preventive_action",
+      "description": "CAPA addresses only the immediate defect (retraining one tech) and does not include any preventive program-level action. No review of calibration interval adequacy, no implementation of electronic PM controls, no trend analysis of prior similar deviations (3 in past 18 months per case_packet). CAPA is reactive only.",
+      "ideal_grill_behavior": "Grill should ask: 'Does CAPA include a review of the 30-day calibration interval? Are there other similar deviations in the past 2 years? Should electronic PM scheduling or mandatory supervisor verification be implemented?' Grill should flag that CAPA must include preventive measures to address systemic PM/calibration control gaps, not just retraining."
+    },
+    {
+      "id": "D4",
+      "branch": "effectiveness",
+      "type": "no_effectiveness_check",
+      "description": "CAPA-2024-001847 has no effectiveness check planned or described. Retraining completion and probe recalibration are one-time actions; there is no verification that PM controls have been strengthened or that calibration intervals are being met going forward.",
+      "ideal_grill_behavior": "Grill should ask: 'How will the effectiveness of retraining be verified? Will there be a follow-up audit of PM checklists and supervisor sign-offs? Will calibration compliance be monitored over the next 90 days?' Grill should require a defined effectiveness check (e.g., 100% audit of next 10 PM events, calibration compliance dashboard review at 30/60/90 days)."
+    },
+    {
+      "id": "D5",
+      "branch": "conflict",
+      "type": "unresolved_conflict",
+      "description": "Two conflicting statements are presented: Tech claims buffers were unavailable and PM was deferred; Supervisor claims PM should never have been marked complete without calibration. Investigation does not resolve which statement is accurate or what the PM checklist actually shows. The conflict is left unresolved in the deviation record.",
+      "ideal_grill_behavior": "Grill should ask: 'What does the 2024-01-15 PM checklist show? Were buffers marked as unavailable? Was calibration marked as deferred or complete? Who approved the PM closure?' Grill should demand the original PM checklist and supervisor approval records to establish the facts and identify the actual control failure (missing buffers, incomplete checklist, inadequate supervision)."
+    }
+  ]
+}

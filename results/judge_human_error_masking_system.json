@@ -1,0 +1,63 @@
+{
+  "case_id": "DEV-2024-0847",
+  "archetype": "human-error-terminal / retraining-only-capa / no-effectiveness-check",
+  "planted_total": 6,
+  "defects": [
+    {
+      "id": "D1",
+      "surfaced": true,
+      "evidence": "Turn 2-5: Grill explicitly challenged the 'operator did not follow procedure' terminal root cause, surfaced the conflicting supervisor statement, and drove to the latent equipment condition (WO-2024-0156 dial drift) as a co-equal candidate root cause."
+    },
+    {
+      "id": "D2",
+      "surfaced": true,
+      "evidence": "Turn 6: 'Is there any CAPA in the record addressing the equipment-drift / overdue-calibration pathway, or is retraining OP-2847 the only action taken?' \u2014 explicitly flagged no preventive element for dial drift, SOP ambiguity, or other operators."
+    },
+    {
+      "id": "D3",
+      "surfaced": true,
+      "evidence": "Turn 7: 'Is there any defined metric, threshold, review date, or owner anywhere in the record for confirming the deviation does not recur \u2014 or is effectiveness entirely undefined?' \u2014 directly probed the null effectiveness check."
+    },
+    {
+      "id": "D4",
+      "surfaced": true,
+      "evidence": "Turn 6: Grill noted other operators (OP-1923, OP-2104, OP-3341) trained on Rev 3 received only email notice of Rev 4, and no audit of other operators was performed \u2014 explicitly raising the scope gap beyond OP-2847 and RP-04."
+    },
+    {
+      "id": "D5",
+      "surfaced": true,
+      "evidence": "Turn 5: 'Was the equipment-drift pathway (WO-2024-0156, 18-month-overdue calibration) ever entered as a contributing or root cause in the investigation, or was it omitted entirely?' \u2014 probed missing evidence review of maintenance history and training records."
+    },
+    {
+      "id": "D6",
+      "surfaced": true,
+      "evidence": "Turn 4: Grill explicitly cited the supervisor LS-0412 'hopper jamming' statement as conflicting with the operator's account and asked whether weight-check timing data could discriminate the two narratives \u2014 directly probing the unresolved conflict."
+    }
+  ],
+  "surfaced_count": 6,
+  "false_gaps": [
+    {
+      "description": "Grill raised 'Branch 1 \u2014 problem statement integrity' as a formal branch, spending Turn 1 on restating the problem statement without cause.",
+      "why_spurious": "While methodologically sound as a framing exercise, the deviation record's problem statement is not a planted defect in the answer key. This was a process-hygiene step rather than a gap that needed surfacing."
+    }
+  ],
+  "root_cause_depth_0_2": 2,
+  "root_cause_rationale": "The Grill drove well past the proximate 'operator did not follow SOP' conclusion, surfacing the latent equipment condition (WO-2024-0156 dial drift, 18-month overdue calibration, unactioned recommendation), the unresolved conflict between operator and supervisor statements, and the missing weight-timing evidence. It explicitly invoked latent-vs-active failure framing (Rule 3 / Swiss-cheese logic) and identified three competing causal scenarios, downgrading the stated root cause to a hypothesis. This is full systemic depth.",
+  "capa_rigor_0_3": 3,
+  "capa_rationale": "+1: Grill checked root-cause linkage \u2014 explicitly noted CAPA is keyed to an unsupported root cause (Turn 6). +1: Demanded preventive element \u2014 asked whether any CAPA addressed dial recalibration, SOP design, calibration backlog, or other operators (Turn 6), and confirmed none existed. +1: Demanded measurable, time-bound effectiveness check \u2014 directly asked for metric, threshold, review date, and owner (Turn 7), confirmed all absent.",
+  "hallucination_count": 0,
+  "hallucinations": [],
+  "leading_count": 1,
+  "leading_examples": [
+    {
+      "turn": 3,
+      "why": "The Grill offered a specific AI-suggested hypothesis that 'the dial physically drifted from Position 3 during the run, producing light tablets the operator then chased' \u2014 while labeled as AI-suggested, this framing presupposed the drift-then-chase sequence and anchored the Defendant toward confirming it rather than independently deriving it. The label mitigates but does not eliminate the anchoring effect."
+    }
+  ],
+  "questions_total": 8,
+  "substantive_questions": 8,
+  "termination_quality_0_2": 2,
+  "looped": false,
+  "termination_rationale": "The Grill closed all six branches explicitly, converting unanswerable forensic points (dial position data, weight-timing sequence, re-qualification protocol) into tracked open items with specific recovery actions (pull LIMS/MES weight-check log, pull re-qualification work order). No branch was abandoned without disposition. The final summary table distinguished RESOLVED from DEFERRED items. No looping or redundant questioning observed.",
+  "overall_comment": "The Grill achieved a clean sweep of all six planted defects, drove root cause to full systemic depth, applied rigorous CAPA scrutiny on all three dimensions, and closed every branch with either a resolution or a tracked open item \u2014 with zero hallucinations and only one minor leading instance."
+}

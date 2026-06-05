@@ -1,0 +1,26 @@
+Key ...LgAA | cases=['human_error_masking_system'] | max_turns=12
+
+=== human_error_masking_system :: Human-error root cause masking a system cause ===
+  [reused generated case]
+  planted defects: 6
+  running grill loop... (ablation=hypotheses_off)
+  grill turns: 9 | completed_naturally=True
+  judging...
+  recall=1.0 halluc=1 lead=0 cost=$0.6899
+
+WROTE /Users/gouravpandey/the fictional company/deviation-grill/results/metrics__hyp_off.csv
+TOTAL COST THIS RUN: $0.6899  (calls=20)
+EXTRAPOLATION: 6 cases ≈ $4.14, 7 cases ≈ $4.83 before ablations
+Key ...LgAA | cases=['human_error_masking_system'] | max_turns=12
+
+=== human_error_masking_system :: Human-error root cause masking a system cause ===
+  [reused generated case]
+  planted defects: 6
+  running grill loop... (ablation=hardstops_off)
+  grill turns: 8 | completed_naturally=True
+  judging...
+  recall=1.0 halluc=0 lead=1 cost=$0.7292
+
+WROTE /Users/gouravpandey/the fictional company/deviation-grill/results/metrics__hardstops_off.csv
+TOTAL COST THIS RUN: $0.7292  (calls=18)
+EXTRAPOLATION: 6 cases ≈ $4.38, 7 cases ≈ $5.10 before ablations

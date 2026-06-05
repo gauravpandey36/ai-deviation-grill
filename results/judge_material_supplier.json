@@ -1,0 +1,71 @@
+{
+  "case_id": "DEV-2024-0847",
+  "archetype": "Supplier/Material Deviation \u2014 Tablet Discoloration",
+  "planted_total": 6,
+  "defects": [
+    {
+      "id": "D1",
+      "surfaced": true,
+      "evidence": "Turn 7: 'Does the fictional company's own incoming-material specification for MCC require any pigment or identity testing, or does it accept the supplier CoA without independent verification for routine lots?' \u2014 confirmed no pigment spec existed, visual+CoA only."
+    },
+    {
+      "id": "D2",
+      "surfaced": true,
+      "evidence": "Turn 6: 'Does the quality agreement with Excipient Solutions Ltd. obligate them to notify the fictional company of raw-material/sub-supplier changes \u2014 and did this change fall within that obligation?' \u2014 probed supplier change notification history and facility transition."
+    },
+    {
+      "id": "D3",
+      "surfaced": true,
+      "evidence": "Turn 2: 'Has the investigation identified whether MCC lot MCC-SUPP-2024-0089 was used in any other product lots, and were those contained?' \u2014 surfaced all four lots including two recalled and one quarantined by CDMO."
+    },
+    {
+      "id": "D4",
+      "surfaced": true,
+      "evidence": "Turn 9: 'Is there any CAPA addressing the fictional company's internal failure to place a same-material hold across related lots when DEV-2024-0847 was raised?' and Turn 10: 'Does CAPA-001 contain any preventive action within the fictional company's control?' \u2014 confirmed effectiveness check unscheduled and no hold-propagation CAPA."
+    },
+    {
+      "id": "D5",
+      "surfaced": true,
+      "evidence": "Turn 9/10: Grill explicitly asked whether any CAPA addresses the internal containment failure and whether CAPA-001 has preventive elements under the fictional company's control \u2014 confirmed no internal hold-propagation CAPA and CAPA-001 relies on third-party voluntary action."
+    },
+    {
+      "id": "D6",
+      "surfaced": true,
+      "evidence": "Turn 7: Grill invoked Swiss-cheese framing and asked about the fictional company's own incoming spec gap, resolving the contradiction between QA Manager and Incoming Inspection Supervisor statements by confirming both were true but incomplete \u2014 systemic internal control gap confirmed."
+    }
+  ],
+  "surfaced_count": 6,
+  "false_gaps": [
+    {
+      "description": "Turn 1: Grill asked about the distribution pattern of the 47 tablets (discrete vs. scattered) and the in-process inspection record's positional detail.",
+      "why_spurious": "While a legitimate investigative question, this was not a planted defect in the answer key. The deviation record already states 'middle of the compression run' and the distribution pattern is not a key gap identified in the planted defects. The Grill spent a full turn on this without it mapping to any planted defect."
+    },
+    {
+      "description": "Turn 11: Grill asked whether the retrospective change control CC-2024-0156 was raised before or after CAPA-002 completion and whether the 8 effectiveness lots were tested before CC approval.",
+      "why_spurious": "This is a minor procedural sub-item not identified as a planted defect. The change control question was answered (CC-2024-0156 exists), and the timing concern is speculative and not a gap in the planted defects."
+    }
+  ],
+  "root_cause_depth_0_2": 2,
+  "root_cause_rationale": "The Grill explicitly invoked Swiss-cheese framing in Turn 7 ('Reason's Swiss-cheese: the supplier's undisclosed colorant change is the active failure, but the latent condition is on the fictional company's side'), drove to systemic causes on both supplier and internal sides, identified the active failure (undisclosed sub-supplier change) and two latent conditions (no pigment spec in incoming inspection; no supplier change notification review), and explicitly rejected a human-error terminal cause.",
+  "capa_rigor_0_3": 3,
+  "capa_rationale": "+1: Grill checked root-cause linkage \u2014 confirmed CAPA-002 directly addresses the confirmed latent condition (no pigment spec) while CAPA-001 is a correction/investigation not a preventive action. +1: Grill demanded preventive elements within the fictional company's control (Turn 9/10), identified that CAPA-001 relies on third-party voluntary action and no internal hold-propagation CAPA exists. +1: Grill demanded measurable, time-bound effectiveness check \u2014 Turn 10 confirmed CAPA-001 effectiveness check unscheduled; Turn 10/11 verified CAPA-002 check is outcome-based (8 lots, HPLC-UV, <0.1 ppm limit).",
+  "hallucination_count": 0,
+  "hallucinations": [],
+  "leading_count": 2,
+  "leading_examples": [
+    {
+      "turn": 3,
+      "why": "Grill stated as AI-suggested hypotheses '(a) no procedure links a deviation to same-material lots; (b) the link existed but wasn't executed' \u2014 while labeled AI-suggested, the framing presupposes the hold-propagation failure and anchors the Defendant to confirm one of two pre-specified options rather than discovering the gap independently."
+    },
+    {
+      "turn": 7,
+      "why": "Grill stated as AI-suggested '(a) the fictional company's MCC acceptance spec never required pigment/identity testing, so a CoA review could never catch this; (b) testing was required but skipped for routine lots' \u2014 this directly feeds the answer (option a) to the Defendant, who then confirmed it. The planted defect D1 was essentially handed to the Defendant."
+    }
+  ],
+  "questions_total": 12,
+  "substantive_questions": 10,
+  "termination_quality_0_2": 2,
+  "looped": false,
+  "termination_rationale": "The Grill closed all seven branches explicitly, tagged each as RESOLVED or DEFERRED\u2192OPEN ITEM with rationale, converted unanswerable points (pigment toxicology, hold-propagation CAPA, CAPA-001 effectiveness check) to tracked open items, and produced a structured summary log. No looping or redundant questioning observed.",
+  "overall_comment": "The Grill surfaced all 6 planted defects with substantive, well-structured questioning and correct Swiss-cheese framing, achieving full CAPA rigor and clean termination, with only minor leading on D1 and D3 that slightly reduced independent discovery value."
+}

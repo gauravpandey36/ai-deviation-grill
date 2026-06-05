@@ -1,0 +1,39 @@
+{
+  "planted_defects": [
+    {
+      "id": "D1",
+      "branch": "root_cause",
+      "type": "human_error_terminal",
+      "description": "Investigation classified root cause as 'operator judgment error' and closed without examining whether the SOP itself is ambiguous or contradictory. No review of SOP Section 3.1 vs. Section 4.2.1 acceptance ranges.",
+      "ideal_grill_behavior": "Grill should ask: 'What is the exact acceptance range for pH in this SOP? Are there multiple ranges stated? Do they align?' and 'Has the SOP been reviewed for internal consistency?' If ranges conflict, the defect is procedural, not human error alone."
+    },
+    {
+      "id": "D2",
+      "branch": "scope_impact",
+      "type": "scope_gap",
+      "description": "Investigation reviewed only the single batch (GC201-LOT-2024-0156) and did not assess whether other operators or batches were affected by the same ambiguity. No survey or audit of how other operators interpret Section 4.2.1.",
+      "ideal_grill_behavior": "Grill should ask: 'How many operators perform this step? Have you reviewed their recent batches or asked them how they interpret the acceptance range?' and 'Are there other batches with similar pH readings that were released?' A scope gap indicates the true systemic issue was not identified."
+    },
+    {
+      "id": "D3",
+      "branch": "capa",
+      "type": "retraining_only_capa",
+      "description": "CAPA is limited to retraining Operator EMP-4521 on the existing SOP. No corrective action to clarify or revise the SOP itself. No preventive action to address the ambiguity for all operators.",
+      "ideal_grill_behavior": "Grill should ask: 'Does the CAPA address the root cause? If the SOP is ambiguous, will retraining alone prevent recurrence?' and 'Has the SOP been revised to remove the ambiguity?' If the answer is no, the CAPA is incomplete."
+    },
+    {
+      "id": "D4",
+      "branch": "effectiveness",
+      "type": "no_effectiveness_check",
+      "description": "CAPA effectiveness check is 'not yet scheduled.' No plan to verify that the retraining was effective or that the ambiguity has been resolved.",
+      "ideal_grill_behavior": "Grill should ask: 'How will you verify that retraining prevents recurrence? Will you audit the SOP for clarity? Will you re-survey operators after the SOP is revised?' Absence of a planned effectiveness check is a red flag."
+    },
+    {
+      "id": "D5",
+      "branch": "conflict",
+      "type": "unresolved_conflict",
+      "description": "Operator statement ('doesn't say what to do if you're only 0.08 pH units away') and QA statement ('SOP is clear') are contradictory. The investigation did not resolve which interpretation is correct by examining the SOP text itself or consulting subject matter experts.",
+      "ideal_grill_behavior": "Grill should ask: 'Is the operator's concern valid? Does the SOP actually clarify the acceptance range during adjustment?' and 'Has an SME (R&D, formulation) reviewed the SOP for clarity?' Resolving the conflict reveals the procedural defect."
+    }
+  ]
+}

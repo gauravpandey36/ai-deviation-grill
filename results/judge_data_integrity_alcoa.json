@@ -1,0 +1,68 @@
+{
+  "case_id": "DEV-2024-1847",
+  "archetype": "OOS-reprocessing / data-integrity / ALCOA+",
+  "planted_total": 7,
+  "defects": [
+    {
+      "id": "D1",
+      "surfaced": true,
+      "evidence": "Turn 5: 'Shared login (QA-DUB-042) is a secondary integrity enabler'; Turn 5/6 explicitly names shared login as preventing individual accountability and obscuring who performed each run"
+    },
+    {
+      "id": "D2",
+      "surfaced": true,
+      "evidence": "Turn 1: 'No audit trail printout reviewed or retained before retest authorization'; Turn 3-4: column temperature excursion (28.1\u00b0C) and manual peak integration override explicitly raised and confirmed as uninvestigated"
+    },
+    {
+      "id": "D3",
+      "surfaced": true,
+      "evidence": "Turn 1: 'No contemporaneous deviation report initiated on 2024-11-14 when the 98.2% result was obtained'; retest form post-hoc (signed 08:00 after Run 2 at 09:15 on 2024-11-15)"
+    },
+    {
+      "id": "D4",
+      "surfaced": true,
+      "evidence": "Turn 4: 'Given the documented temp excursion, what evidence supports treating Run 1 as invalid rather than as the correct OOS result?'; Turn 4 response confirms analyst's sample-prep claim contradicted by lab notebook and audit trail"
+    },
+    {
+      "id": "D5",
+      "surfaced": true,
+      "evidence": "Turn 6: 'The sole CAPA is retraining... retraining addresses an active failure, not the just-confirmed missing forcing function'; Turn 7: CAPA inadequate, no systemic element, no effectiveness check defined"
+    },
+    {
+      "id": "D6",
+      "surfaced": true,
+      "evidence": "Turn 2: 'Was any market/inventory action taken on Lot 2024-0847?'; Turn 3: containment status unknown, no hold placed, distribution records not pulled; Turn 8-9: disposition cannot stand without resolving instrument scope and shipping status"
+    },
+    {
+      "id": "D7",
+      "surfaced": true,
+      "evidence": "Turn 1: retest form signed post-hoc, supervisor stated he signed 'as a formality' without reviewing audit trail; Turn 5: supervisor signing 'as a formality' explicitly named; conflict between analyst and supervisor statements implicitly surfaced through authorization chain questioning"
+    }
+  ],
+  "surfaced_count": 7,
+  "false_gaps": [],
+  "root_cause_depth_0_2": 2,
+  "root_cause_rationale": "The Grill explicitly rejected 'Analyst did not follow SOP' as a terminal root cause (Rule 3/Reason), drove to two latent systemic conditions using Rasmussen's SRK framework: (a) no CDS/LIMS forcing-function locking OOS results pending documented invalidation; (b) paper retest form with no certified audit-trail review requirement. Shared login as secondary enabler also identified. Full Swiss-cheese/Rasmussen lens invoked and named.",
+  "capa_rigor_0_3": 3,
+  "capa_rationale": "+1: Explicitly checked root-cause linkage \u2014 retraining CAPA does not address the confirmed enforcement/systemic root cause. +1: Demanded preventive element \u2014 specified CDS workflow lock, retest-form redesign, shared-login remediation as required systemic CAPA elements; rejected retraining-only. +1: Demanded measurable, time-bound effectiveness check \u2014 Turn 7 explicitly asked for metric, threshold, timeframe, owner, data source; confirmed none defined.",
+  "hallucination_count": 1,
+  "hallucinations": [
+    {
+      "turn": 5,
+      "asserted": "Grill stated '28.1\u00b0C is actually out of 25\u00b12\u00b0C spec (>27.0\u00b0C ceiling)' as a fact. The deviation record states spec as 25.0\u00b12\u00b0C (range 23\u201327\u00b0C), making 28.1\u00b0C out-of-spec \u2014 but the Grill asserted this as established fact rather than flagging it as a question to confirm, and the defendant's Turn 3 response had already introduced the 28.1\u00b0C figure. The Grill stated the ceiling as '27.0\u00b0C' definitively without the defendant confirming the spec limits."
+    }
+  ],
+  "leading_count": 1,
+  "leading_examples": [
+    {
+      "turn": 5,
+      "why": "Grill stated 'Note: 28.1\u00b0C is actually out of 25\u00b12\u00b0C spec (>27.0\u00b0C ceiling) \u2014 itself an uninvestigated excursion' as a declarative fact, feeding the defendant the conclusion that Run 1 had an OOS temperature excursion rather than asking whether the column temperature was within spec. This anchored the defendant to accept the excursion framing without independently confirming the spec limits."
+    }
+  ],
+  "questions_total": 7,
+  "substantive_questions": 7,
+  "termination_quality_0_2": 2,
+  "looped": false,
+  "termination_rationale": "All seven branches were explicitly closed or converted to tracked open items with evidence citations and owner/deadline placeholders. The Grill declared 'GRILL COMPLETE' after confirming no loops or redundant questioning. Unanswerable points (shipping status, instrument scope, disposition re-evaluation, CAPA effectiveness) were formally deferred as ranked open items rather than dropped.",
+  "overall_comment": "Near-perfect grill: all 7 planted defects surfaced, root cause driven to systemic level with Rasmussen lens, CAPA rigor maximal, termination clean \u2014 marred only by one minor hallucination/leading instance where the Grill asserted the 28.1\u00b0C temperature as definitively out-of-spec rather than flagging it as a question."
+}

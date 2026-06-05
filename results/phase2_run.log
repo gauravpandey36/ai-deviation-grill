@@ -1,0 +1,17 @@
+Key ...LgAA | auditing 16 records
+  [1/16] DEV-GC-2025-018 ... (spend $0.00)
+  [2/16] DEV-GC-2025-019 ... (spend $0.27)
+  [3/16] DEV-GC-2025-022 ... (spend $0.55)
+  [4/16] DEV-GC-2024-088 ... (spend $0.81)
+  [5/16] DEV-GC-2025-034 ... (spend $1.09)
+  [6/16] DEV-GC-2024-067 ... (spend $1.34)
+  [7/16] DEV-GC-2024-071 ... (spend $1.60)
+  [8/16] DEV-GC-2024-045 ... (spend $1.86)
+  [9/16] DEV-GC-2024-082 ... (spend $2.12)
+  [10/16] DEV-GC-2025-009 ... (spend $2.38)
+  [11/16] DEV-GC-2025-012 ... (spend $2.64)
+  [12/16] DEV-GC-2025-028 ... (spend $2.89)
+  [13/16] DEV-GC-2024-CDMO1-008 ... (spend $3.15)
+  BUDGET GUARD: $3.41 >= $3.3 -> stopping after 13/16 records.
+
+WROTE results/real_run.md (13 records) | cost $3.4091

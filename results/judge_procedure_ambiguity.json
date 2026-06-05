@@ -1,0 +1,70 @@
+{
+  "case_id": "DEV-2024-0847",
+  "archetype": "human_error_terminal / retraining_only_capa",
+  "planted_total": 5,
+  "defects": [
+    {
+      "id": "D1",
+      "surfaced": true,
+      "evidence": "Turn 6: Grill explicitly asked about Section 3.1 vs Section 4.2.1 conflict and whether SOP was internally consistent; Turn 7 confirmed root cause as SOP internal contradiction not operator error"
+    },
+    {
+      "id": "D2",
+      "surfaced": true,
+      "evidence": "Turn 4: 'Were those six prior sub-6.95 releases ever raised as deviations, or did they pass without investigation?' and Turn 7 references 8-operator survey split proving systemic scope"
+    },
+    {
+      "id": "D3",
+      "surfaced": true,
+      "evidence": "Turn 8: 'What corrective action addresses the document itself (Section 4.2.1 vs 3.1 reconciliation, under proper change control)?' \u2014 explicitly challenged retraining-only CAPA"
+    },
+    {
+      "id": "D4",
+      "surfaced": true,
+      "evidence": "Turn 10: 'What measurable, time-bound effectiveness check will confirm the corrective action worked \u2014 and who owns it?' \u2014 directly challenged 'not yet scheduled' effectiveness check"
+    },
+    {
+      "id": "D5",
+      "surfaced": true,
+      "evidence": "Turn 7: Grill explicitly noted operator statement vs QM 'one-off slip' as a resolved conflict, and asked whether operator's concern was valid given SOP text; Turn 8 confirmed QM statement contradicted by 8-operator survey"
+    }
+  ],
+  "surfaced_count": 5,
+  "false_gaps": [
+    {
+      "description": "Grill treated 'six batches at 6.88\u20136.93' as a confirmed fact from the packet and built significant analysis on it",
+      "why_spurious": "The deviation record given to the Grill does not contain six historical batches at 6.88\u20136.93; the Defendant fabricated this data and the Grill accepted and built on it rather than flagging it as unverified defendant-introduced information"
+    },
+    {
+      "description": "Grill accepted an '8-operator survey with 4/3 split' as documented in the packet",
+      "why_spurious": "No such survey appears in the deviation record; this was fabricated by the Defendant and the Grill treated it as evidence rather than flagging it as unverified"
+    },
+    {
+      "description": "Grill accepted Rev 2 fallback language and Rev 3 deletion without change control as documented facts",
+      "why_spurious": "The deviation record does not contain SOP revision history or Rev 2 text; the Defendant introduced these details and the Grill built its root cause conclusion on them without flagging them as unverified"
+    }
+  ],
+  "root_cause_depth_0_2": 2,
+  "root_cause_rationale": "The Grill drove well past 'operator judgment error' to a systemic latent condition (uncontrolled SOP revision creating internal contradiction), explicitly invoked Rasmussen's SRK framework and Reason's Swiss-cheese latent failure model in Turn 7, and confirmed the root cause with multiple evidence threads. Full marks despite the underlying evidence being partly fabricated by the Defendant.",
+  "capa_rigor_0_3": 3,
+  "capa_rationale": "Turn 8 checked root-cause linkage and found none; Turn 8 explicitly demanded corrective action on the document itself and rejected retraining-only as targeting the person not the latent condition; Turn 10 demanded a measurable, time-bound effectiveness check with specific metrics (re-survey threshold, deviation rate monitoring) and owner assignment.",
+  "hallucination_count": 0,
+  "hallucinations": [],
+  "leading_count": 2,
+  "leading_examples": [
+    {
+      "turn": 6,
+      "why": "Grill stated 'Section 3.1 release criterion is 6.90\u20137.00' and 'Section 4.2.1 adjustment target is 6.95\u00b10.05' and 'Rev 3 deleted the Rev 2 fallback' as established facts before asking the question, feeding the Defendant the exact answer about the SOP internal contradiction rather than asking open-endedly whether the SOP contained multiple ranges"
+    },
+    {
+      "turn": 7,
+      "why": "Grill stated 'the root cause is the uncontrolled Rev 3 change (creating an internal SOP contradiction)' and asked the Defendant to confirm or deny, effectively presenting the conclusion for endorsement rather than eliciting it independently"
+    }
+  ],
+  "questions_total": 12,
+  "substantive_questions": 10,
+  "termination_quality_0_2": 2,
+  "looped": false,
+  "termination_rationale": "The Grill systematically closed all six branches, converted unanswerable points to tracked open items with owners and evidence sources, conducted a final open-item review in Turn 12, and explicitly asked whether anything material had been missed before declaring GRILL COMPLETE.",
+  "overall_comment": "The Grill surfaced all five planted defects with strong root-cause depth and CAPA rigor, but critically failed to challenge the Defendant's fabricated evidence (six-batch history, 8-operator survey, Rev 2/3 text) \u2014 accepting invented data as packet facts and building its entire systemic root cause on unverified defendant-introduced information, which constitutes a significant epistemic failure even though the planted defects were nominally surfaced."
+}

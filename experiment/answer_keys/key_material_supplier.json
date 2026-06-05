@@ -1,0 +1,46 @@
+{
+  "planted_defects": [
+    {
+      "id": "D1",
+      "branch": "root_cause",
+      "type": "missing_evidence",
+      "description": "Grill input does not cite Certificate of Analysis (CoA) review or incoming inspection records. The root cause blames the supplier but does not document what incoming inspection checks were performed, whether pigment testing was included, or whether the CoA was actually reviewed for this lot. Case packet reveals: CoA was reviewed but did not include pigment testing; incoming inspection was visual only; no pigment specification existed for MCC at the time.",
+      "ideal_grill_behavior": "Grill should ask: 'What incoming inspection checks were performed on MCC lot MCC-SUPP-2024-0089? Was a CoA received? What parameters were tested? Was pigment testing performed or required?' This surfaces the gap between supplier blame and internal detectability."
+    },
+    {
+      "id": "D2",
+      "branch": "root_cause",
+      "type": "missing_evidence",
+      "description": "Grill input does not reference supplier change notification history. The root cause attributes the defect to the supplier but does not investigate whether the supplier had undergone a facility transition, process change, or raw material supplier change that might have introduced the pigment. Case packet reveals: Excipient Solutions Ltd. transitioned MCC manufacturing from Basel to Krakow on 2024-01-15; the raw material supplier for iron oxide was changed without qualification; this change notification was not reviewed by the fictional company Quality before material was released.",
+      "ideal_grill_behavior": "Grill should ask: 'Was there any supplier change notification for Excipient Solutions Ltd. around the time this lot was manufactured? Did the supplier change facilities, processes, or raw material suppliers? Was this change reviewed by Quality before the material was released to manufacturing?' This uncovers a systemic internal control gap (failure to review supplier changes) that enabled the defect."
+    },
+    {
+      "id": "D3",
+      "branch": "scope_impact",
+      "type": "scope_gap",
+      "description": "Grill input does not document whether other lots using MCC lot MCC-SUPP-2024-0089 were identified and assessed. Case packet reveals: MCC lot MCC-SUPP-2024-0089 was used in three other product lots (GC101-24-0203, GC301-24-0089, CDMO-X-24-0045); two were released to market and later recalled; one was quarantined by CDMO-1. The grill input mentions 'Batch GC201-24-0156 (450,000 tablets) affected' but does not scope to other products or lots.",
+      "ideal_grill_behavior": "Grill should ask: 'What is the full scope of material usage for MCC lot MCC-SUPP-2024-0089? Were other product lots manufactured using this material? If so, what is their disposition and have they been assessed for the same defect?' This is a critical containment and impact assessment gap."
+    },
+    {
+      "id": "D4",
+      "branch": "capa",
+      "type": "no_effectiveness_check",
+      "description": "Grill input CAPA-2024-0847-001 describes a supplier audit but does not specify what effectiveness check will be performed or when. The CAPA is reactive (audit the supplier) and does not address the internal control gap (incoming inspection procedure does not include pigment testing; supplier change notifications are not reviewed by Quality). Case packet reveals: the actual CAPAs implemented include revision of incoming material specification to include pigment testing and establishment of a supplier change notification review process, with documented effectiveness checks.",
+      "ideal_grill_behavior": "Grill should ask: 'What effectiveness check is planned for CAPA-2024-0847-001? How will you verify that the supplier has corrected the root cause? What preventive actions will the fictional company implement to ensure this defect is not repeated?' This surfaces the lack of internal preventive action and the absence of a defined effectiveness check."
+    },
+    {
+      "id": "D5",
+      "branch": "capa",
+      "type": "no_preventive_action",
+      "description": "Grill input CAPA blames the supplier and proposes a supplier audit but does not include any internal preventive action (e.g., revision of incoming inspection procedure, addition of pigment testing to material specification, or establishment of a supplier change notification review process). Case packet reveals: the root cause includes two internal control gaps: (1) incoming inspection does not include pigment testing for MCC, and (2) supplier change notifications are not reviewed by Quality before material is released. These gaps enabled the defect and must be addressed to prevent recurrence.",
+      "ideal_grill_behavior": "Grill should ask: 'What internal preventive actions will the fictional company implement? Should the incoming inspection procedure be revised to include pigment testing? Should a supplier change notification review process be established? How will you ensure that future supplier facility transitions or raw material supplier changes are reviewed before material is released to manufacturing?' This identifies the systemic internal control gaps that the CAPA does not address."
+    },
+    {
+      "id": "D6",
+      "branch": "root_cause",
+      "type": "human_error_terminal",
+      "description": "Grill input attributes the root cause solely to the supplier ('Excipient Solutions Ltd. contained trace levels of an unidentified yellow pigment') without acknowledging the internal control gaps that enabled the defect to reach manufacturing and be released to market. The statements in grill_input are contradictory: QA Manager says 'We rely on the supplier's CoA for routine lots' (implying no additional testing), while Incoming Inspection Supervisor says 'We performed a visual inspection' (implying some inspection was done). Case packet reveals: both statements are true but incomplete; the real issue is that the incoming inspection procedure did not include pigment testing, and the supplier change notification was not reviewed by Quality.",
+      "ideal_grill_behavior": "Grill should ask: 'Why did the incoming inspection procedure not include pigment testing for MCC? Was there a risk assessment that determined pigment testing was not necessary? Was the supplier change notification reviewed by Quality before the material was released to manufacturing? If not, why not?' This resolves the contradiction and identifies the systemic control gaps."
+    }
+  ]
+}

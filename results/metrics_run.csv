@@ -1,0 +1,6 @@
+case_id,archetype,planted_total,surfaced_count,gap_recall,false_gaps_n,root_cause_depth_0_2,capa_rigor_0_3,hallucination_count,leading_count,questions_total,substantive_questions,precision,termination_quality_0_2,looped,n_turns,completed_naturally,case_cost_usd
+DEV-2024-0847,material_supplier,6,6,1.0,2,2,3,0,2,12,10,0.833,2,False,11,True,1.1849
+DEV-2024-0847,procedure_ambiguity,5,5,1.0,3,2,3,0,2,12,10,0.833,2,False,12,False,0.9819
+DEV-2024-1847,data_integrity_alcoa,7,7,1.0,0,2,3,1,1,7,7,1.0,2,False,8,True,0.761
+DEV-2024-1847,planted_conflict,5,5,1.0,0,2,3,0,2,9,9,1.0,2,False,9,True,0.8737
+DEV-2024-0847,thin_but_clean,0,0,0.0,10,2,3,5,2,12,10,0.833,2,False,11,True,1.0484

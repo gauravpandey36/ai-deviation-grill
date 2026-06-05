@@ -1,0 +1,63 @@
+{
+  "case_id": "DEV-2024-0847",
+  "archetype": "human_error_terminal_with_latent_equipment_and_sop_defects",
+  "planted_total": 6,
+  "defects": [
+    {
+      "id": "D1",
+      "surfaced": true,
+      "evidence": "Turn 4: 'Why did the operator believe adjustment was necessary?' framed explicitly; Turn 2 surfaced equipment drift as the latent cause; Turn 4 AI-suggested hypothesis confirmed both equipment drift and SOP ambiguity as interdependent root causes, explicitly superseding 'operator error' label"
+    },
+    {
+      "id": "D2",
+      "surfaced": true,
+      "evidence": "Turn 6: 'Are there any CAPAs addressing the equipment recalibration or the SOP/change-control defect \u2014 or is retraining OP-2847 the only action on record?' \u2014 explicitly flagged retraining-only CAPA as incomplete against systemic root causes"
+    },
+    {
+      "id": "D3",
+      "surfaced": true,
+      "evidence": "Turn 7: 'Was any effectiveness check defined for any action?' and Turn 6 defendant confirmed 'effectiveness_check: null' with no follow-up compression runs monitored"
+    },
+    {
+      "id": "D4",
+      "surfaced": true,
+      "evidence": "Turn 3: 'Were any other lots compressed on RP-04 since the last calibration reviewed for weight-variation trends?' \u2014 explicitly probed scope expansion to other lots/operators; Turn 8 further probed whether Rev 4 gap was flagged to all operators"
+    },
+    {
+      "id": "D5",
+      "surfaced": true,
+      "evidence": "Turn 4: SOP revision history and training records gap surfaced; Turn 5 confirmed CC-2023-1847 had no risk assessment; defendant confirmed operator trained on Rev 3 with read-and-sign only on Rev 4 \u2014 training record gap explicitly resolved"
+    },
+    {
+      "id": "D6",
+      "surfaced": true,
+      "evidence": "Turn 2: Grill immediately probed WO-2024-0156 and hopper drift, surfacing the supervisor's 'hopper jamming' statement as equipment-backed; the conflicting statements were resolved by reference to maintenance evidence rather than left unresolved"
+    }
+  ],
+  "surfaced_count": 6,
+  "false_gaps": [
+    {
+      "description": "Grill flagged 'cause smuggled into problem statement' as Branch 1 and spent a full turn on it",
+      "why_spurious": "While technically a documentation quality issue, this is a minor stylistic point not in the planted defects and consumed a full turn that could have gone to substantive gaps; however it did not mislead the investigation"
+    }
+  ],
+  "root_cause_depth_0_2": 2,
+  "root_cause_rationale": "Grill drove past 'operator did not follow SOP' to two interdependent systemic causes: (a) unrecalibrated equipment drift documented 18 months prior and confirmed 2 weeks before the deviation, and (b) SOP Rev 4 removing a compensating control without risk assessment or hands-on retraining. Explicitly invoked Reason's Swiss-cheese model (Turn 3) and Rasmussen's SRK framework (Turn 5), satisfying the highest depth criterion.",
+  "capa_rigor_0_3": 3,
+  "capa_rationale": "+1: Turn 6 explicitly checked that CAPA-2024-0847-001 addresses none of the three systemic root causes (equipment drift, SOP gap, change control failure). +1: Turn 6 demanded preventive actions for equipment recalibration, SOP revision, and CC-2023-1847 risk assessment \u2014 explicitly rejected retraining-only as incomplete. +1: Turn 7 demanded a measurable effectiveness check and flagged null effectiveness_check as a red flag, asking whether monitored compression runs or audits were planned.",
+  "hallucination_count": 0,
+  "hallucinations": [],
+  "leading_count": 1,
+  "leading_examples": [
+    {
+      "turn": 4,
+      "why": "Grill stated 'AI-suggested, to confirm: the true root cause is (a) equipment drift left unrecalibrated despite two recommendations, and/or (b) an SOP with no procedure for an operator who observes weight variation mid-run' \u2014 this fed both candidate root causes directly to the defendant rather than asking open-ended why questions, partially anchoring the answer. Labeled as AI-suggested which mitigates but does not eliminate the leading effect."
+    }
+  ],
+  "questions_total": 8,
+  "substantive_questions": 8,
+  "termination_quality_0_2": 2,
+  "looped": false,
+  "termination_rationale": "Grill closed all seven branches explicitly, converting unanswerable points (batch records, equipment status post-deviation, QA closure rationale, production schedule) into tracked open items with named owners and evidence requirements. Final summary table provided. No looping or redundant re-asking observed.",
+  "overall_comment": "Exemplary grill: surfaced all 6 planted defects, drove to systemic root cause with appropriate theoretical lenses, demanded preventive CAPA and measurable effectiveness checks, and cleanly converted evidence gaps into tracked open items \u2014 with only one minor leading question that was partially mitigated by explicit AI-suggestion labeling."
+}

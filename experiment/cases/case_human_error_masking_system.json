@@ -1,0 +1,62 @@
+{
+  "case_id": "DEV-EVAL-human_error_masking_system",
+  "archetype": "human_error_masking_system",
+  "title": "GC-201 Tablet Compression: Weight Variance \u2014 Operator Retrained, Root Cause Closed",
+  "grill_input": {
+    "deviation_id": "DEV-2024-0847",
+    "product": "GC-201 (Tablet, 50 mg)",
+    "lot_number": "GC201-2024-04521",
+    "site": "SITE-GC-01",
+    "process_step": "Tablet Compression (Rotary Press, Equipment ID: RP-04)",
+    "equipment_id": "RP-04",
+    "classification": "Major",
+    "date_identified": "2024-02-14",
+    "date_investigation_initiated": "2024-02-14",
+    "description_what_happened": "During routine in-process weight check at compression, 47 tablets out of 500 sampled fell outside specification (target 50 \u00b1 2 mg; range observed 47.8\u201352.3 mg). Batch was held and 100% sorted. Root cause investigation concluded operator error in hopper feed rate adjustment.",
+    "description_what_should_have_happened": "All tablets compressed to 50 \u00b1 2 mg per SOP GC-201-COMP-012 Rev 4. Operator should have maintained hopper feed rate at 'Position 3' throughout run.",
+    "document_deviated_from": "SOP GC-201-COMP-012 Rev 4, Section 4.2.1: 'Set hopper feed rate dial to Position 3 before starting compression cycle. Do not adjust during run.'",
+    "immediate_corrections": "Batch GC201-2024-04521 sorted 100%; 453 conforming tablets retained, 47 non-conforming tablets destroyed. Equipment RP-04 cleaned and re-qualified. Operator (ID: OP-2847) removed from compression line pending retraining.",
+    "investigation_steps": [
+      "Visual inspection of RP-04 hopper and feed mechanism: no mechanical defects noted.",
+      "Review of operator logbook: operator OP-2847 noted 'adjusted feed dial twice during run due to inconsistent tablet weight.' No record of why adjustment was deemed necessary.",
+      "Interview with operator OP-2847: stated 'I thought the tablets were coming out light, so I moved the dial to Position 4 midway through. Then I moved it back to Position 3 when I saw heavier tablets.' Operator acknowledged not following SOP step 4.2.1.",
+      "No review of hopper calibration or feed rate verification data.",
+      "No comparison with other operators' runs on same equipment."
+    ],
+    "root_cause_category": "Human Error",
+    "root_cause_description": "Operator OP-2847 deviated from SOP GC-201-COMP-012 Rev 4, Section 4.2.1 by adjusting the hopper feed rate dial during the compression run without authorization. This caused inconsistent tablet weight. Root cause: operator did not follow written procedure.",
+    "impact_assessment": "Batch GC201-2024-04521 (10,000 tablets): 47 tablets (0.47%) out of specification. No tablets released to market. No patient impact. Batch disposition: 453 conforming tablets released after 100% sort; 47 non-conforming tablets destroyed.",
+    "batch_disposition": "Released (partial, after 100% sort and rework)",
+    "capa": {
+      "capa_id": "CAPA-2024-0847-001",
+      "description": "Retraining of operator OP-2847 on SOP GC-201-COMP-012 Rev 4, Section 4.2.1. Operator to complete classroom training and supervised compression run (minimum 2 hours) before return to independent operation.",
+      "assigned_to": "Training Department",
+      "target_completion": "2024-03-07",
+      "effectiveness_check": null
+    },
+    "linked_change_control": null,
+    "statements": [
+      {
+        "speaker": "Operator OP-2847",
+        "quote": "I adjusted the dial because the tablets looked light coming out. The SOP says not to adjust, but I thought I was helping quality."
+      },
+      {
+        "speaker": "Line Supervisor (LS-0412)",
+        "quote": "Operator OP-2847 told me the hopper was jamming and feed was inconsistent, which is why they adjusted. But they never reported it formally."
+      }
+    ],
+    "investigation_closed_date": "2024-02-21",
+    "investigation_closed_by": "Quality Manager (QM-0156)",
+    "status": "Closed"
+  },
+  "case_packet": {
+    "true_systemic_cause": "SOP GC-201-COMP-012 Rev 4, Section 4.2.1 is ambiguous and operationally unworkable at line speed. The step reads 'Set hopper feed rate dial to Position 3 before starting compression cycle. Do not adjust during run.' However, the hopper feed rate dial has no detent or lock mechanism; it drifts under vibration. Additionally, the SOP does not define what 'Position 3' means numerically or how to verify it is set correctly. Operators trained on Rev 3 (superseded 6 months prior) were taught to 'monitor and micro-adjust the dial every 5 minutes to maintain consistent feed.' Rev 4 removed this instruction without explanation, creating cognitive conflict. Operator OP-2847 was trained on Rev 3 and never formally re-trained on Rev 4; they received only a 'read and sign' email notice of the change.",
+    "hopper_calibration_history": "Equipment RP-04 hopper feed mechanism was last calibrated 18 months ago. Calibration certificate shows dial position drift of \u00b10.3 units under normal vibration. No recalibration scheduled. Maintenance logs show 'hopper vibration' complaints from 4 operators in the past 8 months, none escalated.",
+    "other_operator_feedback": "Interviews with operators OP-1923, OP-2104, and OP-3341 (conducted post-closure, not in original investigation) reveal: all three have adjusted the feed dial during runs; all three state the dial 'creeps' and tablets become inconsistent if not monitored; all three were trained on Rev 3 and did not receive formal training on Rev 4; all three assumed Rev 4 was a 'read-only' notice and continued prior practice.",
+    "sop_revision_history": "SOP GC-201-COMP-012 Rev 3 (effective 2023-08-15): Section 4.2.1 stated 'Set hopper feed rate dial to Position 3 (marked line) before starting. Monitor dial every 5 minutes and adjust \u00b10.1 units if feed inconsistency observed.' Rev 4 (effective 2023-10-01): Section 4.2.1 changed to 'Set hopper feed rate dial to Position 3 before starting compression cycle. Do not adjust during run.' Change rationale in change control CC-2023-1847: 'Simplify procedure to reduce operator variability.' No risk assessment of removing the monitoring step. No operator feedback solicited.",
+    "training_records": "Operator OP-2847: Last formal training on compression procedures was 2023-07-20 (Rev 3 curriculum). Email notice of SOP Rev 4 sent 2023-10-01 with subject 'SOP Update \u2014 Read and Acknowledge.' OP-2847 acknowledged receipt 2023-10-02 but did not complete any hands-on retraining. No record of supervisor verification that OP-2847 understood the change.",
+    "maintenance_work_order": "WO-2024-0156 (dated 2024-01-28, 2 weeks before deviation): Operator complaint 'hopper feed dial drifts during run, causing weight variation.' Maintenance response: 'Dial position verified at 0.2 units drift. Recommend recalibration.' Recommendation not acted upon; no follow-up scheduled.",
+    "effectiveness_check_status": "CAPA-2024-0847-001 (retraining) was marked complete on 2024-03-08. No effectiveness verification conducted. No follow-up compression runs monitored. No audit of other operators' adherence to Rev 4 performed.",
+    "conflicting_statement_resolution": "Line Supervisor LS-0412's statement about 'hopper jamming' is supported by maintenance WO-2024-0156 and operator feedback. Operator OP-2847 did not formally report the issue, but the condition was real and known to maintenance. Operator's adjustment was a rational response to a latent system defect, not willful non-compliance."
+  }
+}
