@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Deviation Grill — two agents stress-test a deviation</title>
+<meta name="description" content="Two AI agents stress-test a pharmaceutical deviation investigation. Synthetic data, research demo — not a validated GxP system.">
+
+<!-- Open Graph / LinkedIn preview -->
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="AI Deviation Grill — two agents stress-test a deviation">
+<meta property="og:description" content="One AI plays the investigation team; the other interrogates it. Synthetic data, research demo — not a validated GxP system.">
+<meta property="og:image" content="https://gauravpandey36.github.io/ai-deviation-grill/poster.jpg">
+<meta property="og:url" content="https://gauravpandey36.github.io/ai-deviation-grill/">
+<meta property="og:video" content="https://gauravpandey36.github.io/ai-deviation-grill/deviation_grill_splitscreen_CIP.mp4">
+<meta property="og:video:secure_url" content="https://gauravpandey36.github.io/ai-deviation-grill/deviation_grill_splitscreen_CIP.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="1920">
+<meta property="og:video:height" content="1080">
+<meta name="twitter:card" content="player">
+
+<style>
+  :root{ --bg:#0e141c; --fg:#e7eef5; --mut:#8fa3b8; --acc:#8fd0ff; }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+       font:16px/1.6 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:980px;margin:0 auto;padding:32px 20px 64px}
+  h1{font-size:28px;margin:0 0 6px}
+  .sub{color:var(--mut);margin:0 0 22px}
+  video{width:100%;border-radius:12px;background:#000;box-shadow:0 8px 30px rgba(0,0,0,.5)}
+  .card{background:#131c27;border:1px solid #1f2c3a;border-radius:12px;padding:18px 20px;margin:22px 0}
+  .acc{color:var(--acc)}
+  a{color:var(--acc);text-decoration:none} a:hover{text-decoration:underline}
+  ul{margin:8px 0 0;padding-left:20px} li{margin:4px 0}
+  .disc{color:var(--mut);font-size:13px;border-top:1px solid #1f2c3a;margin-top:28px;padding-top:16px}
+  .btn{display:inline-block;margin-top:6px;padding:10px 16px;border:1px solid var(--acc);
+       border-radius:8px;color:var(--acc);font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>AI Deviation Grill <span class="acc">— two agents stress-test a deviation</span></h1>
+  <p class="sub">One AI plays the investigation team. The other interrogates it, one question at a time.</p>
+
+  <video controls playsinline poster="poster.jpg" preload="metadata">
+    <source src="deviation_grill_splitscreen_CIP.mp4" type="video/mp4">
+    Your browser can't play this video — <a href="deviation_grill_splitscreen_CIP.mp4">download it here</a>.
+  </video>
+
+  <div class="card">
+    <strong>The case (synthetic):</strong> a clean-in-place log said the cycle finished clean at 14:00;
+    the equipment audit trail said a pressure alarm forced a restart to 15:47. A valid microbial hit was
+    written off as a "sampling error," and ~50,000 units were released on that basis. Watch the grill
+    drive the conclusion to a latent validation gap — not operator error.
+    <ul>
+      <li><span class="acc">34/34</span> planted gaps surfaced across 7 seeded test cases (100% recall on defect-bearing cases)</li>
+      <li>Refused "operator error" closures; rejected retraining-only CAPAs</li>
+      <li>On a genuinely clean record it over-reached — a real, documented limitation</li>
+    </ul>
+  </div>
+
+  <p>
+    <a class="btn" href="https://github.com/gauravpandey36/ai-deviation-grill">View the open-source repo (MIT) →</a>
+  </p>
+  <p class="sub">The skill, the four-agent evaluation harness, the scores, and the transcripts are all open.
+     Interrogation discipline adapted from Matt Pocock's <em>grill-me</em> (credited in the repo).</p>
+
+  <p class="disc">
+    All examples use synthetic data from a fictional, deliberately-unnamed pharmaceutical company,
+    generated for research and educational purposes. This is a research experiment and a multi-agent
+    demo — not a validated GxP system, and not advice for real investigations. The video is fully
+    synthetic (AI avatars + voices).
+  </p>
+</div>
+</body>
+</html>
